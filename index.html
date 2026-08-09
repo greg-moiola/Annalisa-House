@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annalisa House</title>
+</head>
 
+<body>
+
+    <h1>Annalisa House</h1>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyC9sl_86qiMF9aG2pA5Zh594-b9ytTbDLE",
+            authDomain: "annalisa-house.firebaseapp.com",
+            projectId: "annalisa-house",
+            storageBucket: "annalisa-house.firebasestorage.app",
+            messagingSenderId: "72106901461",
+            appId: "1:72106901461:web:c2926494a7c508a70b475c"
+        };
+
+        const app = initializeApp(firebaseConfig);
+
+        console.log("Firebase collegato correttamente!");
+    </script>
+
+</body>
+</html>
