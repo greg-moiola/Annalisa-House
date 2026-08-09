@@ -1,0 +1,135 @@
+/* =========================
+   BASE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.home {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    background-image: url("../img/home.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.home-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   HOME CONTENT
+========================= */
+
+.home-content {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    color: white;
+}
+
+.home-content h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+
+    font-weight: normal;
+
+    letter-spacing: 0.15em;
+}
+
+.home-content p {
+    margin-top: 15px;
+
+    font-size: clamp(1rem, 2vw, 1.5rem);
+
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 25px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 10;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.menu-button,
+.language-button {
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-family: "Times New Roman", Times, serif;
+
+    cursor: pointer;
+}
+
+.menu-button {
+    font-size: 28px;
+}
+
+.language-button {
+    font-size: 17px;
+
+    letter-spacing: 0.08em;
+}
