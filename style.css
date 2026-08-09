@@ -1,5 +1,5 @@
 /* =========================
-   BASE
+   RESET
 ========================= */
 
 * {
@@ -8,16 +8,27 @@
     box-sizing: border-box;
 }
 
+
 html,
 body {
+
     width: 100%;
     height: 100%;
+
     overflow: hidden;
+
 }
 
+
 body {
-    font-family: "Times New Roman", Times, serif;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
 }
+
 
 
 /* =========================
@@ -25,63 +36,31 @@ body {
 ========================= */
 
 .home {
+
     position: relative;
 
     width: 100%;
     height: 100vh;
 
-    background-image: url("../img/home.jpg");
+    background:
+
+        linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.25)
+        ),
+
+        #777;
+
     background-size: cover;
     background-position: center;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
+
 }
 
-
-/* =========================
-   OVERLAY
-========================= */
-
-.home-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    background: rgba(0, 0, 0, 0.25);
-}
-
-
-/* =========================
-   HOME CONTENT
-========================= */
-
-.home-content {
-    position: relative;
-
-    z-index: 2;
-
-    text-align: center;
-
-    color: white;
-}
-
-.home-content h1 {
-    font-size: clamp(2.5rem, 8vw, 6rem);
-
-    font-weight: normal;
-
-    letter-spacing: 0.15em;
-}
-
-.home-content p {
-    margin-top: 15px;
-
-    font-size: clamp(1rem, 2vw, 1.5rem);
-
-    letter-spacing: 0.15em;
-}
 
 
 /* =========================
@@ -89,6 +68,7 @@ body {
 ========================= */
 
 .header {
+
     position: fixed;
 
     top: 0;
@@ -96,21 +76,63 @@ body {
 
     width: 100%;
 
-    padding: 25px 30px;
+    padding:
+
+        28px
+        32px;
 
     display: flex;
+
     justify-content: space-between;
     align-items: center;
 
-    z-index: 10;
+    z-index: 20;
+
 }
 
 
+
 /* =========================
-   BUTTONS
+   MENU BUTTON
 ========================= */
 
-.menu-button,
+.menu-button {
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.3s ease;
+
+}
+
+
+.menu-button:hover {
+
+    opacity: 0.65;
+
+}
+
+
+
+/* =========================
+   LANGUAGE BUTTON
+========================= */
+
 .language-button {
 
     background: none;
@@ -119,17 +141,241 @@ body {
 
     color: white;
 
-    font-family: "Times New Roman", Times, serif;
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
 
-    cursor: pointer;
-}
-
-.menu-button {
-    font-size: 28px;
-}
-
-.language-button {
     font-size: 17px;
 
     letter-spacing: 0.08em;
+
+    cursor: pointer;
+
+}
+
+
+
+/* =========================
+   HOME TEXT
+========================= */
+
+.home-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    color: white;
+
+}
+
+
+.home-content h1 {
+
+    font-size:
+        clamp(
+            2.5rem,
+            8vw,
+            6rem
+        );
+
+    font-weight: normal;
+
+    letter-spacing: 0.15em;
+
+}
+
+
+.home-content p {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(
+            1rem,
+            2vw,
+            1.5rem
+        );
+
+    letter-spacing: 0.15em;
+
+}
+
+
+
+/* =========================
+   MENU OVERLAY
+========================= */
+
+.menu-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #f4f1eb;
+
+    z-index: 100;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-20px);
+
+    transition:
+
+        opacity 0.45s ease,
+
+        transform 0.45s ease,
+
+        visibility 0.45s ease;
+
+}
+
+
+
+/* =========================
+   MENU OPEN
+========================= */
+
+.menu-overlay.open {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+
+}
+
+
+
+/* =========================
+   MENU CONTAINER
+========================= */
+
+.menu-container {
+
+    width: 100%;
+    height: 100%;
+
+    padding:
+
+        28px
+        32px;
+
+}
+
+
+
+/* =========================
+   MENU HEADER
+========================= */
+
+.menu-header {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.menu-logo {
+
+    font-size: 18px;
+
+    letter-spacing:
+        0.12em;
+
+}
+
+
+.menu-close {
+
+    background: none;
+
+    border: none;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 38px;
+
+    font-weight: 300;
+
+    cursor: pointer;
+
+    line-height: 1;
+
+}
+
+
+
+/* =========================
+   MENU LINKS
+========================= */
+
+.menu-links {
+
+    height: calc(100% - 70px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
+.menu-links a {
+
+    position: relative;
+
+    color: #222;
+
+    text-decoration: none;
+
+    font-size:
+        clamp(
+            1.5rem,
+            4vw,
+            2.4rem
+        );
+
+    letter-spacing:
+        0.08em;
+
+    font-weight: normal;
+
+    transition:
+        opacity 0.3s ease;
+
+}
+
+
+.menu-links a:hover {
+
+    opacity: 0.5;
+
 }
