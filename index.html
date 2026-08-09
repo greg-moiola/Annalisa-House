@@ -1,16 +1,52 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Annalisa House</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <h1>Annalisa House</h1>
+    <!-- HEADER -->
+    <header class="header">
 
+        <!-- MENU -->
+        <button class="menu-button" aria-label="Apri menu">
+            ☰
+        </button>
+
+        <!-- LINGUA -->
+        <button class="language-button">
+            IT ▾
+        </button>
+
+    </header>
+
+
+    <!-- HOME -->
+    <main class="home">
+
+        <div class="home-overlay"></div>
+
+        <div class="home-content">
+
+            <h1>ANNALISA HOUSE</h1>
+
+            <p>Lago di Garda</p>
+
+        </div>
+
+    </main>
+
+
+    <!-- FIREBASE -->
     <script type="module">
+
         import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 
         const firebaseConfig = {
@@ -25,6 +61,7 @@
         const app = initializeApp(firebaseConfig);
 
         console.log("Firebase collegato correttamente!");
+
     </script>
 
 </body>
