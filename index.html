@@ -5,11 +5,15 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Annalisa House</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css">
 
 </head>
 
@@ -23,6 +27,7 @@
 
     <header class="header">
 
+
         <button
             class="menu-button"
             id="menuButton"
@@ -33,24 +38,67 @@
         </button>
 
 
-        <button
-            class="language-button"
-            id="languageButton">
+        <!-- LINGUA -->
 
-            IT ▾
+        <div class="language-selector">
 
-        </button>
+            <button
+                class="language-button"
+                id="languageButton">
+
+                IT ▾
+
+            </button>
+
+
+            <div
+                class="language-menu"
+                id="languageMenu">
+
+
+                <button
+                    class="language-option"
+                    data-language="it">
+
+                    🇮🇹 Italiano
+
+                </button>
+
+
+                <button
+                    class="language-option"
+                    data-language="de">
+
+                    🇩🇪 Deutsch
+
+                </button>
+
+
+                <button
+                    class="language-option"
+                    data-language="en">
+
+                    🇬🇧 English
+
+                </button>
+
+
+            </div>
+
+        </div>
 
     </header>
 
 
 
     <!-- =========================
-         HOME
+         PAGINE
     ========================== -->
 
     <main>
 
+
+        <!-- HOME -->
 
         <section
             class="page page-home active"
@@ -58,11 +106,23 @@
 
             <div class="home-overlay"></div>
 
+
             <div class="home-content">
 
-                <h1>ANNALISA HOUSE</h1>
+                <h1
+                    data-i18n="homeTitle">
 
-                <p>Lago di Garda</p>
+                    ANNALISA HOUSE
+
+                </h1>
+
+
+                <p
+                    data-i18n="homeLocation">
+
+                    Lago di Garda
+
+                </p>
 
             </div>
 
@@ -70,9 +130,7 @@
 
 
 
-        <!-- =========================
-             GALLERIA
-        ========================== -->
+        <!-- GALLERIA -->
 
         <section
             class="page"
@@ -80,11 +138,18 @@
 
             <div class="page-content">
 
-                <h2>GALLERIA</h2>
+                <h2 data-i18n="galleryTitle">
 
-                <p>
+                    GALLERIA
+
+                </h2>
+
+
+                <p data-i18n="galleryText">
+
                     Le immagini della casa
                     saranno presto disponibili.
+
                 </p>
 
             </div>
@@ -93,9 +158,7 @@
 
 
 
-        <!-- =========================
-             SERVIZI
-        ========================== -->
+        <!-- SERVIZI -->
 
         <section
             class="page"
@@ -103,11 +166,18 @@
 
             <div class="page-content">
 
-                <h2>SERVIZI</h2>
+                <h2 data-i18n="servicesTitle">
 
-                <p>
+                    SERVIZI
+
+                </h2>
+
+
+                <p data-i18n="servicesText">
+
                     Scopri tutti i servizi
                     disponibili presso Annalisa House.
+
                 </p>
 
             </div>
@@ -116,9 +186,7 @@
 
 
 
-        <!-- =========================
-             RECENSIONI
-        ========================== -->
+        <!-- RECENSIONI -->
 
         <section
             class="page"
@@ -126,11 +194,18 @@
 
             <div class="page-content">
 
-                <h2>RECENSIONI</h2>
+                <h2 data-i18n="reviewsTitle">
 
-                <p>
+                    RECENSIONI
+
+                </h2>
+
+
+                <p data-i18n="reviewsText">
+
                     Le recensioni dei nostri ospiti
                     saranno disponibili qui.
+
                 </p>
 
             </div>
@@ -139,9 +214,7 @@
 
 
 
-        <!-- =========================
-             CONTATTI
-        ========================== -->
+        <!-- CONTATTI -->
 
         <section
             class="page"
@@ -149,11 +222,18 @@
 
             <div class="page-content">
 
-                <h2>CONTATTI</h2>
+                <h2 data-i18n="contactsTitle">
 
-                <p>
+                    CONTATTI
+
+                </h2>
+
+
+                <p data-i18n="contactsText">
+
                     Contattaci per maggiori informazioni
                     su Annalisa House.
+
                 </p>
 
             </div>
@@ -162,9 +242,7 @@
 
 
 
-        <!-- =========================
-             ADMIN
-        ========================== -->
+        <!-- ADMIN -->
 
         <section
             class="page"
@@ -172,10 +250,17 @@
 
             <div class="page-content">
 
-                <h2>ADMIN</h2>
+                <h2 data-i18n="adminTitle">
 
-                <p>
+                    ADMIN
+
+                </h2>
+
+
+                <p data-i18n="adminText">
+
                     Area amministratore.
+
                 </p>
 
             </div>
@@ -188,7 +273,7 @@
 
 
     <!-- =========================
-         MENU
+         MENU HAMBURGER
     ========================== -->
 
     <div
@@ -201,8 +286,11 @@
 
             <div class="menu-header">
 
+
                 <span class="menu-logo">
+
                     ANNALISA HOUSE
+
                 </span>
 
 
@@ -215,6 +303,7 @@
 
                 </button>
 
+
             </div>
 
 
@@ -222,33 +311,63 @@
             <nav class="menu-links">
 
 
-                <a href="#" data-page="homePage">
+                <a
+                    href="#"
+                    data-page="homePage"
+                    data-i18n="navHome">
+
                     HOME
+
                 </a>
 
 
-                <a href="#" data-page="galleryPage">
+                <a
+                    href="#"
+                    data-page="galleryPage"
+                    data-i18n="navGallery">
+
                     GALLERIA
+
                 </a>
 
 
-                <a href="#" data-page="servicesPage">
+                <a
+                    href="#"
+                    data-page="servicesPage"
+                    data-i18n="navServices">
+
                     SERVIZI
+
                 </a>
 
 
-                <a href="#" data-page="reviewsPage">
+                <a
+                    href="#"
+                    data-page="reviewsPage"
+                    data-i18n="navReviews">
+
                     RECENSIONI
+
                 </a>
 
 
-                <a href="#" data-page="contactsPage">
+                <a
+                    href="#"
+                    data-page="contactsPage"
+                    data-i18n="navContacts">
+
                     CONTATTI
+
                 </a>
 
 
-                <a href="#" data-page="adminPage">
+                <a
+                    href="#"
+                    data-page="adminPage"
+                    data-i18n="navAdmin">
+
                     ADMIN
+
                 </a>
 
 
@@ -269,27 +388,35 @@
 
         import {
             initializeApp
-        } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+        } from
+        "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 
 
         const firebaseConfig = {
 
-            apiKey: "AIzaSyC9sl_86qiMF9aG2pA5Zh594-b9ytTbDLE",
+            apiKey:
+                "AIzaSyC9sl_86qiMF9aG2pA5Zh594-b9ytTbDLE",
 
-            authDomain: "annalisa-house.firebaseapp.com",
+            authDomain:
+                "annalisa-house.firebaseapp.com",
 
-            projectId: "annalisa-house",
+            projectId:
+                "annalisa-house",
 
-            storageBucket: "annalisa-house.firebasestorage.app",
+            storageBucket:
+                "annalisa-house.firebasestorage.app",
 
-            messagingSenderId: "72106901461",
+            messagingSenderId:
+                "72106901461",
 
-            appId: "1:72106901461:web:c2926494a7c508a70b475c"
+            appId:
+                "1:72106901461:web:c2926494a7c508a70b475c"
 
         };
 
 
-        const app = initializeApp(firebaseConfig);
+        const app =
+            initializeApp(firebaseConfig);
 
 
         console.log(
