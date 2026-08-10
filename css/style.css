@@ -1,13 +1,111 @@
 /* =========================
-   LANGUAGE SELECTOR
+   RESET
 ========================= */
 
-.language-selector {
+* {
 
-    position: relative;
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
 
 }
 
+
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+}
+
+
+body {
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    background: #f4f1eb;
+
+    color: #222;
+
+}
+
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 28px 32px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 50;
+
+}
+
+
+
+/* =========================
+   MENU BUTTON
+========================= */
+
+.menu-button {
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    transition:
+        opacity 0.3s ease;
+
+}
+
+
+.menu-button:hover {
+
+    opacity: 0.6;
+
+}
+
+
+
+/* =========================
+   LANGUAGE
+========================= */
 
 .language-button {
 
@@ -28,46 +126,233 @@
 
     cursor: pointer;
 
-    padding: 6px;
-
 }
 
 
-.language-menu {
 
-    position: absolute;
+/* =========================
+   PAGES
+========================= */
 
-    top: calc(100% + 12px);
+.page {
 
-    right: 0;
+    position: fixed;
 
-    min-width: 150px;
+    inset: 0;
 
-    background: rgba(244, 241, 235, 0.97);
+    width: 100%;
+    height: 100vh;
 
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
 
-    padding: 8px 0;
+    align-items: center;
+    justify-content: center;
 
     opacity: 0;
 
     visibility: hidden;
 
     transform:
-        translateY(-8px);
+        scale(1.02);
 
     transition:
 
-        opacity 0.25s ease,
+        opacity 0.5s ease,
 
-        transform 0.25s ease,
+        transform 0.6s ease,
 
-        visibility 0.25s ease;
+        visibility 0.5s ease;
 
 }
 
 
-.language-menu.open {
+.page.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        scale(1);
+
+}
+
+
+
+/* =========================
+   HOME
+========================= */
+
+.page-home {
+
+    background:
+
+        linear-gradient(
+            rgba(0, 0, 0, 0.28),
+            rgba(0, 0, 0, 0.28)
+        ),
+
+        #777;
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+.home-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.08);
+
+}
+
+
+.home-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    color: white;
+
+}
+
+
+.home-content h1 {
+
+    font-size:
+        clamp(
+            2.5rem,
+            8vw,
+            6rem
+        );
+
+    font-weight: normal;
+
+    letter-spacing:
+        0.15em;
+
+}
+
+
+.home-content p {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(
+            1rem,
+            2vw,
+            1.5rem
+        );
+
+    letter-spacing:
+        0.15em;
+
+}
+
+
+
+/* =========================
+   OTHER PAGES
+========================= */
+
+.page:not(.page-home) {
+
+    background: #f4f1eb;
+
+}
+
+
+.page-content {
+
+    text-align: center;
+
+    max-width: 700px;
+
+    padding: 40px;
+
+}
+
+
+.page-content h2 {
+
+    font-size:
+        clamp(
+            2.2rem,
+            6vw,
+            4rem
+        );
+
+    font-weight: normal;
+
+    letter-spacing:
+        0.12em;
+
+    margin-bottom: 25px;
+
+}
+
+
+.page-content p {
+
+    font-size:
+        clamp(
+            1rem,
+            2vw,
+            1.3rem
+        );
+
+    line-height: 1.7;
+
+}
+
+
+
+/* =========================
+   MENU OVERLAY
+========================= */
+
+.menu-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #f4f1eb;
+
+    z-index: 100;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-20px);
+
+    transition:
+
+        opacity 0.45s ease,
+
+        transform 0.45s ease,
+
+        visibility 0.45s ease;
+
+}
+
+
+.menu-overlay.open {
 
     opacity: 1;
 
@@ -79,38 +364,167 @@
 }
 
 
-.language-option {
+
+/* =========================
+   MENU CONTAINER
+========================= */
+
+.menu-container {
 
     width: 100%;
+    height: 100%;
+
+    padding: 28px 32px;
+
+}
+
+
+
+/* =========================
+   MENU HEADER
+========================= */
+
+.menu-header {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.menu-logo {
+
+    font-size: 18px;
+
+    letter-spacing:
+        0.12em;
+
+}
+
+
+.menu-close {
 
     background: none;
 
     border: none;
-
-    padding: 10px 18px;
-
-    text-align: left;
 
     font-family:
         "Times New Roman",
         Times,
         serif;
 
-    font-size: 15px;
+    font-size: 38px;
 
-    color: #222;
+    font-weight: normal;
 
     cursor: pointer;
 
-    transition:
-        background 0.2s ease;
+    line-height: 1;
+
+    color: #222;
 
 }
 
 
-.language-option:hover {
 
-    background:
-        rgba(0, 0, 0, 0.06);
+/* =========================
+   MENU LINKS
+========================= */
+
+.menu-links {
+
+    height:
+        calc(100% - 70px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
+.menu-links a {
+
+    color: #222;
+
+    text-decoration: none;
+
+    font-size:
+        clamp(
+            1.5rem,
+            4vw,
+            2.4rem
+        );
+
+    letter-spacing:
+        0.08em;
+
+    font-weight: normal;
+
+    transition:
+
+        opacity 0.3s ease,
+
+        transform 0.3s ease;
+
+}
+
+
+.menu-links a:hover {
+
+    opacity: 0.5;
+
+    transform:
+        translateX(5px);
+
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .header {
+
+        padding:
+            22px 22px;
+
+    }
+
+
+    .menu-container {
+
+        padding:
+            22px;
+
+    }
+
+
+    .menu-links {
+
+        gap: 24px;
+
+    }
+
+
+    .menu-links a {
+
+        font-size:
+            1.8rem;
+
+    }
 
 }
