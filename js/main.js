@@ -22,6 +22,18 @@ const pages =
     );
 
 
+const languageButton =
+    document.getElementById("languageButton");
+
+const languageMenu =
+    document.getElementById("languageMenu");
+
+const languageOptions =
+    document.querySelectorAll(
+        ".language-option"
+    );
+
+
 
 /* =========================
    OPEN MENU
@@ -103,3 +115,91 @@ menuLinks.forEach(
 
     }
 );
+
+
+/* =========================
+   LANGUAGE MENU
+========================= */
+
+languageButton.addEventListener(
+    "click",
+    (event) => {
+
+        event.stopPropagation();
+
+        languageMenu.classList.toggle("open");
+
+    }
+);
+
+
+/* =========================
+   LANGUAGE SELECTION
+========================= */
+
+languageOptions.forEach(
+    (option) => {
+
+        option.addEventListener(
+            "click",
+            (event) => {
+
+                event.stopPropagation();
+
+                const language =
+                    option.dataset.language;
+
+
+                languageButton.textContent =
+                    language.toUpperCase() + " ▾";
+
+
+                languageMenu.classList.remove(
+                    "open"
+                );
+
+
+                localStorage.setItem(
+                    "annalisaLanguage",
+                    language
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================
+   CLOSE LANGUAGE MENU
+========================= */
+
+document.addEventListener(
+    "click",
+    () => {
+
+        languageMenu.classList.remove(
+            "open"
+        );
+
+    }
+);
+
+
+/* =========================
+   RESTORE LANGUAGE
+========================= */
+
+const savedLanguage =
+    localStorage.getItem(
+        "annalisaLanguage"
+    );
+
+
+if (savedLanguage) {
+
+    languageButton.textContent =
+        savedLanguage.toUpperCase() + " ▾";
+
+}
