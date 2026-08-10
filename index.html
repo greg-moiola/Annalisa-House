@@ -23,8 +23,6 @@
 
     <header class="header">
 
-        <!-- MENU BUTTON -->
-
         <button
             class="menu-button"
             id="menuButton"
@@ -35,9 +33,9 @@
         </button>
 
 
-        <!-- LANGUAGE -->
-
-        <button class="language-button">
+        <button
+            class="language-button"
+            id="languageButton">
 
             IT ▾
 
@@ -51,18 +49,139 @@
          HOME
     ========================== -->
 
-    <main class="home">
-
-        <div class="home-overlay"></div>
+    <main>
 
 
-        <div class="home-content">
+        <section
+            class="page page-home active"
+            id="homePage">
 
-            <h1>ANNALISA HOUSE</h1>
+            <div class="home-overlay"></div>
 
-            <p>Lago di Garda</p>
+            <div class="home-content">
 
-        </div>
+                <h1>ANNALISA HOUSE</h1>
+
+                <p>Lago di Garda</p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             GALLERIA
+        ========================== -->
+
+        <section
+            class="page"
+            id="galleryPage">
+
+            <div class="page-content">
+
+                <h2>GALLERIA</h2>
+
+                <p>
+                    Le immagini della casa
+                    saranno presto disponibili.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SERVIZI
+        ========================== -->
+
+        <section
+            class="page"
+            id="servicesPage">
+
+            <div class="page-content">
+
+                <h2>SERVIZI</h2>
+
+                <p>
+                    Scopri tutti i servizi
+                    disponibili presso Annalisa House.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             RECENSIONI
+        ========================== -->
+
+        <section
+            class="page"
+            id="reviewsPage">
+
+            <div class="page-content">
+
+                <h2>RECENSIONI</h2>
+
+                <p>
+                    Le recensioni dei nostri ospiti
+                    saranno disponibili qui.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTATTI
+        ========================== -->
+
+        <section
+            class="page"
+            id="contactsPage">
+
+            <div class="page-content">
+
+                <h2>CONTATTI</h2>
+
+                <p>
+                    Contattaci per maggiori informazioni
+                    su Annalisa House.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ADMIN
+        ========================== -->
+
+        <section
+            class="page"
+            id="adminPage">
+
+            <div class="page-content">
+
+                <h2>ADMIN</h2>
+
+                <p>
+                    Area amministratore.
+                </p>
+
+            </div>
+
+        </section>
+
 
     </main>
 
@@ -72,13 +191,13 @@
          MENU
     ========================== -->
 
-    <div class="menu-overlay" id="menuOverlay">
+    <div
+        class="menu-overlay"
+        id="menuOverlay">
 
 
         <div class="menu-container">
 
-
-            <!-- MENU HEADER -->
 
             <div class="menu-header">
 
@@ -100,37 +219,35 @@
 
 
 
-            <!-- MENU LINKS -->
-
             <nav class="menu-links">
 
 
-                <a href="index.html">
+                <a href="#" data-page="homePage">
                     HOME
                 </a>
 
 
-                <a href="#">
+                <a href="#" data-page="galleryPage">
                     GALLERIA
                 </a>
 
 
-                <a href="#">
+                <a href="#" data-page="servicesPage">
                     SERVIZI
                 </a>
 
 
-                <a href="#">
+                <a href="#" data-page="reviewsPage">
                     RECENSIONI
                 </a>
 
 
-                <a href="#">
+                <a href="#" data-page="contactsPage">
                     CONTATTI
                 </a>
 
 
-                <a href="#">
+                <a href="#" data-page="adminPage">
                     ADMIN
                 </a>
 
@@ -182,8 +299,6 @@
     </script>
 
 
-
-    <!-- MENU JAVASCRIPT -->
 
     <script src="js/main.js"></script>
 
