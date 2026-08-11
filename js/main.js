@@ -3,7 +3,13 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 
 import {
-    getFirestore
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp,
+    getDocs,
+    orderBy,
+    query
 } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 
 
@@ -712,3 +718,320 @@ ratingButtons.forEach(
 
     }
 );
+
+
+/* =========================
+   FIRESTORE - RECENSIONI
+========================= */
+
+const publishReviewButton =
+    document.getElementById("publishReviewButton");
+
+const reviewNameInput =
+    document.getElementById("reviewName");
+
+const reviewCountrySelect =
+    document.getElementById("reviewCountry");
+
+const reviewTextInput =
+    document.getElementById("reviewText");
+
+
+publishReviewButton.addEventListener(
+    "click",
+    async () => {
+
+        const name =
+            reviewNameInput.value.trim();
+
+        const country =
+            reviewCountrySelect.value;
+
+        const text =
+            reviewTextInput.value.trim();
+
+
+        /* CONTROLLI */
+
+        if (!name) {
+
+            alert("Inserisci il tuo nome.");
+
+            return;
+
+        }
+
+
+        if (selectedRating === 0) {
+
+            alert("Seleziona una valutazione.");
+
+            return;
+
+        }
+
+
+        if (!text) {
+
+            alert("Scrivi una recensione.");
+
+            return;
+
+        }
+
+
+        /* SALVATAGGIO FIRESTORE */
+
+        try {
+
+            publishReviewButton.disabled = true;
+
+            publishReviewButton.textContent =
+                "PUBBLICAZIONE...";
+
+
+            await addDoc(
+                collection(db, "reviews"),
+                {
+
+                    nome: name,
+
+                    paese: country,
+
+                    stelle: selectedRating,
+
+                    testo: text,
+
+                    data: serverTimestamp()
+
+                }
+            );
+
+
+            /* RESET */
+
+            reviewNameInput.value = "";
+
+            reviewCountrySelect.value = "IT";
+
+            reviewTextInput.value = "";
+
+            selectedRating = 0;
+
+
+            ratingButtons.forEach(
+                (star) => {
+
+                    star.textContent = "☆";
+
+                }
+            );
+
+
+            reviewModal.classList.remove("open");
+
+
+            publishReviewButton.disabled = false;
+
+            publishReviewButton.textContent =
+                "PUBBLICA RECENSIONE";
+
+
+            /* RICARICA RECENSIONI */
+
+            loadReviews();
+
+
+        } catch (error) {
+
+            console.error(
+                "Errore nel salvataggio:",
+                error
+            );
+
+
+            alert(
+                "Si è verificato un errore. Riprova."
+            );
+
+
+            publishReviewButton.disabled = false;
+
+            publishReviewButton.textContent =
+                "PUBBLICA RECENSIONE";
+
+        }
+
+    }
+);
+
+/* =========================
+   CARICAMENTO RECENSIONI
+========================= */
+
+async function loadReviews() {
+
+    const reviewsList =
+        document.getElementById("reviewsList");
+
+
+    reviewsList.innerHTML = "";
+
+
+    try {
+
+        const reviewsQuery =
+            query(
+                collection(db, "reviews"),
+                orderBy("data", "desc")
+            );
+
+
+        const snapshot =
+            await getDocs(reviewsQuery);
+
+
+        snapshot.forEach(
+            (documentSnapshot) => {
+
+                const review =
+                    documentSnapshot.data();
+
+
+                const card =
+                    document.createElement("div");
+
+                card.className =
+                    "review-card";
+
+
+                /* STELLE */
+
+                const stars =
+                    "★".repeat(review.stelle) +
+                    "☆".repeat(5 - review.stelle);
+
+
+                /* DATA */
+
+                let formattedDate =
+                    "";
+
+
+                if (review.data) {
+
+                    const date =
+                        review.data.toDate();
+
+
+                    formattedDate =
+                        date.toLocaleDateString(
+                            "it-IT",
+                            {
+                                day: "numeric",
+                                month: "long",
+                                year: "numeric"
+                            }
+                        );
+
+                }
+
+
+                /* RECENSIONE */
+
+                card.innerHTML = `
+
+                    <div class="review-top">
+
+                        <span class="review-author">
+                            ${getCountryFlag(review.paese)}
+                            ${escapeHTML(review.nome)}
+                        </span>
+
+                        <span class="review-date">
+                            ${formattedDate}
+                        </span>
+
+                    </div>
+
+                    <div class="review-stars">
+                        ${stars}
+                    </div>
+
+                    <p class="review-text">
+                        ${escapeHTML(review.testo)}
+                    </p>
+
+                `;
+
+
+                reviewsList.appendChild(card);
+
+            }
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Errore caricamento recensioni:",
+            error
+        );
+
+    }
+
+}
+
+/* =========================
+   BANDIERE
+========================= */
+
+function getCountryFlag(country) {
+
+    const flags = {
+
+        IT: "🇮🇹",
+
+        DE: "🇩🇪",
+
+        AT: "🇦🇹",
+
+        CH: "🇨🇭",
+
+        FR: "🇫🇷",
+
+        ES: "🇪🇸",
+
+        GB: "🇬🇧",
+
+        US: "🇺🇸",
+
+        NL: "🇳🇱",
+
+        BE: "🇧🇪",
+
+        OTHER: "🌍"
+
+    };
+
+
+    return flags[country] || "🌍";
+
+}
+
+/* =========================
+   SICUREZZA TESTO
+========================= */
+
+function escapeHTML(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+loadReviews();
