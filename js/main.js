@@ -5,8 +5,7 @@ import {
 import {
     getFirestore
 } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
-const menuButton =
-    document.getElementById("menuButton");
+
 const firebaseConfig = {
 
     apiKey: "AIzaSyC9sl_86qiMF9aG2pA5Zh594-b9ytTbDLE",
@@ -28,6 +27,8 @@ const firebaseConfig = {
 
 };
 
+const menuButton =
+    document.getElementById("menuButton");
 
 const app =
     initializeApp(firebaseConfig);
