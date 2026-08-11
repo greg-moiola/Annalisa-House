@@ -336,3 +336,127 @@ function changeLanguage(language) {
     );
 
 }
+
+
+/* =========================
+   REVIEW MODAL
+========================= */
+
+const reviewModal =
+    document.getElementById("reviewModal");
+
+const writeReviewButton =
+    document.getElementById("writeReviewButton");
+
+const reviewModalClose =
+    document.getElementById("reviewModalClose");
+
+
+/* =========================
+   OPEN MODAL
+========================= */
+
+writeReviewButton.addEventListener(
+    "click",
+    () => {
+
+        reviewModal.classList.add("open");
+
+    }
+);
+
+
+/* =========================
+   CLOSE MODAL
+========================= */
+
+reviewModalClose.addEventListener(
+    "click",
+    () => {
+
+        reviewModal.classList.remove("open");
+
+    }
+);
+
+
+/* =========================
+   CLOSE CLICKING OUTSIDE
+========================= */
+
+reviewModal.addEventListener(
+    "click",
+    (event) => {
+
+        if (
+            event.target === reviewModal
+        ) {
+
+            reviewModal.classList.remove(
+                "open"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================
+   RATING STARS
+========================= */
+
+const ratingButtons =
+    document.querySelectorAll(
+        "#ratingStars button"
+    );
+
+
+let selectedRating = 0;
+
+
+ratingButtons.forEach(
+    (button) => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                selectedRating =
+                    Number(
+                        button.dataset.rating
+                    );
+
+
+                ratingButtons.forEach(
+                    (star) => {
+
+                        const rating =
+                            Number(
+                                star.dataset.rating
+                            );
+
+
+                        if (
+                            rating <=
+                            selectedRating
+                        ) {
+
+                            star.textContent =
+                                "★";
+
+                        } else {
+
+                            star.textContent =
+                                "☆";
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
