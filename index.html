@@ -179,34 +179,11 @@
         
 
 
-            <div class="review-card">
+            <div
+    class="reviews-list"
+    id="reviewsList">
 
-                <div class="review-top">
-
-                    <span class="review-author">
-                        🇩🇪 Anna
-                    </span>
-
-                    <span class="review-date">
-                        8 agosto 2026
-                    </span>
-
-                </div>
-
-
-                <div class="review-stars">
-                    ★★★★☆
-                </div>
-
-
-                <p class="review-text">
-                    Wunderschönes Haus
-                    in einer tollen Lage.
-                </p>
-
-            </div>
-
-        </div>
+</div>
 
 
         <button
@@ -565,48 +542,7 @@
 
     </div>
 
-
-
-    <!-- =========================
-         FIREBASE
-    ========================== -->
-
-    <script type="module">
-
-        import {
-            initializeApp
-        } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
-
-
-        const firebaseConfig = {
-
-            apiKey: "AIzaSyC9sl_86qiMF9aG2pA5Zh594-b9ytTbDLE",
-
-            authDomain: "annalisa-house.firebaseapp.com",
-
-            projectId: "annalisa-house",
-
-            storageBucket: "annalisa-house.firebasestorage.app",
-
-            messagingSenderId: "72106901461",
-
-            appId: "1:72106901461:web:c2926494a7c508a70b475c"
-
-        };
-
-
-        const app = initializeApp(firebaseConfig);
-
-
-        console.log(
-            "Firebase collegato correttamente!"
-        );
-
-    </script>
-
-
-
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 
 
 </body>
