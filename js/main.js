@@ -200,6 +200,20 @@ const translations = {
 
     it: {
 
+        writeReview: "SCRIVI RECENSIONE",
+
+        writeReviewTitle: "SCRIVI RECENSIONE",
+
+        reviewName: "Nome",
+
+        reviewCountry: "Paese",
+
+        reviewRating: "Valutazione",
+
+        reviewText: "La tua recensione",
+
+        publishReview: "PUBBLICA RECENSIONE",
+
         homeTitle: "ANNALISA HOUSE",
         homeLocation: "Lago di Garda",
 
@@ -230,6 +244,20 @@ const translations = {
 
     de: {
 
+        writeReview: "BEWERTUNG SCHREIBEN",
+
+        writeReviewTitle: "BEWERTUNG SCHREIBEN",
+
+        reviewName: "Name",
+
+        reviewCountry: "Land",
+
+        reviewRating: "Bewertung",
+
+        reviewText: "Ihre Bewertung",
+
+        publishReview: "BEWERTUNG VERÖFFENTLICHEN",
+
         homeTitle: "ANNALISA HOUSE",
         homeLocation: "Gardasee",
 
@@ -259,6 +287,20 @@ const translations = {
 
 
     en: {
+
+        writeReview: "WRITE A REVIEW",
+
+        writeReviewTitle: "WRITE A REVIEW",
+
+        reviewName: "Name",
+
+        reviewCountry: "Country",
+
+        reviewRating: "Rating",
+
+        reviewText: "Your review",
+
+        publishReview: "PUBLISH REVIEW",
 
         homeTitle: "ANNALISA HOUSE",
         homeLocation: "Lake Garda",
