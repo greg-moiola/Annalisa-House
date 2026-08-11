@@ -1,6 +1,40 @@
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+
+import {
+    getFirestore
+} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 const menuButton =
     document.getElementById("menuButton");
+const firebaseConfig = {
 
+    apiKey: "AIzaSyC9sl_86qiMF9aG2pA5Zh594-b9ytTbDLE",
+
+    authDomain:
+        "annalisa-house.firebaseapp.com",
+
+    projectId:
+        "annalisa-house",
+
+    storageBucket:
+        "annalisa-house.firebasestorage.app",
+
+    messagingSenderId:
+        "72106901461",
+
+    appId:
+        "1:72106901461:web:c2926494a7c508a70b475c"
+
+};
+
+
+const app =
+    initializeApp(firebaseConfig);
+
+
+const db =
+    getFirestore(app);
 
 const menuClose =
     document.getElementById("menuClose");
