@@ -200,6 +200,32 @@ const translations = {
 
     it: {
 
+        namePlaceholder: "Il tuo nome",
+
+        reviewPlaceholder: "Scrivi qui la tua recensione...",
+
+        countryIT: "Italia",
+
+        countryDE: "Germania",
+
+        countryAT: "Austria",
+
+        countryCH: "Svizzera",
+
+        countryFR: "Francia",
+
+        countryES: "Spagna",
+
+        countryGB: "Regno Unito",
+
+        countryUS: "Stati Uniti",
+
+        countryNL: "Paesi Bassi",
+
+        countryBE: "Belgio",
+
+        countryOTHER: "Altro",
+
         writeReview: "SCRIVI RECENSIONE",
 
         writeReviewTitle: "SCRIVI RECENSIONE",
@@ -244,6 +270,45 @@ const translations = {
 
     de: {
 
+        namePlaceholder:
+    "Dein Name",
+
+reviewPlaceholder:
+    "Schreiben Sie hier Ihre Bewertung...",
+
+countryIT:
+    "Italien",
+
+countryDE:
+    "Deutschland",
+
+countryAT:
+    "Österreich",
+
+countryCH:
+    "Schweiz",
+
+countryFR:
+    "Frankreich",
+
+countryES:
+    "Spanien",
+
+countryGB:
+    "Vereinigtes Königreich",
+
+countryUS:
+    "Vereinigte Staaten",
+
+countryNL:
+    "Niederlande",
+
+countryBE:
+    "Belgien",
+
+countryOTHER:
+    "Andere",
+
         writeReview: "BEWERTUNG SCHREIBEN",
 
         writeReviewTitle: "BEWERTUNG SCHREIBEN",
@@ -287,6 +352,45 @@ const translations = {
 
 
     en: {
+
+        namePlaceholder:
+    "Your name",
+
+reviewPlaceholder:
+    "Write your review here...",
+
+countryIT:
+    "Italy",
+
+countryDE:
+    "Germany",
+
+countryAT:
+    "Austria",
+
+countryCH:
+    "Switzerland",
+
+countryFR:
+    "France",
+
+countryES:
+    "Spain",
+
+countryGB:
+    "United Kingdom",
+
+countryUS:
+    "United States",
+
+countryNL:
+    "Netherlands",
+
+countryBE:
+    "Belgium",
+
+countryOTHER:
+    "Other",
 
         writeReview: "WRITE A REVIEW",
 
@@ -361,6 +465,60 @@ function changeLanguage(language) {
             }
 
         });
+
+    /* =========================
+   PLACEHOLDER
+========================= */
+
+document
+    .querySelectorAll("[data-i18n-placeholder]")
+    .forEach((element) => {
+
+        const key =
+            element.dataset.i18nPlaceholder;
+
+        if (selectedLanguage[key]) {
+
+            element.placeholder =
+                selectedLanguage[key];
+
+        }
+
+    });
+
+
+/* =========================
+   PAESI
+========================= */
+
+const countryOptions =
+    document.querySelectorAll(
+        "#reviewCountry option"
+    );
+
+
+countryOptions.forEach(
+    (option) => {
+
+        const country =
+            option.dataset.country;
+
+        const key =
+            "country" + country;
+
+        if (selectedLanguage[key]) {
+
+            const flag =
+                option.textContent.trim().split(" ")[0];
+
+            option.textContent =
+                flag + " " +
+                selectedLanguage[key];
+
+        }
+
+    }
+);
 
     languageButton.textContent =
         language.toUpperCase() + " ▾";
