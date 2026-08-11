@@ -299,6 +299,7 @@
             <input
                 type="text"
                 id="reviewName"
+                data-i18n-placeholder="namePlaceholder"
                 placeholder="Il tuo nome"
                 maxlength="40">
 
@@ -321,51 +322,51 @@
 
             <select id="reviewCountry">
 
-                <option value="IT">
-                    🇮🇹 Italia
-                </option>
+    <option value="IT" data-country="IT">
+        🇮🇹 Italia
+    </option>
 
-                <option value="DE">
-                    🇩🇪 Germania
-                </option>
+    <option value="DE" data-country="DE">
+        🇩🇪 Germania
+    </option>
 
-                <option value="AT">
-                    🇦🇹 Austria
-                </option>
+    <option value="AT" data-country="AT">
+        🇦🇹 Austria
+    </option>
 
-                <option value="CH">
-                    🇨🇭 Svizzera
-                </option>
+    <option value="CH" data-country="CH">
+        🇨🇭 Svizzera
+    </option>
 
-                <option value="FR">
-                    🇫🇷 Francia
-                </option>
+    <option value="FR" data-country="FR">
+        🇫🇷 Francia
+    </option>
 
-                <option value="ES">
-                    🇪🇸 Spagna
-                </option>
+    <option value="ES" data-country="ES">
+        🇪🇸 Spagna
+    </option>
 
-                <option value="GB">
-                    🇬🇧 Regno Unito
-                </option>
+    <option value="GB" data-country="GB">
+        🇬🇧 Regno Unito
+    </option>
 
-                <option value="US">
-                    🇺🇸 Stati Uniti
-                </option>
+    <option value="US" data-country="US">
+        🇺🇸 Stati Uniti
+    </option>
 
-                <option value="NL">
-                    🇳🇱 Paesi Bassi
-                </option>
+    <option value="NL" data-country="NL">
+        🇳🇱 Paesi Bassi
+    </option>
 
-                <option value="BE">
-                    🇧🇪 Belgio
-                </option>
+    <option value="BE" data-country="BE">
+        🇧🇪 Belgio
+    </option>
 
-                <option value="OTHER">
-                    🌍 Altro
-                </option>
+    <option value="OTHER" data-country="OTHER">
+        🌍 Altro
+    </option>
 
-            </select>
+</select>
 
         </div>
 
@@ -417,6 +418,7 @@
 
             <textarea
                 id="reviewText"
+                data-i18n-placeholder="reviewPlaceholder"
                 placeholder="Scrivi qui la tua recensione..."
                 maxlength="1000">
             </textarea>
