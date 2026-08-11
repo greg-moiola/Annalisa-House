@@ -256,6 +256,191 @@
 
 </section>
 
+        <!-- =========================
+     FORM RECENSIONE
+========================= -->
+
+<div
+    class="review-modal"
+    id="reviewModal">
+
+    <div class="review-modal-content">
+
+
+        <button
+            class="review-modal-close"
+            id="reviewModalClose">
+
+            ×
+
+        </button>
+
+
+        <h2 data-i18n="writeReviewTitle">
+
+            SCRIVI RECENSIONE
+
+        </h2>
+
+
+        <!-- NOME -->
+
+        <div class="review-field">
+
+            <label
+                for="reviewName"
+                data-i18n="reviewName">
+
+                Nome
+
+            </label>
+
+
+            <input
+                type="text"
+                id="reviewName"
+                placeholder="Il tuo nome"
+                maxlength="40">
+
+        </div>
+
+
+
+        <!-- PAESE -->
+
+        <div class="review-field">
+
+            <label
+                for="reviewCountry"
+                data-i18n="reviewCountry">
+
+                Paese
+
+            </label>
+
+
+            <select id="reviewCountry">
+
+                <option value="IT">
+                    🇮🇹 Italia
+                </option>
+
+                <option value="DE">
+                    🇩🇪 Germania
+                </option>
+
+                <option value="AT">
+                    🇦🇹 Austria
+                </option>
+
+                <option value="CH">
+                    🇨🇭 Svizzera
+                </option>
+
+                <option value="FR">
+                    🇫🇷 Francia
+                </option>
+
+                <option value="ES">
+                    🇪🇸 Spagna
+                </option>
+
+                <option value="GB">
+                    🇬🇧 Regno Unito
+                </option>
+
+                <option value="US">
+                    🇺🇸 Stati Uniti
+                </option>
+
+                <option value="NL">
+                    🇳🇱 Paesi Bassi
+                </option>
+
+                <option value="BE">
+                    🇧🇪 Belgio
+                </option>
+
+                <option value="OTHER">
+                    🌍 Altro
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- STELLE -->
+
+        <div class="review-field">
+
+            <label data-i18n="reviewRating">
+
+                Valutazione
+
+            </label>
+
+
+            <div
+                class="rating-stars"
+                id="ratingStars">
+
+                <button data-rating="1">☆</button>
+
+                <button data-rating="2">☆</button>
+
+                <button data-rating="3">☆</button>
+
+                <button data-rating="4">☆</button>
+
+                <button data-rating="5">☆</button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TESTO -->
+
+        <div class="review-field">
+
+            <label
+                for="reviewText"
+                data-i18n="reviewText">
+
+                La tua recensione
+
+            </label>
+
+
+            <textarea
+                id="reviewText"
+                placeholder="Scrivi qui la tua recensione..."
+                maxlength="1000">
+            </textarea>
+
+        </div>
+
+
+
+        <!-- PUBBLICA -->
+
+        <button
+            class="publish-review-button"
+            id="publishReviewButton"
+            data-i18n="publishReview">
+
+            PUBBLICA RECENSIONE
+
+        </button>
+
+
+    </div>
+
+</div>
+
 
 
         <!-- =========================
