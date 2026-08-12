@@ -12,6 +12,13 @@ import {
     query
 } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 
+import {
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+
 
 /* =========================
    FIREBASE
@@ -45,6 +52,10 @@ const app =
 
 const db =
     getFirestore(app);
+
+
+const auth =
+    getAuth(app);
 
 
 console.log(
@@ -1032,6 +1043,123 @@ function escapeHTML(text) {
 
     return div.innerHTML;
 
+
+    /* =========================
+   ADMIN LOGIN
+========================= */
+
+const adminLogin =
+    document.getElementById("adminLogin");
+
+const adminPanel =
+    document.getElementById("adminPanel");
+
+const adminEmail =
+    document.getElementById("adminEmail");
+
+const adminPassword =
+    document.getElementById("adminPassword");
+
+const adminLoginButton =
+    document.getElementById("adminLoginButton");
+
+const adminLoginMessage =
+    document.getElementById("adminLoginMessage");
+
+const adminLogoutButton =
+    document.getElementById("adminLogoutButton");
+
+
+adminLoginButton.addEventListener(
+    "click",
+    async () => {
+
+        const email =
+            adminEmail.value.trim();
+
+        const password =
+            adminPassword.value;
+
+
+        if (!email || !password) {
+
+            adminLoginMessage.textContent =
+                "Inserisci email e password.";
+
+            return;
+
+        }
+
+
+        try {
+
+            adminLoginMessage.textContent =
+                "Accesso in corso...";
+
+
+            await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
+
+
+            adminLoginMessage.textContent =
+                "";
+
+
+        } catch (error) {
+
+            console.error(error);
+
+
+            adminLoginMessage.textContent =
+                "Email o password non corretti.";
+
+        }
+
+    }
+);
+
 }
 
 loadReviews();
+
+
+/* =========================
+   STATO ADMIN
+========================= */
+
+onAuthStateChanged(
+    auth,
+    (user) => {
+
+        if (user) {
+
+            adminLogin.style.display =
+                "none";
+
+            adminPanel.style.display =
+                "block";
+
+        } else {
+
+            adminLogin.style.display =
+                "block";
+
+            adminPanel.style.display =
+                "none";
+
+        }
+
+    }
+);
+
+adminLogoutButton.addEventListener(
+    "click",
+    async () => {
+
+        await signOut(auth);
+
+    }
+);
