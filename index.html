@@ -421,17 +421,70 @@
             class="page"
             id="adminPage">
 
-            <div class="page-content">
+            <div class="page-content admin-content">
 
-                <h2 data-i18n="adminTitle">
-    ADMIN
-</h2>
+    <h2 data-i18n="adminTitle">
+        ADMIN
+    </h2>
 
-<p data-i18n="adminText">
-    Area amministratore.
-</p>
 
-            </div>
+    <!-- LOGIN ADMIN -->
+
+    <div
+        class="admin-login"
+        id="adminLogin">
+
+        <input
+            type="email"
+            id="adminEmail"
+            placeholder="Email">
+
+        <input
+            type="password"
+            id="adminPassword"
+            placeholder="Password">
+
+        <button
+            id="adminLoginButton">
+
+            ACCEDI
+
+        </button>
+
+        <p
+            id="adminLoginMessage">
+        </p>
+
+    </div>
+
+
+    <!-- PANNELLO ADMIN -->
+
+    <div
+        class="admin-panel"
+        id="adminPanel"
+        style="display: none;">
+
+        <h3>
+            RECENSIONI
+        </h3>
+
+        <div
+            id="adminReviewsList">
+
+        </div>
+
+
+        <button
+            id="adminLogoutButton">
+
+            ESCI
+
+        </button>
+
+    </div>
+
+</div>
 
         </section>
 
