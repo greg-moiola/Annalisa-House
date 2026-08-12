@@ -1,6 +1,4 @@
-import {
-    initializeApp
-} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 
 import {
     getFirestore,
@@ -42,26 +40,21 @@ const firebaseConfig = {
 
     appId:
         "1:72106901461:web:c2926494a7c508a70b475c"
-
 };
 
 
 const app =
     initializeApp(firebaseConfig);
 
-
 const db =
     getFirestore(app);
 
-
 const auth =
     getAuth(app);
+
+
+console.log("Firebase collegato correttamente!");
 console.log("AUTH CARICATO");
-
-
-console.log(
-    "Firebase collegato correttamente!"
-);
 
 
 /* =========================
@@ -71,38 +64,17 @@ console.log(
 const menuButton =
     document.getElementById("menuButton");
 
-
 const menuClose =
     document.getElementById("menuClose");
-
 
 const menuOverlay =
     document.getElementById("menuOverlay");
 
-
 const menuLinks =
-    document.querySelectorAll(
-        ".menu-links a"
-    );
-
+    document.querySelectorAll(".menu-links a");
 
 const pages =
-    document.querySelectorAll(
-        ".page"
-    );
-
-
-const languageButton =
-    document.getElementById("languageButton");
-
-const languageMenu =
-    document.getElementById("languageMenu");
-
-const languageOptions =
-    document.querySelectorAll(
-        ".language-option"
-    );
-
+    document.querySelectorAll(".page");
 
 
 /* =========================
@@ -117,7 +89,6 @@ menuButton.addEventListener(
 
     }
 );
-
 
 
 /* =========================
@@ -135,7 +106,6 @@ menuClose.addEventListener(
     "click",
     closeMenu
 );
-
 
 
 /* =========================
@@ -159,23 +129,21 @@ menuLinks.forEach(
                 pages.forEach(
                     (page) => {
 
-                        page.classList.remove(
-                            "active"
-                        );
+                        page.classList.remove("active");
 
                     }
                 );
 
 
                 const selectedPage =
-                    document.getElementById(
-                        pageId
-                    );
+                    document.getElementById(pageId);
 
 
-                selectedPage.classList.add(
-                    "active"
-                );
+                if (selectedPage) {
+
+                    selectedPage.classList.add("active");
+
+                }
 
 
                 closeMenu();
@@ -188,7 +156,504 @@ menuLinks.forEach(
 
 
 /* =========================
+   TRADUZIONI
+========================= */
+
+const translations = {
+
+    it: {
+
+        namePlaceholder: "Il tuo nome",
+
+        reviewPlaceholder:
+            "Scrivi qui la tua recensione...",
+
+        countryIT: "Italia",
+        countryDE: "Germania",
+        countryAT: "Austria",
+        countryCH: "Svizzera",
+        countryFR: "Francia",
+        countryES: "Spagna",
+        countryGB: "Regno Unito",
+        countryUS: "Stati Uniti",
+        countryNL: "Paesi Bassi",
+        countryBE: "Belgio",
+        countryOTHER: "Altro",
+
+        writeReview:
+            "SCRIVI RECENSIONE",
+
+        writeReviewTitle:
+            "SCRIVI RECENSIONE",
+
+        reviewName:
+            "Nome",
+
+        reviewCountry:
+            "Paese",
+
+        reviewRating:
+            "Valutazione",
+
+        reviewText:
+            "La tua recensione",
+
+        publishReview:
+            "PUBBLICA RECENSIONE",
+
+        homeTitle:
+            "ANNALISA HOUSE",
+
+        homeLocation:
+            "Lago di Garda",
+
+        navHome:
+            "HOME",
+
+        navGallery:
+            "GALLERIA",
+
+        navServices:
+            "SERVIZI",
+
+        navReviews:
+            "RECENSIONI",
+
+        navContacts:
+            "CONTATTI",
+
+        navAdmin:
+            "ADMIN",
+
+        galleryTitle:
+            "GALLERIA",
+
+        galleryText:
+            "Le immagini della casa saranno presto disponibili.",
+
+        servicesTitle:
+            "SERVIZI",
+
+        servicesText:
+            "Scopri tutti i servizi disponibili presso Annalisa House.",
+
+        reviewsTitle:
+            "RECENSIONI",
+
+        reviewsText:
+            "Le recensioni dei nostri ospiti saranno disponibili qui.",
+
+        contactsTitle:
+            "CONTATTI",
+
+        contactsText:
+            "Contattaci per maggiori informazioni su Annalisa House.",
+
+        adminTitle:
+            "ADMIN",
+
+        adminText:
+            "Area amministratore."
+
+    },
+
+
+    de: {
+
+        namePlaceholder:
+            "Dein Name",
+
+        reviewPlaceholder:
+            "Schreiben Sie hier Ihre Bewertung...",
+
+        countryIT:
+            "Italien",
+
+        countryDE:
+            "Deutschland",
+
+        countryAT:
+            "Österreich",
+
+        countryCH:
+            "Schweiz",
+
+        countryFR:
+            "Frankreich",
+
+        countryES:
+            "Spanien",
+
+        countryGB:
+            "Vereinigtes Königreich",
+
+        countryUS:
+            "Vereinigte Staaten",
+
+        countryNL:
+            "Niederlande",
+
+        countryBE:
+            "Belgien",
+
+        countryOTHER:
+            "Andere",
+
+        writeReview:
+            "BEWERTUNG SCHREIBEN",
+
+        writeReviewTitle:
+            "BEWERTUNG SCHREIBEN",
+
+        reviewName:
+            "Name",
+
+        reviewCountry:
+            "Land",
+
+        reviewRating:
+            "Bewertung",
+
+        reviewText:
+            "Ihre Bewertung",
+
+        publishReview:
+            "BEWERTUNG VERÖFFENTLICHEN",
+
+        homeTitle:
+            "ANNALISA HOUSE",
+
+        homeLocation:
+            "Gardasee",
+
+        navHome:
+            "HOME",
+
+        navGallery:
+            "GALERIE",
+
+        navServices:
+            "SERVICES",
+
+        navReviews:
+            "BEWERTUNGEN",
+
+        navContacts:
+            "KONTAKT",
+
+        navAdmin:
+            "ADMIN",
+
+        galleryTitle:
+            "GALERIE",
+
+        galleryText:
+            "Die Bilder des Hauses werden bald verfügbar sein.",
+
+        servicesTitle:
+            "SERVICES",
+
+        servicesText:
+            "Entdecken Sie alle verfügbaren Services im Annalisa House.",
+
+        reviewsTitle:
+            "BEWERTUNGEN",
+
+        reviewsText:
+            "Hier werden die Bewertungen unserer Gäste angezeigt.",
+
+        contactsTitle:
+            "KONTAKT",
+
+        contactsText:
+            "Kontaktieren Sie uns für weitere Informationen über Annalisa House.",
+
+        adminTitle:
+            "ADMIN",
+
+        adminText:
+            "Administrationsbereich."
+
+    },
+
+
+    en: {
+
+        namePlaceholder:
+            "Your name",
+
+        reviewPlaceholder:
+            "Write your review here...",
+
+        countryIT:
+            "Italy",
+
+        countryDE:
+            "Germany",
+
+        countryAT:
+            "Austria",
+
+        countryCH:
+            "Switzerland",
+
+        countryFR:
+            "France",
+
+        countryES:
+            "Spain",
+
+        countryGB:
+            "United Kingdom",
+
+        countryUS:
+            "United States",
+
+        countryNL:
+            "Netherlands",
+
+        countryBE:
+            "Belgium",
+
+        countryOTHER:
+            "Other",
+
+        writeReview:
+            "WRITE A REVIEW",
+
+        writeReviewTitle:
+            "WRITE A REVIEW",
+
+        reviewName:
+            "Name",
+
+        reviewCountry:
+            "Country",
+
+        reviewRating:
+            "Rating",
+
+        reviewText:
+            "Your review",
+
+        publishReview:
+            "PUBLISH REVIEW",
+
+        homeTitle:
+            "ANNALISA HOUSE",
+
+        homeLocation:
+            "Lake Garda",
+
+        navHome:
+            "HOME",
+
+        navGallery:
+            "GALLERY",
+
+        navServices:
+            "SERVICES",
+
+        navReviews:
+            "REVIEWS",
+
+        navContacts:
+            "CONTACT",
+
+        navAdmin:
+            "ADMIN",
+
+        galleryTitle:
+            "GALLERY",
+
+        galleryText:
+            "Photos of the house will be available soon.",
+
+        servicesTitle:
+            "SERVICES",
+
+        servicesText:
+            "Discover all the services available at Annalisa House.",
+
+        reviewsTitle:
+            "REVIEWS",
+
+        reviewsText:
+            "Guest reviews will be available here.",
+
+        contactsTitle:
+            "CONTACT",
+
+        contactsText:
+            "Contact us for more information about Annalisa House.",
+
+        adminTitle:
+            "ADMIN",
+
+        adminText:
+            "Administration area."
+
+    }
+
+};
+
+
+/* =========================
    LANGUAGE MENU
+========================= */
+
+const languageButton =
+    document.getElementById("languageButton");
+
+const languageMenu =
+    document.getElementById("languageMenu");
+
+const languageOptions =
+    document.querySelectorAll(".language-option");
+
+
+function getCountryFlag(country) {
+
+    const flags = {
+
+        IT: "🇮🇹",
+
+        DE: "🇩🇪",
+
+        AT: "🇦🇹",
+
+        CH: "🇨🇭",
+
+        FR: "🇫🇷",
+
+        ES: "🇪🇸",
+
+        GB: "🇬🇧",
+
+        US: "🇺🇸",
+
+        NL: "🇳🇱",
+
+        BE: "🇧🇪",
+
+        OTHER: "🌍"
+
+    };
+
+
+    return flags[country] || "🌍";
+
+}
+
+
+/* =========================
+   CHANGE LANGUAGE
+========================= */
+
+function changeLanguage(language) {
+
+    const selectedLanguage =
+        translations[language];
+
+
+    if (!selectedLanguage) {
+
+        return;
+
+    }
+
+
+    document
+        .querySelectorAll("[data-i18n]")
+        .forEach(
+            (element) => {
+
+                const key =
+                    element.dataset.i18n;
+
+
+                if (selectedLanguage[key]) {
+
+                    element.textContent =
+                        selectedLanguage[key];
+
+                }
+
+            }
+        );
+
+
+    document
+        .querySelectorAll("[data-i18n-placeholder]")
+        .forEach(
+            (element) => {
+
+                const key =
+                    element.dataset.i18nPlaceholder;
+
+
+                if (selectedLanguage[key]) {
+
+                    element.placeholder =
+                        selectedLanguage[key];
+
+                }
+
+            }
+        );
+
+
+    const countryOptions =
+        document.querySelectorAll(
+            "#reviewCountry option"
+        );
+
+
+    countryOptions.forEach(
+        (option) => {
+
+            const country =
+                option.dataset.country;
+
+
+            const key =
+                "country" + country;
+
+
+            if (selectedLanguage[key]) {
+
+                option.textContent =
+                    getCountryFlag(country) +
+                    " " +
+                    selectedLanguage[key];
+
+            }
+
+        }
+    );
+
+
+    languageButton.textContent =
+        language.toUpperCase() + " ▾";
+
+
+    document.documentElement.lang =
+        language;
+
+
+    localStorage.setItem(
+        "annalisaLanguage",
+        language
+    );
+
+
+    languageMenu.classList.remove("open");
+
+}
+
+
+/* =========================
+   LANGUAGE EVENTS
 ========================= */
 
 languageButton.addEventListener(
@@ -202,10 +667,6 @@ languageButton.addEventListener(
     }
 );
 
-
-/* =========================
-   LANGUAGE SELECTION
-========================= */
 
 languageOptions.forEach(
     (option) => {
@@ -228,17 +689,11 @@ languageOptions.forEach(
 );
 
 
-/* =========================
-   CLOSE LANGUAGE MENU
-========================= */
-
 document.addEventListener(
     "click",
     () => {
 
-        languageMenu.classList.remove(
-            "open"
-        );
+        languageMenu.classList.remove("open");
 
     }
 );
@@ -254,356 +709,16 @@ const savedLanguage =
     );
 
 
-if (savedLanguage) {
+if (
+    savedLanguage &&
+    translations[savedLanguage]
+) {
 
-    languageButton.textContent =
-        savedLanguage.toUpperCase() + " ▾";
+    changeLanguage(savedLanguage);
 
-}
+} else {
 
-
-/* =========================
-   TRADUZIONI
-========================= */
-
-const translations = {
-
-    it: {
-
-        namePlaceholder: "Il tuo nome",
-
-        reviewPlaceholder: "Scrivi qui la tua recensione...",
-
-        countryIT: "Italia",
-
-        countryDE: "Germania",
-
-        countryAT: "Austria",
-
-        countryCH: "Svizzera",
-
-        countryFR: "Francia",
-
-        countryES: "Spagna",
-
-        countryGB: "Regno Unito",
-
-        countryUS: "Stati Uniti",
-
-        countryNL: "Paesi Bassi",
-
-        countryBE: "Belgio",
-
-        countryOTHER: "Altro",
-
-        writeReview: "SCRIVI RECENSIONE",
-
-        writeReviewTitle: "SCRIVI RECENSIONE",
-
-        reviewName: "Nome",
-
-        reviewCountry: "Paese",
-
-        reviewRating: "Valutazione",
-
-        reviewText: "La tua recensione",
-
-        publishReview: "PUBBLICA RECENSIONE",
-
-        homeTitle: "ANNALISA HOUSE",
-        homeLocation: "Lago di Garda",
-
-        navHome: "HOME",
-        navGallery: "GALLERIA",
-        navServices: "SERVIZI",
-        navReviews: "RECENSIONI",
-        navContacts: "CONTATTI",
-        navAdmin: "ADMIN",
-
-        galleryTitle: "GALLERIA",
-        galleryText: "Le immagini della casa saranno presto disponibili.",
-
-        servicesTitle: "SERVIZI",
-        servicesText: "Scopri tutti i servizi disponibili presso Annalisa House.",
-
-        reviewsTitle: "RECENSIONI",
-        reviewsText: "Le recensioni dei nostri ospiti saranno disponibili qui.",
-
-        contactsTitle: "CONTATTI",
-        contactsText: "Contattaci per maggiori informazioni su Annalisa House.",
-
-        adminTitle: "ADMIN",
-        adminText: "Area amministratore."
-
-    },
-
-
-    de: {
-
-        namePlaceholder:
-    "Dein Name",
-
-reviewPlaceholder:
-    "Schreiben Sie hier Ihre Bewertung...",
-
-countryIT:
-    "Italien",
-
-countryDE:
-    "Deutschland",
-
-countryAT:
-    "Österreich",
-
-countryCH:
-    "Schweiz",
-
-countryFR:
-    "Frankreich",
-
-countryES:
-    "Spanien",
-
-countryGB:
-    "Vereinigtes Königreich",
-
-countryUS:
-    "Vereinigte Staaten",
-
-countryNL:
-    "Niederlande",
-
-countryBE:
-    "Belgien",
-
-countryOTHER:
-    "Andere",
-
-        writeReview: "BEWERTUNG SCHREIBEN",
-
-        writeReviewTitle: "BEWERTUNG SCHREIBEN",
-
-        reviewName: "Name",
-
-        reviewCountry: "Land",
-
-        reviewRating: "Bewertung",
-
-        reviewText: "Ihre Bewertung",
-
-        publishReview: "BEWERTUNG VERÖFFENTLICHEN",
-
-        homeTitle: "ANNALISA HOUSE",
-        homeLocation: "Gardasee",
-
-        navHome: "HOME",
-        navGallery: "GALERIE",
-        navServices: "SERVICES",
-        navReviews: "BEWERTUNGEN",
-        navContacts: "KONTAKT",
-        navAdmin: "ADMIN",
-
-        galleryTitle: "GALERIE",
-        galleryText: "Die Bilder des Hauses werden bald verfügbar sein.",
-
-        servicesTitle: "SERVICES",
-        servicesText: "Entdecken Sie alle verfügbaren Services im Annalisa House.",
-
-        reviewsTitle: "BEWERTUNGEN",
-        reviewsText: "Hier werden die Bewertungen unserer Gäste angezeigt.",
-
-        contactsTitle: "KONTAKT",
-        contactsText: "Kontaktieren Sie uns für weitere Informationen über Annalisa House.",
-
-        adminTitle: "ADMIN",
-        adminText: "Administrationsbereich."
-
-    },
-
-
-    en: {
-
-        namePlaceholder:
-    "Your name",
-
-reviewPlaceholder:
-    "Write your review here...",
-
-countryIT:
-    "Italy",
-
-countryDE:
-    "Germany",
-
-countryAT:
-    "Austria",
-
-countryCH:
-    "Switzerland",
-
-countryFR:
-    "France",
-
-countryES:
-    "Spain",
-
-countryGB:
-    "United Kingdom",
-
-countryUS:
-    "United States",
-
-countryNL:
-    "Netherlands",
-
-countryBE:
-    "Belgium",
-
-countryOTHER:
-    "Other",
-
-        writeReview: "WRITE A REVIEW",
-
-        writeReviewTitle: "WRITE A REVIEW",
-
-        reviewName: "Name",
-
-        reviewCountry: "Country",
-
-        reviewRating: "Rating",
-
-        reviewText: "Your review",
-
-        publishReview: "PUBLISH REVIEW",
-
-        homeTitle: "ANNALISA HOUSE",
-        homeLocation: "Lake Garda",
-
-        navHome: "HOME",
-        navGallery: "GALLERY",
-        navServices: "SERVICES",
-        navReviews: "REVIEWS",
-        navContacts: "CONTACT",
-        navAdmin: "ADMIN",
-
-        galleryTitle: "GALLERY",
-        galleryText: "Photos of the house will be available soon.",
-
-        servicesTitle: "SERVICES",
-        servicesText: "Discover all the services available at Annalisa House.",
-
-        reviewsTitle: "REVIEWS",
-        reviewsText: "Guest reviews will be available here.",
-
-        contactsTitle: "CONTACT",
-        contactsText: "Contact us for more information about Annalisa House.",
-
-        adminTitle: "ADMIN",
-        adminText: "Administration area."
-
-    }
-
-};
-
-
-
-/* =========================
-   CAMBIO LINGUA
-========================= */
-
-function changeLanguage(language) {
-
-    const selectedLanguage =
-        translations[language];
-
-    if (!selectedLanguage) {
-        return;
-    }
-
-    document
-        .querySelectorAll("[data-i18n]")
-        .forEach((element) => {
-
-            const key =
-                element.dataset.i18n;
-
-            if (selectedLanguage[key]) {
-
-                element.textContent =
-                    selectedLanguage[key];
-
-            }
-
-        });
-
-    /* =========================
-   PLACEHOLDER
-========================= */
-
-document
-    .querySelectorAll("[data-i18n-placeholder]")
-    .forEach((element) => {
-
-        const key =
-            element.dataset.i18nPlaceholder;
-
-        if (selectedLanguage[key]) {
-
-            element.placeholder =
-                selectedLanguage[key];
-
-        }
-
-    });
-
-
-/* =========================
-   PAESI
-========================= */
-
-const countryOptions =
-    document.querySelectorAll(
-        "#reviewCountry option"
-    );
-
-
-countryOptions.forEach(
-    (option) => {
-
-        const country =
-            option.dataset.country;
-
-        const key =
-            "country" + country;
-
-        if (selectedLanguage[key]) {
-
-            const flag =
-                option.textContent.trim().split(" ")[0];
-
-            option.textContent =
-                flag + " " +
-                selectedLanguage[key];
-
-        }
-
-    }
-);
-
-    languageButton.textContent =
-        language.toUpperCase() + " ▾";
-
-    document.documentElement.lang =
-        language;
-
-    localStorage.setItem(
-        "annalisaLanguage",
-        language
-    );
-
-    languageMenu.classList.remove(
-        "open"
-    );
+    changeLanguage("it");
 
 }
 
@@ -622,10 +737,6 @@ const reviewModalClose =
     document.getElementById("reviewModalClose");
 
 
-/* =========================
-   OPEN MODAL
-========================= */
-
 writeReviewButton.addEventListener(
     "click",
     () => {
@@ -635,10 +746,6 @@ writeReviewButton.addEventListener(
     }
 );
 
-
-/* =========================
-   CLOSE MODAL
-========================= */
 
 reviewModalClose.addEventListener(
     "click",
@@ -650,10 +757,6 @@ reviewModalClose.addEventListener(
 );
 
 
-/* =========================
-   CLOSE CLICKING OUTSIDE
-========================= */
-
 reviewModal.addEventListener(
     "click",
     (event) => {
@@ -662,9 +765,7 @@ reviewModal.addEventListener(
             event.target === reviewModal
         ) {
 
-            reviewModal.classList.remove(
-                "open"
-            );
+            reviewModal.classList.remove("open");
 
         }
 
@@ -737,16 +838,24 @@ ratingButtons.forEach(
 ========================= */
 
 const publishReviewButton =
-    document.getElementById("publishReviewButton");
+    document.getElementById(
+        "publishReviewButton"
+    );
 
 const reviewNameInput =
-    document.getElementById("reviewName");
+    document.getElementById(
+        "reviewName"
+    );
 
 const reviewCountrySelect =
-    document.getElementById("reviewCountry");
+    document.getElementById(
+        "reviewCountry"
+    );
 
 const reviewTextInput =
-    document.getElementById("reviewText");
+    document.getElementById(
+        "reviewText"
+    );
 
 
 publishReviewButton.addEventListener(
@@ -763,11 +872,11 @@ publishReviewButton.addEventListener(
             reviewTextInput.value.trim();
 
 
-        /* CONTROLLI */
-
         if (!name) {
 
-            alert("Inserisci il tuo nome.");
+            alert(
+                "Inserisci il tuo nome."
+            );
 
             return;
 
@@ -776,7 +885,9 @@ publishReviewButton.addEventListener(
 
         if (selectedRating === 0) {
 
-            alert("Seleziona una valutazione.");
+            alert(
+                "Seleziona una valutazione."
+            );
 
             return;
 
@@ -785,18 +896,20 @@ publishReviewButton.addEventListener(
 
         if (!text) {
 
-            alert("Scrivi una recensione.");
+            alert(
+                "Scrivi una recensione."
+            );
 
             return;
 
         }
 
 
-        /* SALVATAGGIO FIRESTORE */
-
         try {
 
-            publishReviewButton.disabled = true;
+            publishReviewButton.disabled =
+                true;
+
 
             publishReviewButton.textContent =
                 "PUBBLICAZIONE...";
@@ -820,38 +933,43 @@ publishReviewButton.addEventListener(
             );
 
 
-            /* RESET */
+            reviewNameInput.value =
+                "";
 
-            reviewNameInput.value = "";
+            reviewCountrySelect.value =
+                "IT";
 
-            reviewCountrySelect.value = "IT";
+            reviewTextInput.value =
+                "";
 
-            reviewTextInput.value = "";
-
-            selectedRating = 0;
+            selectedRating =
+                0;
 
 
             ratingButtons.forEach(
                 (star) => {
 
-                    star.textContent = "☆";
+                    star.textContent =
+                        "☆";
 
                 }
             );
 
 
-            reviewModal.classList.remove("open");
+            reviewModal.classList.remove(
+                "open"
+            );
 
 
-            publishReviewButton.disabled = false;
+            publishReviewButton.disabled =
+                false;
+
 
             publishReviewButton.textContent =
                 "PUBBLICA RECENSIONE";
 
 
-            /* RICARICA RECENSIONI */
-
-            loadReviews();
+            await loadReviews();
 
 
         } catch (error) {
@@ -867,7 +985,9 @@ publishReviewButton.addEventListener(
             );
 
 
-            publishReviewButton.disabled = false;
+            publishReviewButton.disabled =
+                false;
+
 
             publishReviewButton.textContent =
                 "PUBBLICA RECENSIONE";
@@ -877,6 +997,7 @@ publishReviewButton.addEventListener(
     }
 );
 
+
 /* =========================
    CARICAMENTO RECENSIONI
 ========================= */
@@ -884,10 +1005,20 @@ publishReviewButton.addEventListener(
 async function loadReviews() {
 
     const reviewsList =
-        document.getElementById("reviewsList");
+        document.getElementById(
+            "reviewsList"
+        );
 
 
-    reviewsList.innerHTML = "";
+    if (!reviewsList) {
+
+        return;
+
+    }
+
+
+    reviewsList.innerHTML =
+        "";
 
 
     try {
@@ -900,7 +1031,9 @@ async function loadReviews() {
 
 
         const snapshot =
-            await getDocs(reviewsQuery);
+            await getDocs(
+                reviewsQuery
+            );
 
 
         snapshot.forEach(
@@ -911,20 +1044,25 @@ async function loadReviews() {
 
 
                 const card =
-                    document.createElement("div");
+                    document.createElement(
+                        "div"
+                    );
+
 
                 card.className =
                     "review-card";
 
 
-                /* STELLE */
+                const rating =
+                    Number(
+                        review.stelle
+                    ) || 0;
+
 
                 const stars =
-                    "★".repeat(review.stelle) +
-                    "☆".repeat(5 - review.stelle);
+                    "★".repeat(rating) +
+                    "☆".repeat(5 - rating);
 
-
-                /* DATA */
 
                 let formattedDate =
                     "";
@@ -949,35 +1087,51 @@ async function loadReviews() {
                 }
 
 
-                /* RECENSIONE */
-
                 card.innerHTML = `
 
                     <div class="review-top">
 
                         <span class="review-author">
+
                             ${getCountryFlag(review.paese)}
-                            ${escapeHTML(review.nome)}
+
+                            ${escapeHTML(
+                                review.nome || ""
+                            )}
+
                         </span>
+
 
                         <span class="review-date">
+
                             ${formattedDate}
+
                         </span>
 
                     </div>
 
+
                     <div class="review-stars">
+
                         ${stars}
+
                     </div>
 
+
                     <p class="review-text">
-                        ${escapeHTML(review.testo)}
+
+                        ${escapeHTML(
+                            review.testo || ""
+                        )}
+
                     </p>
 
                 `;
 
 
-                reviewsList.appendChild(card);
+                reviewsList.appendChild(
+                    card
+                );
 
             }
         );
@@ -994,42 +1148,6 @@ async function loadReviews() {
 
 }
 
-/* =========================
-   BANDIERE
-========================= */
-
-function getCountryFlag(country) {
-
-    const flags = {
-
-        IT: "🇮🇹",
-
-        DE: "🇩🇪",
-
-        AT: "🇦🇹",
-
-        CH: "🇨🇭",
-
-        FR: "🇫🇷",
-
-        ES: "🇪🇸",
-
-        GB: "🇬🇧",
-
-        US: "🇺🇸",
-
-        NL: "🇳🇱",
-
-        BE: "🇧🇪",
-
-        OTHER: "🌍"
-
-    };
-
-
-    return flags[country] || "🌍";
-
-}
 
 /* =========================
    SICUREZZA TESTO
@@ -1038,9 +1156,14 @@ function getCountryFlag(country) {
 function escapeHTML(text) {
 
     const div =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
-    div.textContent = text;
+
+    div.textContent =
+        text;
+
 
     return div.innerHTML;
 
@@ -1052,25 +1175,39 @@ function escapeHTML(text) {
 ========================= */
 
 const adminLogin =
-    document.getElementById("adminLogin");
+    document.getElementById(
+        "adminLogin"
+    );
 
 const adminPanel =
-    document.getElementById("adminPanel");
+    document.getElementById(
+        "adminPanel"
+    );
 
 const adminEmail =
-    document.getElementById("adminEmail");
+    document.getElementById(
+        "adminEmail"
+    );
 
 const adminPassword =
-    document.getElementById("adminPassword");
+    document.getElementById(
+        "adminPassword"
+    );
 
 const adminLoginButton =
-    document.getElementById("adminLoginButton");
+    document.getElementById(
+        "adminLoginButton"
+    );
 
 const adminLoginMessage =
-    document.getElementById("adminLoginMessage");
+    document.getElementById(
+        "adminLoginMessage"
+    );
 
 const adminLogoutButton =
-    document.getElementById("adminLogoutButton");
+    document.getElementById(
+        "adminLogoutButton"
+    );
 
 
 /* =========================
@@ -1084,11 +1221,15 @@ adminLoginButton.addEventListener(
         const email =
             adminEmail.value.trim();
 
+
         const password =
             adminPassword.value;
 
 
-        if (!email || !password) {
+        if (
+            !email ||
+            !password
+        ) {
 
             adminLoginMessage.textContent =
                 "Inserisci email e password.";
@@ -1119,6 +1260,7 @@ adminLoginButton.addEventListener(
 
             console.error(error);
 
+
             adminLoginMessage.textContent =
                 "Email o password non corretti.";
 
@@ -1141,6 +1283,7 @@ onAuthStateChanged(
             adminLogin.style.display =
                 "none";
 
+
             adminPanel.style.display =
                 "block";
 
@@ -1148,6 +1291,7 @@ onAuthStateChanged(
 
             adminLogin.style.display =
                 "block";
+
 
             adminPanel.style.display =
                 "none";
@@ -1177,7 +1321,3 @@ adminLogoutButton.addEventListener(
 ========================= */
 
 loadReviews();
-        await signOut(auth);
-
-    }
-);
