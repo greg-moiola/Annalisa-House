@@ -56,6 +56,7 @@ const db =
 
 const auth =
     getAuth(app);
+console.log("AUTH CARICATO");
 
 
 console.log(
