@@ -1043,8 +1043,10 @@ function escapeHTML(text) {
 
     return div.innerHTML;
 
+}
 
-    /* =========================
+
+/* =========================
    ADMIN LOGIN
 ========================= */
 
@@ -1069,6 +1071,10 @@ const adminLoginMessage =
 const adminLogoutButton =
     document.getElementById("adminLogoutButton");
 
+
+/* =========================
+   LOGIN
+========================= */
 
 adminLoginButton.addEventListener(
     "click",
@@ -1112,7 +1118,6 @@ adminLoginButton.addEventListener(
 
             console.error(error);
 
-
             adminLoginMessage.textContent =
                 "Email o password non corretti.";
 
@@ -1120,10 +1125,6 @@ adminLoginButton.addEventListener(
 
     }
 );
-
-}
-
-loadReviews();
 
 
 /* =========================
@@ -1155,10 +1156,26 @@ onAuthStateChanged(
     }
 );
 
+
+/* =========================
+   LOGOUT
+========================= */
+
 adminLogoutButton.addEventListener(
     "click",
     async () => {
 
+        await signOut(auth);
+
+    }
+);
+
+
+/* =========================
+   CARICA RECENSIONI
+========================= */
+
+loadReviews();
         await signOut(auth);
 
     }
