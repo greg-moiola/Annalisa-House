@@ -1274,6 +1274,12 @@ body {
 
 }
 
+.contacts-content h2 {
+
+    margin-bottom: 25px;
+
+}
+
 
 .contact-item {
 
@@ -1302,5 +1308,11 @@ body {
 .contact-value {
 
     font-weight: normal;
+
+}
+
+.contacts-content h2 {
+
+    margin-bottom: 25px;
 
 }
