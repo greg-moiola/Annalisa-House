@@ -7,7 +7,9 @@ import {
     serverTimestamp,
     getDocs,
     orderBy,
-    query
+    query,
+    deleteDoc,
+    doc
 } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 
 import {
@@ -1283,15 +1285,15 @@ onAuthStateChanged(
             adminLogin.style.display =
                 "none";
 
-
             adminPanel.style.display =
                 "block";
+
+            loadAdminReviews();
 
         } else {
 
             adminLogin.style.display =
                 "block";
-
 
             adminPanel.style.display =
                 "none";
@@ -1300,7 +1302,6 @@ onAuthStateChanged(
 
     }
 );
-
 
 /* =========================
    LOGOUT
@@ -1321,3 +1322,229 @@ adminLogoutButton.addEventListener(
 ========================= */
 
 loadReviews();
+
+
+/* =========================
+   CARICA RECENSIONI ADMIN
+========================= */
+
+async function loadAdminReviews() {
+
+    const adminReviewsList =
+        document.getElementById("adminReviewsList");
+
+    adminReviewsList.innerHTML = "";
+
+    try {
+
+        const reviewsQuery =
+            query(
+                collection(db, "reviews"),
+                orderBy("data", "desc")
+            );
+
+        const snapshot =
+            await getDocs(reviewsQuery);
+
+
+        if (snapshot.empty) {
+
+            adminReviewsList.innerHTML =
+                "<p>Nessuna recensione presente.</p>";
+
+            return;
+
+        }
+
+
+        snapshot.forEach(
+            (documentSnapshot) => {
+
+                const review =
+                    documentSnapshot.data();
+
+                const reviewId =
+                    documentSnapshot.id;
+
+
+                const card =
+                    document.createElement("div");
+
+                card.className =
+                    "admin-review-card";
+
+
+                const stars =
+                    "★".repeat(review.stelle) +
+                    "☆".repeat(5 - review.stelle);
+
+
+                let formattedDate =
+                    "";
+
+                if (review.data) {
+
+                    const date =
+                        review.data.toDate();
+
+                    formattedDate =
+                        date.toLocaleDateString(
+                            "it-IT",
+                            {
+                                day: "numeric",
+                                month: "long",
+                                year: "numeric"
+                            }
+                        );
+
+                }
+
+
+                card.innerHTML = `
+
+                    <div class="admin-review-top">
+
+                        <span class="admin-review-author">
+
+                            ${getCountryFlag(review.paese)}
+
+                            ${escapeHTML(review.nome)}
+
+                        </span>
+
+                        <span class="admin-review-date">
+
+                            ${formattedDate}
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="admin-review-stars">
+
+                        ${stars}
+
+                    </div>
+
+
+                    <p class="admin-review-text">
+
+                        ${escapeHTML(review.testo)}
+
+                    </p>
+
+
+                    <button
+                        class="delete-review-button"
+                        data-review-id="${reviewId}">
+
+                        ELIMINA
+
+                    </button>
+
+                `;
+
+
+                adminReviewsList.appendChild(card);
+
+            }
+        );
+
+
+        /* =========================
+           PULSANTI ELIMINA
+        ========================= */
+
+        const deleteButtons =
+            adminReviewsList.querySelectorAll(
+                ".delete-review-button"
+            );
+
+
+        deleteButtons.forEach(
+            (button) => {
+
+                button.addEventListener(
+                    "click",
+                    async () => {
+
+                        const reviewId =
+                            button.dataset.reviewId;
+
+
+                        const confirmed =
+                            confirm(
+                                "Sei sicuro di voler eliminare questa recensione?"
+                            );
+
+
+                        if (!confirmed) {
+
+                            return;
+
+                        }
+
+
+                        try {
+
+                            button.disabled = true;
+
+                            button.textContent =
+                                "ELIMINAZIONE...";
+
+
+                            await deleteDoc(
+                                doc(
+                                    db,
+                                    "reviews",
+                                    reviewId
+                                )
+                            );
+
+
+                            await loadAdminReviews();
+
+                            await loadReviews();
+
+
+                        } catch (error) {
+
+                            console.error(
+                                "Errore eliminazione recensione:",
+                                error
+                            );
+
+
+                            alert(
+                                "Errore durante l'eliminazione della recensione."
+                            );
+
+
+                            button.disabled = false;
+
+                            button.textContent =
+                                "ELIMINA";
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Errore caricamento recensioni Admin:",
+            error
+        );
+
+        adminReviewsList.innerHTML =
+            "<p>Errore nel caricamento delle recensioni.</p>";
+
+    }
+
+}
