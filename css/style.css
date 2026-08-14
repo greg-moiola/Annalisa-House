@@ -1255,26 +1255,19 @@ body {
 
 .contacts-content {
 
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
     display: flex;
 
     flex-direction: column;
+
+    align-items: center;
 
     gap: 28px;
 
     text-align: center;
 
-    width: 90%;
+    width: 100%;
 
-}
-
-.contacts-content h2 {
-
-    margin-bottom: 25px;
+    margin-top: 40px;
 
 }
 
@@ -1306,11 +1299,5 @@ body {
 .contact-value {
 
     font-weight: normal;
-
-}
-
-.contacts-content h2 {
-
-    margin-bottom: 25px;
 
 }
