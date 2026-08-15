@@ -1365,9 +1365,8 @@ body {
     }
 
     .gallery-content h2 {
-        font-size: 3.2rem;
-        padding: 25px 0;
-    }
+    padding: 25px 0;
+}
 
     .gallery-grid {
         grid-template-columns: repeat(3, 1fr);
