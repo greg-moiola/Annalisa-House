@@ -1307,17 +1307,16 @@ body {
 ========================= */
 
 #galleryPage {
-    /* Mantiene la pagina a tutto schermo permettendo lo scroll interno */
     height: 100vh;
     overflow-y: auto;
-    display: block; /* Sostituisce il flex center per gestire meglio lo scroll */
+    display: block; 
 }
 
 .gallery-content {
     width: 90%;
     max-width: 1100px;
     margin: 0 auto;
-    padding-top: 100px; /* Spazio per non sovrapporsi all'header principale del sito */
+    padding-top: 100px; 
     padding-bottom: 50px;
     text-align: center;
 }
@@ -1326,10 +1325,10 @@ body {
 .gallery-content h2 {
     position: sticky;
     top: 0;
-    background-color: #f4f1eb; /* Stesso colore di sfondo del sito */
+    background-color: #f4f1eb;
     padding: 20px 0;
     margin: 0 0 25px 0;
-    z-index: 20; /* Garantisce che il titolo stia SOPRA le foto */
+    z-index: 20; 
 }
 
 /* GRIGLIA FOTO */
