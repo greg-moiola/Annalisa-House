@@ -193,7 +193,6 @@ body {
 
     background-repeat: no-repeat;
 
-    align-items: flex-end; 
 }
 
 .home-overlay {
@@ -217,11 +216,6 @@ body {
     text-align: center;
 
     color: white;
-
-    width: 100%;
-    margin-bottom: 60px;
-    padding: 0 20px;
-}
 
 }
 
@@ -257,6 +251,26 @@ body {
     letter-spacing:
         0.15em;
 
+}
+
+/* =========================
+   TESTO DEL CIN
+========================= */
+
+.home-bottom-text {
+    position: absolute;
+    bottom: 40px;         
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 2;
+    
+    color: white;
+    text-align: center;
+    width: 90%;           
+    max-width: 800px;
+    
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    letter-spacing: 0.1em;
 }
 
 
