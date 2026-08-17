@@ -273,11 +273,30 @@ const translations = {
         adminText:
             "Area amministratore.",
 
-        curiositaTitle:"CURIOSITÀ"
+        curiositaTitle:"CURIOSITÀ",
+
+        curiositaAnnalisaTitle:
+    "ANNALISA",
+
+        curiositaAnnalisaText:
+    "Mi chiamo Annalisa ho 53 anni e ho preso il mio primo aereo a 2 anni, da allora non mi sono mai fermata. Amo viaggiare, esplorare, conoscere luoghi e persone. Ho sistemato la mia casa sul lago di Garda per dare agli ospiti tutto quello che cerco io negli appartamenti in giro per il mondo. Servizi, e tutto il necessario per rendere il soggiorno piacevole e comodo.",
+
+        curiositaCheckinTitle:
+    "CHECK-IN & CHECK-OUT",
+
+        checkinLabel:
+    "CHECK-IN",
+
+        checkoutLabel:
+    "CHECK-OUT",
+
+        curiositaAnimaliTitle:
+    "AMICI DEGLI ANIMALI",
+
+        curiositaAnimaliText:
+    "Annalisa House è felice di accogliere i vostri amici a quattro zampe.",
 
        
-       
-
     },
 
 
@@ -403,6 +422,27 @@ const translations = {
         curiositaTitle: 
             "NEUGIERIGKEITEN",
 
+        curiositaAnnalisaTitle:
+    "ANNALISA",
+
+         curiositaAnnalisaText:
+    "Ich heiße Annalisa, bin 53 Jahre alt und bin mit 2 Jahren zum ersten Mal geflogen. Seitdem habe ich nie aufgehört zu reisen. Ich liebe es, zu reisen, zu entdecken und neue Orte und Menschen kennenzulernen. Ich habe mein Haus am Gardasee so eingerichtet, dass meine Gäste all das vorfinden, was ich selbst in Ferienwohnungen auf der ganzen Welt suche. Dienstleistungen und alles, was für einen angenehmen und komfortablen Aufenthalt notwendig ist.",
+
+         curiositaCheckinTitle:
+    "CHECK-IN & CHECK-OUT",
+
+         checkinLabel:
+    "CHECK-IN",
+
+         checkoutLabel:
+    "CHECK-OUT",
+
+         curiositaAnimaliTitle:
+    "TIERFREUNDLICH",
+
+         curiositaAnimaliText:
+    "Annalisa House freut sich, Ihre vierbeinigen Freunde willkommen zu heißen.",
+
     },
 
 
@@ -527,6 +567,27 @@ const translations = {
 
         curiositaTitle: 
             "CURIOSITIES",
+
+        curiositaAnnalisaTitle:
+    "ANNALISA",
+
+        curiositaAnnalisaText:
+    "My name is Annalisa, I am 53 years old and I took my first flight when I was 2 years old. Since then, I have never stopped travelling. I love travelling, exploring and discovering new places and people. I have arranged my home on Lake Garda to give guests everything I look for myself in apartments around the world. Services and everything necessary to make your stay pleasant and comfortable.",
+
+        curiositaCheckinTitle:
+    "CHECK-IN & CHECK-OUT",
+
+        checkinLabel:
+    "CHECK-IN",
+
+        checkoutLabel:
+    "CHECK-OUT",
+
+        curiositaAnimaliTitle:
+    "PET FRIENDLY",
+
+        curiositaAnimaliText:
+    "Annalisa House is happy to welcome your four-legged friends.",
 
         
 
