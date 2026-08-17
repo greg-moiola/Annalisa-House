@@ -1418,7 +1418,7 @@ body {
 
     position: absolute;
 
-    top: 75px;
+    top: 50px;
 
     left: 0;
 
@@ -1466,15 +1466,6 @@ body {
     scroll-behavior: smooth;
 
     scroll-snap-type: x mandatory;
-
-}
-
-
-/* NASCONDE LA SCROLLBAR */
-
-.curiosita-slider::-webkit-scrollbar {
-
-    height: 0;
 
 }
 
