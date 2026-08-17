@@ -1400,11 +1400,9 @@ body {
 ========================= */
 
 #curiositaPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 40px; 
-    min-height: 100vh;
+    display: block;
+    width: 100%;
+    padding-top: 40px;
     box-sizing: border-box;
 }
 
@@ -1414,9 +1412,10 @@ body {
 ========================= */
 
 #curiositaPage > h2 {
+    display: block;
     width: 100%;
     text-align: center;
-    margin: 0 0 20px 0;
+    margin: 0 0 30px 0;
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: normal;
     letter-spacing: 0.12em;
@@ -1430,14 +1429,17 @@ body {
 .curiosita-slider {
     width: 100%;
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     gap: 30px;
-    overflow-x: auto;
+    overflow-x: scroll;
     overflow-y: hidden;
     padding: 20px 8vw;
     box-sizing: border-box;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* NASCONDE LA SCROLLBAR */
