@@ -258,7 +258,7 @@ const translations = {
             "ADMIN",
 
         adminText:
-            "Area amministratore."
+            "Area amministratore.",
 
         curiositaTitle:"CURIOSITÀ"
 
@@ -385,7 +385,7 @@ const translations = {
             "ADMIN",
 
         adminText:
-            "Administrationsbereich."
+            "Administrationsbereich.",
   
         curiositaTitle: 
             "NEUGIERIGKEITEN",
@@ -510,7 +510,7 @@ const translations = {
             "ADMIN",
 
         adminText:
-            "Administration area."
+            "Administration area.",
 
         curiositaTitle: 
             "CURIOSITIES",
