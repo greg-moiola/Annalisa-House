@@ -218,6 +218,9 @@ const translations = {
         navServices:
             "SERVIZI",
 
+        navCuriosita: 
+            "CURIOSITÀ",
+
         navReviews:
             "RECENSIONI",
 
@@ -257,8 +260,10 @@ const translations = {
         adminText:
             "Area amministratore."
 
-       navCuriosità: "CURIOSITÀ",
-       curiositaTitle: "CURIOSITÀ",
+        curiositaTitle:"CURIOSITÀ"
+
+       
+       
 
     },
 
@@ -340,6 +345,9 @@ const translations = {
         navServices:
             "SERVICES",
 
+        navCuriosità: 
+            "NEUGIERIGKEITEN",
+
         navReviews:
             "BEWERTUNGEN",
 
@@ -378,9 +386,9 @@ const translations = {
 
         adminText:
             "Administrationsbereich."
-
-    navCuriosità: "NEUGIERIGKEITEN",
-curiositaTitle: "NEUGIERIGKEITEN",
+  
+        curiositaTitle: 
+            "NEUGIERIGKEITEN",
 
     },
 
@@ -462,6 +470,9 @@ curiositaTitle: "NEUGIERIGKEITEN",
         navServices:
             "SERVICES",
 
+        navCuriosità: 
+            "CURIOSITIES",
+
         navReviews:
             "REVIEWS",
 
@@ -501,8 +512,8 @@ curiositaTitle: "NEUGIERIGKEITEN",
         adminText:
             "Administration area."
 
-        navCuriosità: "CURIOSITIES",
-        curiositaTitle: "CURIOSITIES",
+        curiositaTitle: 
+            "CURIOSITIES",
 
         
 
