@@ -78,6 +78,9 @@ const menuLinks =
 const pages =
     document.querySelectorAll(".page");
 
+const curiositaSlider =
+    document.querySelector(".curiosita-slider");
+
 
 /* =========================
    OPEN MENU
@@ -146,6 +149,16 @@ menuLinks.forEach(
                     selectedPage.classList.add("active");
 
                 }
+
+                if (pageId === "curiositaPage") {
+
+    curiositaSlider.scrollTo({
+        left: 0,
+        behavior: "instant"
+    });
+
+}
+
 
 
                 closeMenu();
