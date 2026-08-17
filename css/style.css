@@ -1400,22 +1400,20 @@ body {
 ========================= */
 
 #curiositaPage {
-    display: block;
+    display: flex !important;
+    flex-direction: column !important; 
+    align-items: center;
     width: 100%;
     padding-top: 40px;
     box-sizing: border-box;
 }
 
-/* Titolo desktop*/
 #curiositaPage > h2 {
-    position: static;
-    display: block;
+    display: block !important;
     width: 100%;
     text-align: center;
-    margin: 0 0 40px 0;
-    font-size: 3.5rem;
-    font-weight: normal;
-    letter-spacing: 0.12em;
+    margin: 0 0 30px 0;
+    position: static !important;
 }
 
 /* Slider desktop */
