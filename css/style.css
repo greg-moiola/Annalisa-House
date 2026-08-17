@@ -1392,3 +1392,295 @@ body {
     }
 
 }
+
+
+/* =========================
+   CURIOSITÀ
+========================= */
+
+#curiositaPage {
+
+    overflow: hidden;
+
+}
+
+
+/* TITOLO */
+
+#curiositaPage > h2 {
+
+    text-align: center;
+
+    margin: 0 0 35px 0;
+
+    flex-shrink: 0;
+
+}
+
+
+/* SLIDER */
+
+.curiosita-slider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    width: max-content;
+
+    height: calc(100% - 100px);
+
+    padding: 20px 8vw;
+
+    box-sizing: border-box;
+
+}
+
+
+/* SCHEDE */
+
+.curiosita-card {
+
+    width: 65vw;
+
+    max-width: 850px;
+
+    height: 70vh;
+
+    max-height: 600px;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background: #f5f5f5;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* CONTENUTO */
+
+.curiosita-card-content {
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 45px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+.curiosita-card h3 {
+
+    font-size: 2rem;
+
+    font-weight: normal;
+
+    letter-spacing: 0.12em;
+
+    margin: 25px 0 15px 0;
+
+}
+
+
+.curiosita-card p {
+
+    font-size: 1.05rem;
+
+    line-height: 1.7;
+
+    max-width: 600px;
+
+}
+
+
+/* IMMAGINE PROVVISORIA */
+
+.curiosita-placeholder {
+
+    width: 220px;
+
+    height: 220px;
+
+    background: #777;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+/* CHECK-IN */
+
+.checkin-info {
+
+    display: flex;
+
+    gap: 80px;
+
+    margin-top: 20px;
+
+}
+
+
+.checkin-info p {
+
+    line-height: 1.8;
+
+}
+
+
+/* ANIMALI */
+
+.curiosita-animali {
+
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.35)
+        ),
+        url("../images/animali.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+
+}
+
+
+.animali-overlay {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+}
+
+
+.animali-overlay h3 {
+
+    margin: 0 0 15px 0;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    #curiositaPage > h2 {
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .curiosita-slider {
+
+        gap: 18px;
+
+        padding:
+            15px 8vw;
+
+    }
+
+
+    .curiosita-card {
+
+        width: 84vw;
+
+        height: 68vh;
+
+    }
+
+
+    .curiosita-card-content {
+
+        padding: 25px;
+
+    }
+
+
+    .curiosita-card h3 {
+
+        font-size: 1.4rem;
+
+    }
+
+
+    .curiosita-card p {
+
+        font-size: 0.95rem;
+
+    }
+
+
+    .curiosita-placeholder {
+
+        width: 170px;
+
+        height: 170px;
+
+    }
+
+
+    .checkin-info {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+}
