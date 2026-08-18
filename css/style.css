@@ -1870,11 +1870,15 @@ body {
 
 .services-columns {
 
+    width: fit-content;
+
+    margin: 0 auto;
+
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
 
-    gap: 80px;
+    column-gap: 100px;
 
     text-align: left;
 
@@ -1928,9 +1932,17 @@ body {
 
     .services-columns {
 
-        gap: 30px;
+    width: fit-content;
 
-    }
+    margin: 0 auto;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 25px;
+
+    text-align: left;
+
+}
 
 
     .services-column {
