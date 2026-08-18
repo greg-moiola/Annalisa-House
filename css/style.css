@@ -511,6 +511,11 @@ body {
 
 @media (max-width: 600px) {
 
+   .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
     .header {
 
         padding:
@@ -1532,6 +1537,16 @@ body {
 
 }
 
+.curiosita-card-content > p {
+
+    max-width: 620px;
+
+    font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+
+    line-height: 1.6;
+
+}
+
 
 .curiosita-card h3 {
 
@@ -1566,6 +1581,8 @@ body {
     width: 220px;
 
     height: 220px;
+
+    flex-shrink: 0;
 
     background: #777;
 
