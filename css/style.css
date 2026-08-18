@@ -69,9 +69,7 @@ body {
 ========================= */
 
 .menu-button {
-
     background: none;
-
     border: none;
 
     color: white;
@@ -90,17 +88,20 @@ body {
     padding: 0;
 
     transition:
-        opacity 0.3s ease;
-
+        opacity 0.3s ease,
+        color 0.3s ease;
 }
 
+/* =========================
+   HEADER NELLE ALTRE PAGINE
+========================= */
 
-.menu-button:hover {
+body:has(.page.active:not(.page-home)) .menu-button,
+body:has(.page.active:not(.page-home)) .language-button {
 
-    opacity: 0.6;
+    color: #222;
 
 }
-
 
 
 /* =========================
