@@ -1756,3 +1756,76 @@ body {
     }
 
 }
+
+
+/* =========================
+   SISTEMAZIONI MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    /* TESTO CIN NELLA HOME */
+    .home-bottom-text {
+
+        bottom: 70px;
+
+    }
+
+
+    /* SCHEDA ANNALISA - SCROLL INTERNO */
+    .curiosita-card:first-child
+    .curiosita-card-content {
+
+        overflow-y: auto;
+
+        justify-content: flex-start;
+
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+    }
+
+
+    /* Spazio tra immagine, titolo e testo */
+    .curiosita-card:first-child
+    .curiosita-placeholder {
+
+        flex-shrink: 0;
+
+        margin-bottom: 5px;
+
+    }
+
+
+    .curiosita-card:first-child h3 {
+
+        flex-shrink: 0;
+
+    }
+
+
+    .curiosita-card:first-child p {
+
+        flex-shrink: 0;
+
+        padding-bottom: 10px;
+
+    }
+
+}
+
+/* =========================
+   GALLERIA MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    #galleryPage .gallery-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
+
+    }
+
+}
