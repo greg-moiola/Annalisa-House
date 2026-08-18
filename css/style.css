@@ -1834,6 +1834,116 @@ body {
 
         gap: 15px;
 
+       /* =========================
+           SERVIZI
+       ========================= */
+
+.services-content {
+
+    width: 90%;
+    max-width: 900px;
+
+    text-align: center;
+
+}
+
+
+.services-content h2 {
+
+    font-size:
+        clamp(2rem, 5vw, 3.5rem);
+
+    font-weight: normal;
+
+    letter-spacing: 0.12em;
+
+    margin-bottom: 50px;
+
+}
+
+
+/* DUE COLONNE */
+
+.services-columns {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 80px;
+
+    text-align: left;
+
+}
+
+
+/* SINGOLA COLONNA */
+
+.services-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+}
+
+
+.services-column p {
+
+    font-size:
+        clamp(1rem, 1.8vw, 1.2rem);
+
+    line-height: 1.5;
+
+    margin: 0;
+
+}
+
+
+/* =========================
+   SERVIZI MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .services-content {
+
+        width: 88%;
+
+    }
+
+
+    .services-content h2 {
+
+        margin-bottom: 35px;
+
+    }
+
+
+    .services-columns {
+
+        gap: 30px;
+
+    }
+
+
+    .services-column {
+
+        gap: 18px;
+
+    }
+
+
+    .services-column p {
+
+        font-size: 0.95rem;
+
+    }
+
+}
+
     }
 
 }
