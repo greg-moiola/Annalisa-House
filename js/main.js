@@ -377,7 +377,7 @@ const translations = {
         navServices:
             "SERVICES",
 
-        navCuriosità: 
+        navCuriosita: 
             "NEUGIERIGKEITEN",
 
         navReviews:
@@ -523,7 +523,7 @@ const translations = {
         navServices:
             "SERVICES",
 
-        navCuriosità: 
+        navCuriosita: 
             "CURIOSITIES",
 
         navReviews:
@@ -566,7 +566,7 @@ const translations = {
             "Administration area.",
 
         curiositaTitle: 
-            "CURIOSITIES",
+            "CURIOSITY",
 
         curiositaAnnalisaTitle:
     "ANNALISA",
