@@ -296,6 +296,9 @@ const translations = {
         curiositaAnimaliText:
     "Annalisa House è felice di accogliere i vostri amici a quattro zampe.",
 
+        requestAvailability:
+    "RICHIEDI DISPONIBILITÀ",
+
        
     },
 
@@ -443,6 +446,9 @@ const translations = {
          curiositaAnimaliText:
     "Annalisa House freut sich, Ihre vierbeinigen Freunde willkommen zu heißen.",
 
+        requestAvailability:
+    "VERFÜGBARKEIT ANFRAGEN",
+
     },
 
 
@@ -589,7 +595,8 @@ const translations = {
         curiositaAnimaliText:
     "Annalisa House is happy to welcome your four-legged friends.",
 
-        
+        requestAvailability:
+    "REQUEST AVAILABILITY",
 
     }
 
@@ -1642,5 +1649,41 @@ async function loadAdminReviews() {
             "<p>Errore nel caricamento delle recensioni.</p>";
 
     }
+
+}
+
+        /* =========================
+          TESTO E FUNZIONAMENTO MAIL
+        ========================= */
+
+const availabilityButton =
+    document.getElementById("availabilityButton");
+
+if (availabilityButton) {
+
+    availabilityButton.addEventListener("click", () => {
+
+        const email = "AnnalisaHouse2026@gmail.com";
+
+        let subject;
+
+        if (currentLanguage === "it") {
+
+            subject = "Richiesta disponibilità – Annalisa House";
+
+        } else if (currentLanguage === "de") {
+
+            subject = "Verfügbarkeitsanfrage – Annalisa House";
+
+        } else if (currentLanguage === "en") {
+
+            subject = "Availability request – Annalisa House";
+
+        }
+
+        window.location.href =
+            `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+
+    });
 
 }
