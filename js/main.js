@@ -299,6 +299,12 @@ const translations = {
         requestAvailability:
     "RICHIEDI DISPONIBILITÀ",
 
+        howToSendRequest: 
+            "COME VUOI INVIARE LA RICHIESTA?",
+    
+        mailAppOption: 
+            "PROGRAMMA EMAIL",
+
        
     },
 
@@ -449,6 +455,12 @@ const translations = {
         requestAvailability:
     "VERFÜGBARKEIT ANFRAGEN",
 
+        howToSendRequest: 
+            "WIE MÖCHTEN SIE DIE ANFRAGE SENDEN?",
+    
+        mailAppOption: 
+            "E-MAIL-PROGRAMM",
+
     },
 
 
@@ -597,6 +609,12 @@ const translations = {
 
         requestAvailability:
     "REQUEST AVAILABILITY",
+
+        howToSendRequest: 
+            "HOW WOULD YOU LIKE TO SEND THE REQUEST?",
+    
+        mailAppOption: 
+            "EMAIL CLIENT"
 
     }
 
