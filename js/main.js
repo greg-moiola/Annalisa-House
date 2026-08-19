@@ -1665,8 +1665,21 @@ if (availabilityButton) {
 
         const email = "AnnalisaHouse2026@gmail.com";
 
-        const subject =
-            "Richiesta disponibilità – Annalisa House";
+        let subject;
+
+        if (currentLanguage === "it") {
+
+            subject = "Richiesta disponibilità – Annalisa House";
+
+        } else if (currentLanguage === "de") {
+
+            subject = "Verfügbarkeitsanfrage – Annalisa House";
+
+        } else if (currentLanguage === "en") {
+
+            subject = "Availability request – Annalisa House";
+
+        }
 
         window.location.href =
             `mailto:${email}?subject=${encodeURIComponent(subject)}`;
