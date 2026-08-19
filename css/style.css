@@ -1964,3 +1964,205 @@ body:has(.page.active:not(.page-home)) .language-button {
     }
 
 }
+
+
+/* =========================
+   RICHIEDI DISPONIBILITÀ
+========================= */
+
+.availability-button {
+
+    margin-top: 40px;
+
+    padding: 13px 28px;
+
+    background: transparent;
+
+    border: 1px solid #222;
+
+    color: #222;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 0.95rem;
+
+    letter-spacing: 0.1em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+.availability-button:hover {
+
+    background: #222;
+
+    color: #f4f1eb;
+
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.availability-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    padding: 20px;
+
+}
+
+
+.availability-modal.open {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+.availability-modal-content {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 45px 35px;
+
+    background: #F4F1EB;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+
+}
+
+
+.availability-modal-content h3 {
+
+    margin: 0 0 30px;
+
+    font-size: 1.3rem;
+
+    font-weight: normal;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+.availability-modal-close {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 16px;
+
+    background: none;
+
+    border: none;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    color: #222;
+
+}
+
+
+.availability-option {
+
+    display: block;
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 14px;
+
+    background: transparent;
+
+    border: 1px solid #222;
+
+    color: #222;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 0.95rem;
+
+    letter-spacing: 0.08em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+.availability-option:hover {
+
+    background: #222;
+
+    color: #F4F1EB;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .availability-button {
+
+        margin-top: 30px;
+
+    }
+
+}
