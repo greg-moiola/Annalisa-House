@@ -655,14 +655,10 @@ function getCountryFlag(country) {
    CHANGE LANGUAGE
 ========================= */
 
-let currentLanguage = "it";
-
 function changeLanguage(language) {
 
     const selectedLanguage =
         translations[language];
-
-currentLanguage = language;
     
     if (!selectedLanguage) {
 
@@ -1655,62 +1651,151 @@ async function loadAdminReviews() {
 
 }
 
-        /* =========================
-          TESTO E FUNZIONAMENTO MAIL
-        ========================= */
+
+/* =========================
+   RICHIEDI DISPONIBILITÀ
+========================= */
 
 const availabilityButton =
     document.getElementById("availabilityButton");
 
-if (availabilityButton) {
+const availabilityModal =
+    document.getElementById("availabilityModal");
+
+const availabilityModalClose =
+    document.getElementById("availabilityModalClose");
+
+const gmailOption =
+    document.getElementById("gmailOption");
+
+const mailAppOption =
+    document.getElementById("mailAppOption");
+
+
+if (
+    availabilityButton &&
+    availabilityModal &&
+    availabilityModalClose &&
+    gmailOption &&
+    mailAppOption
+) {
+
+    const email =
+        "AnnalisaHouse2026@gmail.com";
+
+    const subject =
+        "Richiesta disponibilità – Annalisa House";
+
+
+    /* =========================
+       RILEVA DISPOSITIVO
+    ========================= */
+
+    const isMobile =
+        /Android|iPhone|iPad|iPod/i.test(
+            navigator.userAgent
+        );
+
+
+    /* =========================
+       CLICK PULSANTE
+    ========================= */
 
     availabilityButton.addEventListener(
         "click",
         () => {
 
-            const email =
-                "AnnalisaHouse2026@gmail.com";
+            /* TELEFONO */
 
+            if (isMobile) {
 
-            let subject;
+                window.location.href =
+                    `mailto:${email}?subject=${encodeURIComponent(subject)}`;
 
-
-            /* =========================
-               OGGETTO IN BASE ALLA LINGUA
-            ========================= */
-
-            if (currentLanguage === "de") {
-
-                subject =
-                    "Verfügbarkeitsanfrage – Annalisa House";
-
-            } else if (currentLanguage === "en") {
-
-                subject =
-                    "Availability request – Annalisa House";
-
-            } else {
-
-                subject =
-                    "Richiesta disponibilità – Annalisa House";
+                return;
 
             }
 
 
-            /* =========================
-               LINK MAIL
-            ========================= */
+            /* PC */
 
-            const mailtoURL =
-                `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+            availabilityModal.classList.add("open");
+
+        }
+    );
 
 
-            /* =========================
-               APERTURA EMAIL
-            ========================= */
+    /* =========================
+       CHIUDI MODAL
+    ========================= */
+
+    availabilityModalClose.addEventListener(
+        "click",
+        () => {
+
+            availabilityModal.classList.remove("open");
+
+        }
+    );
+
+
+    /* CLICK FUORI DAL MODAL */
+
+    availabilityModal.addEventListener(
+        "click",
+        (event) => {
+
+            if (
+                event.target === availabilityModal
+            ) {
+
+                availabilityModal.classList.remove("open");
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       GMAIL
+    ========================= */
+
+    gmailOption.addEventListener(
+        "click",
+        () => {
+
+            const gmailURL =
+                "https://mail.google.com/mail/?view=cm" +
+                "&fs=1" +
+                "&to=" +
+                encodeURIComponent(email) +
+                "&su=" +
+                encodeURIComponent(subject);
+
+            window.open(
+                gmailURL,
+                "_blank"
+            );
+
+            availabilityModal.classList.remove("open");
+
+        }
+    );
+
+
+    /* =========================
+       PROGRAMMA EMAIL
+    ========================= */
+
+    mailAppOption.addEventListener(
+        "click",
+        () => {
 
             window.location.href =
-                mailtoURL;
+                `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+
+            availabilityModal.classList.remove("open");
 
         }
     );
