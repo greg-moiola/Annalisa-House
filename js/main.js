@@ -305,6 +305,68 @@ const translations = {
         mailAppOption: 
             "PROGRAMMA EMAIL",
 
+        service1:
+             "Riscaldamento",
+                
+
+        service2:
+                    "Aria condizionata",
+                
+
+        service3:
+                    "Pompa di calore",
+                
+
+        service4:
+                    "Rilevatore di fumo",
+                
+
+        service5:
+                    "Estintore",
+                
+        service6:
+                    "Wi-Fi",
+                
+
+        service7:
+                    "Televisore",
+                
+
+        service8:
+                    "Frigorifero",
+        
+
+        service9:
+                    "Forno",
+                
+
+        service10:
+                    "Lavatrice",
+                
+
+        service11:
+                    "Macchina del caffé",
+                
+
+        service12:
+                    "Bollitore",
+                
+        service13:
+                  "Balcone",
+                
+
+        service14:
+                    "Posto auto",
+                
+        service15:
+                    "Piscina",
+                
+
+        service16:
+                    "Culla per bambini",
+               
+
+
        
     },
 
@@ -461,6 +523,54 @@ const translations = {
         mailAppOption: 
             "E-MAIL-PROGRAMM",
 
+        service1:
+    "Heizung",
+
+service2:
+    "Klimaanlage",
+
+service3:
+    "Wärmepumpe",
+
+service4:
+    "Rauchmelder",
+
+service5:
+    "Feuerlöscher",
+
+service6:
+    "WLAN",
+
+service7:
+    "Fernseher",
+
+service8:
+    "Kühlschrank",
+
+service9:
+    "Backofen",
+
+service10:
+    "Waschmaschine",
+
+service11:
+    "Kaffeemaschine",
+
+service12:
+    "Wasserkocher",
+
+service13:
+    "Balkon",
+
+service14:
+    "Parkplatz",
+
+service15:
+    "Swimmingpool",
+
+service16:
+    "Babybett",
+
     },
 
 
@@ -614,7 +724,55 @@ const translations = {
             "HOW WOULD YOU LIKE TO SEND THE REQUEST?",
     
         mailAppOption: 
-            "EMAIL CLIENT"
+            "EMAIL CLIENT",
+
+        service1:
+    "Heating",
+
+service2:
+    "Air conditioning",
+
+service3:
+    "Heat pump",
+
+service4:
+    "Smoke detector",
+
+service5:
+    "Fire extinguisher",
+
+service6:
+    "Wi-Fi",
+
+service7:
+    "Television",
+
+service8:
+    "Refrigerator",
+
+service9:
+    "Oven",
+
+service10:
+    "Washing machine",
+
+service11:
+    "Coffee machine",
+
+service12:
+    "Kettle",
+
+service13:
+    "Balcony",
+
+service14:
+    "Parking space",
+
+service15:
+    "Swimming pool",
+
+service16:
+    "Baby cot",
 
     }
 
