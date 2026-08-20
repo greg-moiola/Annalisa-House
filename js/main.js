@@ -294,7 +294,7 @@ const translations = {
     "AMICI DEGLI ANIMALI",
 
         curiositaAnimaliText:
-    "Annalisa House è felice di accogliere i vostri amici a quattro zampe.",
+    "Annalisa House è felice di accogliere i vostri animali, perché una vacanza è davvero speciale quando la si può condividere con chi amiamo.",
 
         requestAvailability:
     "RICHIEDI DISPONIBILITÀ",
@@ -512,7 +512,7 @@ const translations = {
     "TIERFREUNDLICH",
 
          curiositaAnimaliText:
-    "Annalisa House freut sich, Ihre vierbeinigen Freunde willkommen zu heißen.",
+    "Annalisa House freut sich, Ihre Haustiere willkommen zu heißen, denn ein Urlaub ist wirklich etwas Besonderes, wenn man ihn mit denjenigen teilen kann, die man liebt.",
 
         requestAvailability:
     "VERFÜGBARKEIT ANFRAGEN",
@@ -715,7 +715,7 @@ service16:
     "PET FRIENDLY",
 
         curiositaAnimaliText:
-    "Annalisa House is happy to welcome your four-legged friends.",
+    "Annalisa House is happy to welcome your pets, because a holiday is truly special when you can share it with those you love.",
 
         requestAvailability:
     "REQUEST AVAILABILITY",
