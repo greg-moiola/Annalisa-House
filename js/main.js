@@ -78,6 +78,9 @@ const menuLinks =
 const pages =
     document.querySelectorAll(".page");
 
+const signature =
+    document.querySelector(".signature");
+
 const curiositaSlider =
     document.querySelector(".curiosita-slider");
 
@@ -149,6 +152,20 @@ menuLinks.forEach(
                     selectedPage.classList.add("active");
 
                 }
+
+                if (signature) {
+
+    if (pageId === "homePage") {
+
+        signature.style.color = "white";
+
+    } else {
+
+        signature.style.color = "#222";
+
+    }
+
+}
 
                 if (pageId === "curiositaPage") {
 
