@@ -78,10 +78,6 @@ const menuLinks =
 const pages =
     document.querySelectorAll(".page");
 
-const signature =
-    document.querySelector(".signature");
-     if (signature) {
-
     signature.style.color = "white";
 
 }
@@ -157,18 +153,6 @@ menuLinks.forEach(
                     selectedPage.classList.add("active");
 
                 }
-
-                if (signature) {
-
-    if (pageId === "homePage") {
-
-        signature.style.color = "white";
-
-    } else {
-
-        signature.style.color = "#222";
-
-    }
 
 }
 
