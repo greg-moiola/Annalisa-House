@@ -153,7 +153,6 @@ menuLinks.forEach(
 
                 }
 
-}
 
                 if (pageId === "curiositaPage") {
 
