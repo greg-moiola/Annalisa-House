@@ -1635,7 +1635,7 @@ body:has(.page.active:not(.page-home)) .language-button {
             rgba(0,0,0,0.35)
         ),
 
-        url("../images/animali.jpg");
+        url("/images/animali.jpeg");
 
     background-size: cover;
 
