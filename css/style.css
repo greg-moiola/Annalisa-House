@@ -2167,58 +2167,6 @@ body:has(.page.active:not(.page-home)) .language-button {
 
 }
 
-/* =========================
-   FIRMA SOTTO IL CIN - HOME
-========================= */
-
-.home-signature {
-    display: flex !important;
-    flex-direction: row !important;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-
-    margin-top: 8px;
-
-    gap: 7px;
-
-    color: #ffffff !important;
-
-    font-family: "Times New Roman", Times, serif;
-
-    font-size: 11px;
-
-    letter-spacing: 0.12em;
-
-    white-space: nowrap;
-
-    position: static !important;
-
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-
-    transform: none !important;
-
-    pointer-events: none;
-}
-
-.home-instagram-logo {
-    width: 14px;
-    height: 14px;
-
-    fill: none !important;
-
-    stroke: #ffffff !important;
-
-    stroke-width: 1.8;
-
-    flex-shrink: 0;
-}
-
 .home-instagram-logo .instagram-dot {
     fill: #ffffff !important;
     stroke: none !important;
