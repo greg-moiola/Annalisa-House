@@ -80,7 +80,6 @@ const pages =
 
     signature.style.color = "white";
 
-}
 
 const curiositaSlider =
     document.querySelector(".curiosita-slider");
