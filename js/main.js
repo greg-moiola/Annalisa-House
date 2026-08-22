@@ -78,8 +78,6 @@ const menuLinks =
 const pages =
     document.querySelectorAll(".page");
 
-    signature.style.color = "white";
-
 
 const curiositaSlider =
     document.querySelector(".curiosita-slider");
