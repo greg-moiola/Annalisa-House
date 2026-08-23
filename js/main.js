@@ -152,16 +152,6 @@ menuLinks.forEach(
                 }
 
 
-                if (pageId === "InformazioniPage") {
-
-    curiositaSlider.scrollTo({
-        left: 0,
-        behavior: "instant"
-    });
-
-}
-
-
 
                 closeMenu();
 
@@ -233,7 +223,7 @@ const translations = {
         navServices:
             "SERVIZI",
 
-        navInformazioni: 
+        navinformazioni: 
             "INFORMAZIONI",
 
         navReviews:
@@ -275,7 +265,7 @@ const translations = {
         adminText:
             "Area amministratore.",
 
-        curiositaTitle:"INFORMAZIONI",
+        informazioniTitle:"INFORMAZIONI",
 
         curiositaAnnalisaTitle:
     "ANNALISA",
@@ -453,7 +443,7 @@ const translations = {
         navServices:
             "SERVICES",
 
-        navInformazioni: 
+        navinformazioni: 
             "INFORMATIONEN",
 
         navReviews:
@@ -659,7 +649,7 @@ service16:
         navServices:
             "SERVICES",
 
-        navInformazioni: 
+        navinformazioni: 
             "INFORMATION",
 
         navReviews:
@@ -701,7 +691,7 @@ service16:
         adminText:
             "Administration area.",
 
-        InformazioniTitle: 
+        informazioniTitle: 
             "INFORMATION",
 
         curiositaAnnalisaTitle:
