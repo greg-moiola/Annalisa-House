@@ -152,7 +152,7 @@ menuLinks.forEach(
                 }
 
 
-                if (pageId === "curiositaPage") {
+                if (pageId === "InformazioniPage") {
 
     curiositaSlider.scrollTo({
         left: 0,
@@ -233,8 +233,8 @@ const translations = {
         navServices:
             "SERVIZI",
 
-        navCuriosita: 
-            "CURIOSITÀ",
+        navInformazioni: 
+            "INFORMAZIONI",
 
         navReviews:
             "RECENSIONI",
@@ -279,6 +279,9 @@ const translations = {
 
         curiositaAnnalisaTitle:
     "ANNALISA",
+
+        doveSiamoTitle:
+    "DOVE SIAMO",
 
         curiositaAnnalisaText:
     "Mi chiamo Annalisa ho 53 anni e ho preso il mio primo aereo a 2 anni, da allora non mi sono mai fermata. Amo viaggiare, esplorare, conoscere luoghi e persone. Ho sistemato la mia casa sul lago di Garda per dare agli ospiti tutto quello che cerco io negli appartamenti in giro per il mondo. Servizi, e tutto il necessario per rendere il soggiorno piacevole e comodo.",
@@ -450,7 +453,7 @@ const translations = {
         navServices:
             "SERVICES",
 
-        navCuriosita: 
+        navInformazioni: 
             "INFORMATIONEN",
 
         navReviews:
@@ -492,11 +495,14 @@ const translations = {
         adminText:
             "Administrationsbereich.",
   
-        curiositaTitle: 
-            "NEUGIERIGKEITEN",
+        informazioniTitle: 
+            "INFORMATIONEN",
 
         curiositaAnnalisaTitle:
     "ANNALISA",
+
+        doveSiamoTitle:
+    "WO WIR SIND",
 
          curiositaAnnalisaText:
     "Ich heiße Annalisa, bin 53 Jahre alt und bin mit 2 Jahren zum ersten Mal geflogen. Seitdem habe ich nie aufgehört zu reisen. Ich liebe es, zu reisen, zu entdecken und neue Orte und Menschen kennenzulernen. Ich habe mein Haus am Gardasee so eingerichtet, dass meine Gäste all das vorfinden, was ich selbst in Ferienwohnungen auf der ganzen Welt suche. Dienstleistungen und alles, was für einen angenehmen und komfortablen Aufenthalt notwendig ist.",
@@ -653,7 +659,7 @@ service16:
         navServices:
             "SERVICES",
 
-        navCuriosita: 
+        navInformazioni: 
             "INFORMATION",
 
         navReviews:
@@ -695,11 +701,14 @@ service16:
         adminText:
             "Administration area.",
 
-        curiositaTitle: 
-            "CURIOSITY",
+        InformazioniTitle: 
+            "INFORMATION",
 
         curiositaAnnalisaTitle:
     "ANNALISA",
+
+        doveSiamoTitle:
+    "WHERE WE ARE",
 
         curiositaAnnalisaText:
     "My name is Annalisa, I am 53 years old and I took my first flight when I was 2 years old. Since then, I have never stopped travelling. I love travelling, exploring and discovering new places and people. I have arranged my home on Lake Garda to give guests everything I look for myself in apartments around the world. Services and everything necessary to make your stay pleasant and comfortable.",
