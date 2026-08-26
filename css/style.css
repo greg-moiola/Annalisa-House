@@ -2245,3 +2245,33 @@ body:has(.page.active:not(.page-home)) .language-button {
     }
 
 }
+
+
+/* =========================
+   SCROLL SCHEDA ANNALISA
+========================= */
+
+.curiosita-annalisa {
+    overflow: hidden;
+}
+
+.curiosita-annalisa .curiosita-card-content {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 12px;
+}
+
+/* Scrollbar elegante */
+.curiosita-annalisa .curiosita-card-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.curiosita-annalisa .curiosita-card-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.curiosita-annalisa .curiosita-card-content::-webkit-scrollbar-track {
+    background: transparent;
+}
