@@ -1978,3 +1978,61 @@ if (
     );
 
 }
+
+
+/* =========================
+   GALLERIA A TUTTO SCHERMO
+========================= */
+
+let indiceFoto = 0;
+
+document.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById("galleryOverlay");
+    const fotoIngrandita = document.getElementById("fotoIngrandita");
+    const closeBtn = document.getElementById("closeGalleryBtn");
+    const prevBtn = document.getElementById("prevGalleryBtn");
+    const nextBtn = document.getElementById("nextGalleryBtn");
+
+    // Recupera i collegamenti di tutte le immagini nella griglia
+    function getListaImmagini() {
+        return Array.from(document.querySelectorAll(".gallery-grid img")).map(img => img.src);
+    }
+
+    // Funzione globale per aprire la foto corrispondente all'indice
+    window.apriATuttoSchermo = function(index) {
+        const immagini = getListaImmagini();
+        if (immagini.length === 0) return;
+
+        indiceFoto = index;
+        fotoIngrandita.src = immagini[indiceFoto];
+        if (overlay) overlay.style.display = "block";
+    };
+
+    function chiudiOverlay() {
+        if (overlay) overlay.style.display = "none";
+    }
+
+    function cambiaFoto(direzione) {
+        const immagini = getListaImmagini();
+        if (immagini.length === 0) return;
+
+        indiceFoto += direzione;
+        if (indiceFoto >= immagini.length) indiceFoto = 0;
+        if (indiceFoto < 0) indiceFoto = immagini.length - 1;
+
+        fotoIngrandita.src = immagini[indiceFoto];
+    }
+
+    if (closeBtn) closeBtn.addEventListener("click", chiudiOverlay);
+    if (prevBtn) prevBtn.addEventListener("click", () => cambiaFoto(-1));
+    if (nextBtn) nextBtn.addEventListener("click", () => cambiaFoto(1));
+
+    // Navigazione da tastiera
+    document.addEventListener("keydown", (e) => {
+        if (overlay && overlay.style.display === "block") {
+            if (e.key === "Escape") chiudiOverlay();
+            if (e.key === "ArrowRight") cambiaFoto(1);
+            if (e.key === "ArrowLeft") cambiaFoto(-1);
+        }
+    });
+});
