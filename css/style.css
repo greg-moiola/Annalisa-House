@@ -1405,7 +1405,7 @@ body:has(.page.active:not(.page-home)) .language-button {
    CURIOSITÀ
 ========================= */
 
-#curiositaPage {
+#informazioniPage {
 
     display: block;
 
@@ -1420,7 +1420,7 @@ body:has(.page.active:not(.page-home)) .language-button {
    TITOLO
 ========================= */
 
-#curiositaPage > h2 {
+#informazioniPage > h2 {
 
     position: absolute;
 
@@ -1682,14 +1682,14 @@ body:has(.page.active:not(.page-home)) .language-button {
 
 @media (max-width: 600px) {
 
-    #curiositaPage {
+    #informazioniPage {
 
         padding-top: 80px;
 
     }
 
 
-    #curiositaPage > h2 {
+    #informazioniPage > h2 {
 
         top: 80px;
 
