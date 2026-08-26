@@ -2314,6 +2314,68 @@ body:has(.page.active:not(.page-home)) .language-button {
     border-radius: 10px;
 }
 
+
+/* Overlay Tutto Schermo Galleria */
+.gallery-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.92);
+  z-index: 99999;
+}
+
+.gallery-overlay-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#foto-ingrandita {
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.gallery-overlay-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 100000;
+}
+
+.gallery-overlay-controls {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.gallery-overlay-controls button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.gallery-overlay-controls button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 .curiosita-annalisa .curiosita-card-content::-webkit-scrollbar-track {
     background: transparent;
 }
