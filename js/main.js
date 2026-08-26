@@ -1998,30 +1998,40 @@ document.addEventListener("DOMContentLoaded", () => {
         return Array.from(document.querySelectorAll(".gallery-grid img")).map(img => img.src);
     }
 
-    // Funzione globale per aprire la foto corrispondente all'indice
-    window.apriATuttoSchermo = function(index) {
-        const immagini = getListaImmagini();
-        if (immagini.length === 0) return;
+   // Funzione globale per aprire l'overlay
+window.apriATuttoSchermo = function(index) {
+    const fotoIngrandita = document.getElementById("fotoIngrandita");
+    const overlay = document.getElementById("galleryOverlay");
+    const immagini = getListaImmagini();
 
-        indiceFoto = index;
-        fotoIngrandita.src = immagini[indiceFoto];
-        if (overlay) overlay.style.display = "block";
-    };
-
-    function chiudiOverlay() {
-        if (overlay) overlay.style.display = "none";
+    // Controlla che gli elementi HTML e l'immagine esistano
+    if (!fotoIngrandita || !overlay) {
+        console.error("Elementi HTML della galleria non trovati nel DOM.");
+        return;
     }
 
-    function cambiaFoto(direzione) {
-        const immagini = getListaImmagini();
-        if (immagini.length === 0) return;
-
-        indiceFoto += direzione;
-        if (indiceFoto >= immagini.length) indiceFoto = 0;
-        if (indiceFoto < 0) indiceFoto = immagini.length - 1;
-
-        fotoIngrandita.src = immagini[indiceFoto];
+    if (immagini.length === 0 || !immagini[index]) {
+        console.error("Nessuna immagine trovata per l'indice:", index);
+        return;
     }
+
+    indiceFoto = index;
+    fotoIngrandita.src = immagini[indiceFoto];
+    overlay.style.display = "block";
+};
+
+function cambiaFoto(direzione) {
+    const fotoIngrandita = document.getElementById("fotoIngrandita");
+    const immagini = getListaImmagini();
+
+    if (!fotoIngrandita || immagini.length === 0) return;
+
+    indiceFoto += direzione;
+    if (indiceFoto >= immagini.length) indiceFoto = 0;
+    if (indiceFoto < 0) indiceFoto = immagini.length - 1;
+
+    fotoIngrandita.src = immagini[indiceFoto];
+}
 
     if (closeBtn) closeBtn.addEventListener("click", chiudiOverlay);
     if (prevBtn) prevBtn.addEventListener("click", () => cambiaFoto(-1));
