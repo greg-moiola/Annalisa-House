@@ -254,6 +254,12 @@ body:has(.page.active:not(.page-home)) .language-button {
 
 }
 
+.home-content .home-subtext {
+    margin-top: 5px;                           
+    font-size: clamp(0.85rem, 1.5vw, 1.1rem);                               
+    letter-spacing: 0.1em;
+}
+
 /* =========================
    TESTO DEL CIN
 ========================= */
