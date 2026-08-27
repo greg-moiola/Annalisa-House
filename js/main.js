@@ -1978,3 +1978,213 @@ if (
     );
 
 }
+
+
+/* =========================
+   GALLERIA LIGHTBOX
+========================= */
+
+const galleryLightbox =
+    document.getElementById("galleryLightbox");
+
+const galleryLightboxImage =
+    document.getElementById("galleryLightboxImage");
+
+const galleryLightboxClose =
+    document.getElementById("galleryLightboxClose");
+
+const galleryLightboxPrev =
+    document.getElementById("galleryLightboxPrev");
+
+const galleryLightboxNext =
+    document.getElementById("galleryLightboxNext");
+
+
+const galleryImages =
+    document.querySelectorAll(".gallery-item img");
+
+
+let currentGalleryIndex = 0;
+
+
+/* =========================
+   APRI LIGHTBOX
+========================= */
+
+function openGalleryLightbox(index) {
+
+    currentGalleryIndex = index;
+
+    galleryLightboxImage.src =
+        galleryImages[currentGalleryIndex].src;
+
+    galleryLightbox.classList.add("open");
+
+}
+
+
+/* =========================
+   CHIUDI LIGHTBOX
+========================= */
+
+function closeGalleryLightbox() {
+
+    galleryLightbox.classList.remove("open");
+
+}
+
+
+/* =========================
+   FOTO PRECEDENTE
+========================= */
+
+function previousGalleryImage() {
+
+    currentGalleryIndex--;
+
+    if (currentGalleryIndex < 0) {
+
+        currentGalleryIndex =
+            galleryImages.length - 1;
+
+    }
+
+    galleryLightboxImage.src =
+        galleryImages[currentGalleryIndex].src;
+
+}
+
+
+/* =========================
+   FOTO SUCCESSIVA
+========================= */
+
+function nextGalleryImage() {
+
+    currentGalleryIndex++;
+
+    if (
+        currentGalleryIndex >=
+        galleryImages.length
+    ) {
+
+        currentGalleryIndex = 0;
+
+    }
+
+    galleryLightboxImage.src =
+        galleryImages[currentGalleryIndex].src;
+
+}
+
+
+/* =========================
+   CLICK SULLE FOTO
+========================= */
+
+galleryImages.forEach(
+    (image, index) => {
+
+        image.addEventListener(
+            "click",
+            () => {
+
+                openGalleryLightbox(index);
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================
+   PULSANTE CHIUDI
+========================= */
+
+galleryLightboxClose.addEventListener(
+    "click",
+    closeGalleryLightbox
+);
+
+
+/* =========================
+   PRECEDENTE
+========================= */
+
+galleryLightboxPrev.addEventListener(
+    "click",
+    previousGalleryImage
+);
+
+
+/* =========================
+   SUCCESSIVA
+========================= */
+
+galleryLightboxNext.addEventListener(
+    "click",
+    nextGalleryImage
+);
+
+
+/* =========================
+   CLICK SULLO SFONDO
+========================= */
+
+galleryLightbox.addEventListener(
+    "click",
+    (event) => {
+
+        if (
+            event.target ===
+            galleryLightbox
+        ) {
+
+            closeGalleryLightbox();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   TASTIERA
+========================= */
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            !galleryLightbox.classList.contains("open")
+        ) {
+
+            return;
+
+        }
+
+
+        if (event.key === "Escape") {
+
+            closeGalleryLightbox();
+
+        }
+
+
+        if (event.key === "ArrowLeft") {
+
+            previousGalleryImage();
+
+        }
+
+
+        if (event.key === "ArrowRight") {
+
+            nextGalleryImage();
+
+        }
+
+    }
+);
