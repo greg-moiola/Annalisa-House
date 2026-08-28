@@ -2525,3 +2525,228 @@ body:has(.page.active:not(.page-home)) .language-button {
     background: rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
+
+
+/* =====================================================
+   OTTIMIZZAZIONE GRAFICA MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    /* =========================
+       HEADER MOBILE
+    ========================= */
+
+    .header {
+        padding: 20px 18px;
+    }
+
+    .menu-button {
+        font-size: 28px;
+    }
+
+    .language-button {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+
+    /* =========================
+       GALLERIA MOBILE
+    ========================= */
+
+    #galleryPage {
+        height: 100dvh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .gallery-content {
+        width: 92%;
+        padding-top: 85px;
+        padding-bottom: 35px;
+    }
+
+    .gallery-content h2 {
+        padding: 15px 0 20px;
+        margin-bottom: 18px;
+        font-size: 2rem;
+    }
+
+    .gallery-grid {
+        gap: 12px;
+    }
+
+    .gallery-item {
+        aspect-ratio: 4 / 3;
+    }
+
+
+    /* =========================
+       LIGHTBOX MOBILE
+    ========================= */
+
+    .gallery-lightbox {
+        width: 100vw;
+        height: 100dvh;
+        padding:
+            env(safe-area-inset-top)
+            env(safe-area-inset-right)
+            env(safe-area-inset-bottom)
+            env(safe-area-inset-left);
+    }
+
+    .gallery-lightbox-content {
+        width: 86%;
+        height: 72%;
+    }
+
+    .gallery-lightbox-content img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+
+    /* =========================
+       CHIUSURA LIGHTBOX
+    ========================= */
+
+    .gallery-lightbox-close {
+        top: 18px;
+        right: 18px;
+
+        width: 46px;
+        height: 46px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: rgba(0, 0, 0, 0.45);
+        border-radius: 50%;
+
+        font-size: 32px;
+
+        z-index: 10002;
+    }
+
+
+    /* =========================
+       FRECCE LIGHTBOX
+    ========================= */
+
+    .gallery-lightbox-prev,
+    .gallery-lightbox-next {
+
+        width: 52px;
+        height: 52px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: rgba(0, 0, 0, 0.50);
+        border-radius: 50%;
+
+        color: white;
+
+        font-size: 42px;
+        line-height: 1;
+
+        padding: 0;
+
+        z-index: 10002;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .gallery-lightbox-prev {
+        left: 12px;
+    }
+
+    .gallery-lightbox-next {
+        right: 12px;
+    }
+
+
+    /* =========================
+       EFFETTO AL TOCCO
+    ========================= */
+
+    .gallery-lightbox-prev:active,
+    .gallery-lightbox-next:active,
+    .gallery-lightbox-close:active {
+        transform: translateY(-50%) scale(0.92);
+    }
+
+    .gallery-lightbox-close:active {
+        transform: scale(0.92);
+    }
+
+
+    /* =========================
+       SERVIZI
+    ========================= */
+
+    .services-content {
+        width: 90%;
+    }
+
+    .services-content h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .services-columns {
+        column-gap: 22px;
+    }
+
+    .services-column {
+        gap: 16px;
+    }
+
+    .services-column p {
+        font-size: 0.9rem;
+        line-height: 1.45;
+    }
+
+
+    /* =========================
+       INFORMAZIONI
+    ========================= */
+
+    #informazioniPage {
+        padding-top: 75px;
+    }
+
+    #informazioniPage > h2 {
+        top: 75px;
+        font-size: 2rem;
+    }
+
+    .curiosita-slider {
+        height: calc(100dvh - 75px);
+        padding: 18px 7vw;
+        gap: 16px;
+    }
+
+    .curiosita-card {
+        width: 86vw;
+        height: 68dvh;
+    }
+
+
+    /* =========================
+       SCHEDA ANNALISA
+    ========================= */
+
+    .curiosita-annalisa .curiosita-card-content {
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+
+}
