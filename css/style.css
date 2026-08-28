@@ -280,7 +280,15 @@ body:has(.page.active:not(.page-home)) .language-button {
     letter-spacing: 0.1em;
 }
 
-
+/* =========================
+   TESTO DEL TAG
+========================= */
+.home-logo-text {
+   
+  margin-top: 5px; 
+  color: white;
+  font-size: 0.5em
+}
 
 /* =========================
    OTHER PAGES
