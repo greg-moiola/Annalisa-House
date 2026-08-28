@@ -287,7 +287,7 @@ body:has(.page.active:not(.page-home)) .language-button {
    
   margin-top: 5px; 
   color: white;
-  font-size: 0.65rem
+  font-size: clamp(0.48rem, 0.81vw, 0.65rem);
 }
 
 /* =========================
