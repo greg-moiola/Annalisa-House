@@ -565,119 +565,6 @@ body:has(.page.active:not(.page-home)) .language-button {
 
 
 /* =========================
-   LANGUAGE SELECTOR
-========================= */
-
-.language-selector {
-
-    position: relative;
-
-}
-
-
-.language-button {
-
-    background: none;
-
-    border: none;
-
-    color: white;
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-size: 16px;
-
-    letter-spacing: 0.08em;
-
-    cursor: pointer;
-
-    padding: 6px;
-
-}
-
-
-.language-menu {
-
-    position: absolute;
-
-    top: calc(100% + 12px);
-
-    right: 0;
-
-    min-width: 155px;
-
-    background: rgba(244, 241, 235, 0.98);
-
-    padding: 7px 0;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform: translateY(-8px);
-
-    transition:
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0.25s ease;
-
-}
-
-
-.language-menu.open {
-
-    opacity: 1;
-
-    visibility: visible;
-
-    transform: translateY(0);
-
-}
-
-
-.language-option {
-
-    display: block;
-
-    width: 100%;
-
-    background: none;
-
-    border: none;
-
-    padding: 11px 18px;
-
-    text-align: left;
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-size: 15px;
-
-    color: #222;
-
-    cursor: pointer;
-
-    transition:
-        background 0.2s ease;
-
-}
-
-
-.language-option:hover {
-
-    background:
-        rgba(0, 0, 0, 0.06);
-
-}
-
-
-/* =========================
    REVIEWS
 ========================= */
 
@@ -2524,4 +2411,331 @@ body:has(.page.active:not(.page-home)) .language-button {
 .curiosita-annalisa .curiosita-card-content::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+}
+
+
+
+/* =====================================================
+   IMPOSTAZIONI
+===================================================== */
+
+.settings-selector {
+
+    position: relative;
+
+    z-index: 10000;
+
+}
+
+
+/* PULSANTE */
+
+.settings-button {
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    padding: 6px;
+
+    transition:
+        transform 0.25s ease,
+        color 0.3s ease;
+
+}
+
+
+.settings-button:hover {
+
+    transform: rotate(25deg);
+
+}
+
+
+/* =====================================================
+   MENU PRINCIPALE
+===================================================== */
+
+.settings-menu {
+
+    position: absolute;
+
+    top: calc(100% + 10px);
+
+    right: 0;
+
+    width: 190px;
+
+    background: #f4f1eb;
+
+    border:
+        1px solid rgba(0, 0, 0, 0.12);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-8px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+
+    overflow: hidden;
+
+}
+
+
+.settings-menu.open {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* OPZIONI */
+
+.settings-option {
+
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    padding: 15px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 15px;
+
+    text-align: left;
+
+    color: #222;
+
+}
+
+
+.settings-option:hover {
+
+    background:
+        rgba(0, 0, 0, 0.05);
+
+}
+
+
+.settings-arrow {
+
+    font-size: 22px;
+
+}
+
+
+/* =====================================================
+   SOTTOMENU
+===================================================== */
+
+.settings-submenu {
+
+    position: absolute;
+
+    top: calc(100% + 10px);
+
+    right: 200px;
+
+    width: 170px;
+
+    background: #f4f1eb;
+
+    border:
+        1px solid rgba(0, 0, 0, 0.12);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateX(8px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+
+    overflow: hidden;
+
+}
+
+
+.settings-submenu.open {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(0);
+
+}
+
+
+/* OPZIONI SOTTOMENU */
+
+.settings-submenu-option {
+
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    padding: 14px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 15px;
+
+    color: #222;
+
+    text-align: left;
+
+}
+
+
+.settings-submenu-option:hover {
+
+    background:
+        rgba(0, 0, 0, 0.05);
+
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.theme-dark {
+
+    background: #151515;
+
+    color: white;
+
+}
+
+
+body.theme-dark .page:not(.page-home) {
+
+    background: #151515;
+
+    color: white;
+
+}
+
+
+/* MENU IMPOSTAZIONI */
+
+body.theme-dark .settings-menu,
+body.theme-dark .settings-submenu {
+
+    background: #202020;
+
+    border-color:
+        rgba(255, 255, 255, 0.15);
+
+}
+
+
+body.theme-dark .settings-option,
+body.theme-dark .settings-submenu-option {
+
+    color: white;
+
+}
+
+
+body.theme-dark .settings-option:hover,
+body.theme-dark .settings-submenu-option:hover {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .settings-button {
+
+        font-size: 26px;
+
+    }
+
+
+    .settings-menu {
+
+        width: 180px;
+
+    }
+
+
+    .settings-submenu {
+
+        width: 160px;
+
+        right: 190px;
+
+    }
+
 }
