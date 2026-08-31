@@ -2764,6 +2764,8 @@ body:has(.page.active:not(.page-home)) .language-button {
 .settings-selector {
     position: relative;
     z-index: 10000;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -2772,25 +2774,47 @@ body:has(.page.active:not(.page-home)) .language-button {
 ========================= */
 
 .settings-button {
+
     border: none;
+
     background: transparent;
+
+    color: white;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
     font-size: 28px;
+
+    line-height: 1;
+
     cursor: pointer;
-    padding: 8px;
-    color: black;
-    transition: transform 0.2s ease;
+
+    padding: 0;
+
+    transition:
+        opacity 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
+
 }
+
 
 .settings-button:hover {
     transform: rotate(25deg);
 }
 
+/* =========================
+   HEADER NELLE ALTRE PAGINE
+========================= */
 
-/* HOME - BIANCO */
+body:has(.page.active:not(.page-home)) .menu-button,
+body:has(.page.active:not(.page-home)) .settings-button {
 
-.page-home.active ~ * .settings-button,
-body:has(.page-home.active) .settings-button {
-    color: white;
+    color: #222;
+
 }
 
 
@@ -3045,24 +3069,14 @@ body.theme-dark .settings-button {
 }
 
 
+
 /* =====================================================
-   LEFT HANDED MODE
+   MODALITÀ MANCINO
 ===================================================== */
 
-body.left-handed .menu-button {
+body.left-handed .header {
 
-    right: auto !important;
-
-    left: 30px;
-
-}
-
-
-body.left-handed .settings-selector {
-
-    right: auto !important;
-
-    left: 30px;
+    flex-direction: row-reverse;
 
 }
 
@@ -3113,19 +3127,4 @@ body.left-handed .settings-submenu {
     body.left-handed .settings-submenu {
         left: 198px;
     }
-
-
-    body.left-handed .menu-button {
-
-        left: 18px;
-
-    }
-
-
-    body.left-handed .settings-selector {
-
-        left: 18px;
-
-    }
-
 }
