@@ -2752,3 +2752,380 @@ body:has(.page.active:not(.page-home)) .language-button {
     }
 
 }
+
+
+
+
+
+/* =====================================================
+   IMPOSTAZIONI
+===================================================== */
+
+.settings-selector {
+    position: relative;
+    z-index: 10000;
+}
+
+
+/* =========================
+   SETTINGS BUTTON
+========================= */
+
+.settings-button {
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 8px;
+    color: black;
+    transition: transform 0.2s ease;
+}
+
+.settings-button:hover {
+    transform: rotate(25deg);
+}
+
+
+/* HOME - BIANCO */
+
+.page-home.active ~ * .settings-button,
+body:has(.page-home.active) .settings-button {
+    color: white;
+}
+
+
+/* =========================
+   MAIN SETTINGS MENU
+========================= */
+
+.settings-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+
+    width: 210px;
+
+    background: white;
+
+    border: 1px solid rgba(0, 0, 0, 0.12);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translateY(-8px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+    overflow: hidden;
+
+    z-index: 10001;
+}
+
+
+.settings-menu.open {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================
+   SETTINGS OPTIONS
+========================= */
+
+.settings-option {
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    padding:
+        15px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    font-family:
+        inherit;
+
+    font-size: 14px;
+
+    text-align: left;
+
+    color: black;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.settings-option:hover {
+    background:
+        rgba(0, 0, 0, 0.05);
+}
+
+
+.settings-arrow {
+    font-size: 22px;
+    line-height: 1;
+}
+
+
+/* =========================
+   SUBMENUS
+========================= */
+
+.settings-submenu {
+    position: absolute;
+
+    top: calc(100% + 8px);
+
+    right: 218px;
+
+    width: 190px;
+
+    background: white;
+
+    border:
+        1px solid rgba(0, 0, 0, 0.12);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translateX(8px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+    overflow: hidden;
+
+    z-index: 10002;
+}
+
+
+.settings-submenu.open {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateX(0);
+}
+
+
+/* =========================
+   SUBMENU OPTIONS
+========================= */
+
+.settings-submenu-option {
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    padding:
+        15px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+
+    font-family:
+        inherit;
+
+    font-size: 14px;
+
+    color: black;
+
+    text-align: left;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.settings-submenu-option:hover {
+    background:
+        rgba(0, 0, 0, 0.05);
+}
+
+
+/* =====================================================
+   DARK THEME
+===================================================== */
+
+body.theme-dark {
+
+    background:
+        #151515;
+
+    color:
+        white;
+
+}
+
+
+/* Pagine principali */
+
+body.theme-dark .page:not(.page-home) {
+
+    background:
+        #151515;
+
+    color:
+        white;
+
+}
+
+
+/* Impostazioni */
+
+body.theme-dark .settings-menu,
+body.theme-dark .settings-submenu {
+
+    background:
+        #202020;
+
+    border-color:
+        rgba(255, 255, 255, 0.12);
+
+}
+
+
+body.theme-dark .settings-option,
+body.theme-dark .settings-submenu-option {
+
+    color:
+        white;
+
+}
+
+
+body.theme-dark .settings-option:hover,
+body.theme-dark .settings-submenu-option:hover {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+}
+
+
+/* Pulsante impostazioni */
+
+body.theme-dark .settings-button {
+
+    color:
+        white;
+
+}
+
+
+/* =====================================================
+   LEFT HANDED MODE
+===================================================== */
+
+body.left-handed .menu-button {
+
+    right: auto !important;
+
+    left: 30px;
+
+}
+
+
+body.left-handed .settings-selector {
+
+    right: auto !important;
+
+    left: 30px;
+
+}
+
+
+/* Sottomenu a destra quando siamo mancini */
+
+body.left-handed .settings-menu {
+
+    right: auto;
+
+    left: 0;
+
+}
+
+
+body.left-handed .settings-submenu {
+
+    right: auto;
+
+    left: 218px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .settings-button {
+        font-size: 26px;
+    }
+
+
+    .settings-menu {
+        width: 190px;
+    }
+
+
+    .settings-submenu {
+        width: 175px;
+
+        right: 198px;
+    }
+
+
+    body.left-handed .settings-submenu {
+        left: 198px;
+    }
+
+
+    body.left-handed .menu-button {
+
+        left: 18px;
+
+    }
+
+
+    body.left-handed .settings-selector {
+
+        left: 18px;
+
+    }
+
+}
