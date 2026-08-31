@@ -359,6 +359,18 @@ const translations = {
 
         service16:
                     "Culla per bambini",
+
+        settingsLanguage: 
+            "Lingua",
+
+        settingsTheme: 
+    "Tema",
+
+        settingsLight: 
+    "Chiaro",
+
+        settingsDark: 
+    "Scuro",
                
 
 
@@ -569,6 +581,18 @@ service15:
 service16:
     "Babybett",
 
+        settingsLanguage: 
+            "Sprache",
+
+        settingsTheme: 
+            "Thema",
+
+        settingsLight: 
+            "Hell",
+
+        settingsDark: 
+            "Dunkel",
+
     },
 
 
@@ -775,6 +799,18 @@ service15:
 service16:
     "Baby cot",
 
+        settingsLanguage: 
+            "Language",
+
+        settingsTheme:
+             "Theme",
+
+        settingsLight: 
+            "Light",
+
+        settingsDark: 
+            "Dark",
+
     }
 
 };
@@ -783,16 +819,6 @@ service16:
 /* =========================
    LANGUAGE MENU
 ========================= */
-
-const languageButton =
-    document.getElementById("languageButton");
-
-const languageMenu =
-    document.getElementById("languageMenu");
-
-const languageOptions =
-    document.querySelectorAll(".language-option");
-
 
 function getCountryFlag(country) {
 
@@ -914,10 +940,6 @@ function changeLanguage(language) {
     );
 
 
-    languageButton.textContent =
-        language.toUpperCase() + " ▾";
-
-
     document.documentElement.lang =
         language;
 
@@ -926,9 +948,6 @@ function changeLanguage(language) {
         "annalisaLanguage",
         language
     );
-
-
-    languageMenu.classList.remove("open");
 
 }
 
@@ -1000,6 +1019,186 @@ if (
 } else {
 
     changeLanguage("it");
+
+}
+
+/* =========================
+   IMPOSTAZIONI
+========================= */
+
+const settingsButton =
+    document.getElementById("settingsButton");
+
+const settingsMenu =
+    document.getElementById("settingsMenu");
+
+const settingsLanguageButton =
+    document.getElementById("settingsLanguageButton");
+
+const settingsThemeButton =
+    document.getElementById("settingsThemeButton");
+
+const languageSettingsMenu =
+    document.getElementById("languageSettingsMenu");
+
+const themeSettingsMenu =
+    document.getElementById("themeSettingsMenu");
+
+const languageOptions =
+    document.querySelectorAll(".language-option");
+
+const themeOptions =
+    document.querySelectorAll("[data-theme]");
+
+
+/* APRI / CHIUDI MENU IMPOSTAZIONI */
+
+settingsButton.addEventListener(
+    "click",
+    (event) => {
+
+        event.stopPropagation();
+
+        settingsMenu.classList.toggle("open");
+
+        languageSettingsMenu.classList.remove("open");
+
+        themeSettingsMenu.classList.remove("open");
+
+    }
+);
+
+
+/* APRI SOTTOMENU LINGUA */
+
+settingsLanguageButton.addEventListener(
+    "click",
+    (event) => {
+
+        event.stopPropagation();
+
+        languageSettingsMenu.classList.toggle("open");
+
+        themeSettingsMenu.classList.remove("open");
+
+    }
+);
+
+
+/* APRI SOTTOMENU TEMA */
+
+settingsThemeButton.addEventListener(
+    "click",
+    (event) => {
+
+        event.stopPropagation();
+
+        themeSettingsMenu.classList.toggle("open");
+
+        languageSettingsMenu.classList.remove("open");
+
+    }
+);
+
+
+/* CAMBIO LINGUA */
+
+languageOptions.forEach(
+    (option) => {
+
+        option.addEventListener(
+            "click",
+            (event) => {
+
+                event.stopPropagation();
+
+                const language =
+                    option.dataset.language;
+
+                changeLanguage(language);
+
+                settingsMenu.classList.remove("open");
+
+                languageSettingsMenu.classList.remove("open");
+
+            }
+        );
+
+    }
+);
+
+
+/* CAMBIO TEMA */
+
+themeOptions.forEach(
+    (option) => {
+
+        option.addEventListener(
+            "click",
+            (event) => {
+
+                event.stopPropagation();
+
+                const theme =
+                    option.dataset.theme;
+
+                document.body.classList.remove(
+                    "theme-light",
+                    "theme-dark"
+                );
+
+                document.body.classList.add(
+                    "theme-" + theme
+                );
+
+                localStorage.setItem(
+                    "annalisaTheme",
+                    theme
+                );
+
+                settingsMenu.classList.remove("open");
+
+                themeSettingsMenu.classList.remove("open");
+
+            }
+        );
+
+    }
+);
+
+
+/* CHIUDI MENU CLICCANDO FUORI */
+
+document.addEventListener(
+    "click",
+    () => {
+
+        settingsMenu.classList.remove("open");
+
+        languageSettingsMenu.classList.remove("open");
+
+        themeSettingsMenu.classList.remove("open");
+
+    }
+);
+
+
+/* RIPRISTINA TEMA */
+
+const savedTheme =
+    localStorage.getItem("annalisaTheme");
+
+if (savedTheme) {
+
+    document.body.classList.add(
+        "theme-" + savedTheme
+    );
+
+} else {
+
+    document.body.classList.add(
+        "theme-light"
+    );
 
 }
 
