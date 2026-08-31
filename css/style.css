@@ -3081,7 +3081,7 @@ body.left-handed .header {
 }
 
 
-/* Sottomenu a destra quando siamo mancini */
+/* MENU IMPOSTAZIONI A SINISTRA */
 
 body.left-handed .settings-menu {
 
@@ -3092,6 +3092,8 @@ body.left-handed .settings-menu {
 }
 
 
+/* SOTTOMENU VERSO DESTRA */
+
 body.left-handed .settings-submenu {
 
     right: auto;
@@ -3099,7 +3101,6 @@ body.left-handed .settings-submenu {
     left: 218px;
 
 }
-
 
 /* =====================================================
    MOBILE
@@ -3119,7 +3120,6 @@ body.left-handed .settings-submenu {
 
     .settings-submenu {
         width: 175px;
-
         right: 198px;
     }
 
@@ -3127,4 +3127,5 @@ body.left-handed .settings-submenu {
     body.left-handed .settings-submenu {
         left: 198px;
     }
+
 }
