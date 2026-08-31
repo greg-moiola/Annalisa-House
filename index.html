@@ -21,7 +21,7 @@
     <!-- ==========================================
          SCHERMATA MANUTENZIONE
     =========================================== -->
-   <--
+   <!--
     <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: white; display: flex; justify-content: center; align-items: center; z-index: 999999; font-family: sans-serif;">
         <h1 style="color: #333; text-align: center; font-size: 2rem; padding: 20px;">
             Website under maintenance.<br>We will be back soon!
@@ -49,55 +49,176 @@
 
         
 
-    <!-- SELETTORE LINGUA -->
+    <!-- =========================
+     IMPOSTAZIONI
+========================= -->
 
-    <div class="language-selector">
+<div class="settings-selector">
+
+    <!-- PULSANTE ROTELLA -->
+
+    <button
+        class="settings-button"
+        id="settingsButton"
+        aria-label="Impostazioni">
+
+        ⚙
+
+    </button>
+
+
+    <!-- MENU PRINCIPALE -->
+
+    <div
+        class="settings-menu"
+        id="settingsMenu">
 
         <button
-            class="language-button"
-            id="languageButton">
+            class="settings-option"
+            data-settings-panel="language">
 
-            IT ▾
+            <span data-i18n="settingsLanguage">
+                Lingua
+            </span>
+
+            <span class="settings-arrow">
+                ›
+            </span>
 
         </button>
 
 
-        <div
-            class="language-menu"
-            id="languageMenu">
+        <button
+            class="settings-option"
+            data-settings-panel="theme">
 
-            <button
-                class="language-option"
-                data-language="it">
+            <span data-i18n="settingsTheme">
+                Tema
+            </span>
 
-                🇮🇹 Italiano
+            <span class="settings-arrow">
+                ›
+            </span>
 
-            </button>
-
-
-            <button
-                class="language-option"
-                data-language="de">
-
-                🇩🇪 Deutsch
-
-            </button>
+        </button>
 
 
-            <button
-                class="language-option"
-                data-language="en">
+        <button
+            class="settings-option"
+            data-settings-panel="usage">
 
-                🇬🇧 English
+            <span data-i18n="settingsUsage">
+                Utilizzo
+            </span>
 
-            </button>
+            <span class="settings-arrow">
+                ›
+            </span>
 
-        </div>
+        </button>
 
     </div>
 
-</header>
 
+    <!-- SOTTOMENU LINGUA -->
+
+    <div
+        class="settings-submenu"
+        id="languageSettingsMenu">
+
+        <button
+            class="settings-submenu-option language-option"
+            data-language="it">
+
+            🇮🇹 Italiano
+
+        </button>
+
+
+        <button
+            class="settings-submenu-option language-option"
+            data-language="de">
+
+            🇩🇪 Deutsch
+
+        </button>
+
+
+        <button
+            class="settings-submenu-option language-option"
+            data-language="en">
+
+            🇬🇧 English
+
+        </button>
+
+    </div>
+
+
+    <!-- SOTTOMENU TEMA -->
+
+    <div
+        class="settings-submenu"
+        id="themeSettingsMenu">
+
+        <button
+            class="settings-submenu-option"
+            data-theme="light">
+
+            ☀️
+            <span data-i18n="settingsLight">
+                Chiaro
+            </span>
+
+        </button>
+
+
+        <button
+            class="settings-submenu-option"
+            data-theme="dark">
+
+            🌙
+            <span data-i18n="settingsDark">
+                Scuro
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- SOTTOMENU UTILIZZO -->
+
+    <div
+        class="settings-submenu"
+        id="usageSettingsMenu">
+
+        <button
+            class="settings-submenu-option"
+            data-usage="right">
+
+            🫱
+            <span data-i18n="settingsRight">
+                Destro
+            </span>
+
+        </button>
+
+
+        <button
+            class="settings-submenu-option"
+            data-usage="left">
+
+            🫲
+            <span data-i18n="settingsLeft">
+                Mancino
+            </span>
+
+        </button>
+
+    </div>
+
+</div>
 
 
     <!-- =========================
