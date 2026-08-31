@@ -359,6 +359,27 @@ const translations = {
 
         service16:
                     "Culla per bambini",
+
+        settingsLanguage:
+    "Lingua",
+
+settingsTheme:
+    "Tema",
+
+settingsUsage:
+    "Utilizzo",
+
+settingsLight:
+    "Chiaro",
+
+settingsDark:
+    "Scuro",
+
+settingsRight:
+    "Destro",
+
+settingsLeft:
+    "Mancino",
                
 
 
@@ -569,6 +590,27 @@ service15:
 service16:
     "Babybett",
 
+        settingsLanguage:
+    "Sprache",
+
+settingsTheme:
+    "Erscheinungsbild",
+
+settingsUsage:
+    "Bedienung",
+
+settingsLight:
+    "Hell",
+
+settingsDark:
+    "Dunkel",
+
+settingsRight:
+    "Rechtshänder",
+
+settingsLeft:
+    "Linkshänder",
+
     },
 
 
@@ -775,23 +817,65 @@ service15:
 service16:
     "Baby cot",
 
+        settingsLanguage:
+    "Language",
+
+settingsTheme:
+    "Theme",
+
+settingsUsage:
+    "Usage",
+
+settingsLight:
+    "Light",
+
+settingsDark:
+    "Dark",
+
+settingsRight:
+    "Right-handed",
+
+settingsLeft:
+    "Left-handed",
+
     }
 
 };
 
 
 /* =========================
-   LANGUAGE MENU
+   IMPOSTAZIONI
 ========================= */
 
-const languageButton =
-    document.getElementById("languageButton");
+const settingsButton =
+    document.getElementById("settingsButton");
 
-const languageMenu =
-    document.getElementById("languageMenu");
+const settingsMenu =
+    document.getElementById("settingsMenu");
+
+const settingsOptions =
+    document.querySelectorAll(".settings-option");
+
+const settingsSubmenus =
+    document.querySelectorAll(".settings-submenu");
+
+const languageSettingsMenu =
+    document.getElementById("languageSettingsMenu");
+
+const themeSettingsMenu =
+    document.getElementById("themeSettingsMenu");
+
+const usageSettingsMenu =
+    document.getElementById("usageSettingsMenu");
 
 const languageOptions =
     document.querySelectorAll(".language-option");
+
+const themeOptions =
+    document.querySelectorAll("[data-theme]");
+
+const usageOptions =
+    document.querySelectorAll("[data-usage]");
 
 
 function getCountryFlag(country) {
@@ -914,10 +998,6 @@ function changeLanguage(language) {
     );
 
 
-    languageButton.textContent =
-        language.toUpperCase() + " ▾";
-
-
     document.documentElement.lang =
         language;
 
@@ -927,27 +1007,95 @@ function changeLanguage(language) {
         language
     );
 
-
-    languageMenu.classList.remove("open");
-
 }
 
 
 /* =========================
-   LANGUAGE EVENTS
+   SETTINGS MENU EVENTS
 ========================= */
 
-languageButton.addEventListener(
+settingsButton.addEventListener(
     "click",
     (event) => {
 
         event.stopPropagation();
 
-        languageMenu.classList.toggle("open");
+        settingsMenu.classList.toggle("open");
+
+        settingsSubmenus.forEach(
+            (submenu) => {
+
+                submenu.classList.remove("open");
+
+            }
+        );
 
     }
 );
 
+
+/* =========================
+   OPEN SETTINGS SUBMENUS
+========================= */
+
+settingsOptions.forEach(
+    (option) => {
+
+        option.addEventListener(
+            "click",
+            (event) => {
+
+                event.stopPropagation();
+
+                const panel =
+                    option.dataset.settingsPanel;
+
+
+                settingsSubmenus.forEach(
+                    (submenu) => {
+
+                        submenu.classList.remove("open");
+
+                    }
+                );
+
+
+                if (panel === "language") {
+
+                    languageSettingsMenu.classList.add(
+                        "open"
+                    );
+
+                }
+
+
+                if (panel === "theme") {
+
+                    themeSettingsMenu.classList.add(
+                        "open"
+                    );
+
+                }
+
+
+                if (panel === "usage") {
+
+                    usageSettingsMenu.classList.add(
+                        "open"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================
+   LANGUAGE SELECTION
+========================= */
 
 languageOptions.forEach(
     (option) => {
@@ -963,6 +1111,16 @@ languageOptions.forEach(
 
                 changeLanguage(language);
 
+                settingsMenu.classList.remove("open");
+
+                settingsSubmenus.forEach(
+                    (submenu) => {
+
+                        submenu.classList.remove("open");
+
+                    }
+                );
+
             }
         );
 
@@ -970,14 +1128,139 @@ languageOptions.forEach(
 );
 
 
+/* =========================
+   THEME
+========================= */
+
+function changeTheme(theme) {
+
+    document.body.classList.remove(
+        "theme-light",
+        "theme-dark"
+    );
+
+
+    document.body.classList.add(
+        "theme-" + theme
+    );
+
+
+    localStorage.setItem(
+        "annalisaTheme",
+        theme
+    );
+
+}
+
+
+themeOptions.forEach(
+    (option) => {
+
+        option.addEventListener(
+            "click",
+            (event) => {
+
+                event.stopPropagation();
+
+                const theme =
+                    option.dataset.theme;
+
+                changeTheme(theme);
+
+                settingsMenu.classList.remove("open");
+
+                settingsSubmenus.forEach(
+                    (submenu) => {
+
+                        submenu.classList.remove("open");
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================
+   HANDEDNESS
+========================= */
+
+function changeUsage(usage) {
+
+    document.body.classList.remove(
+        "right-handed",
+        "left-handed"
+    );
+
+
+    document.body.classList.add(
+        usage + "-handed"
+    );
+
+
+    localStorage.setItem(
+        "annalisaUsage",
+        usage
+    );
+
+}
+
+
+usageOptions.forEach(
+    (option) => {
+
+        option.addEventListener(
+            "click",
+            (event) => {
+
+                event.stopPropagation();
+
+                const usage =
+                    option.dataset.usage;
+
+                changeUsage(usage);
+
+                settingsMenu.classList.remove("open");
+
+                settingsSubmenus.forEach(
+                    (submenu) => {
+
+                        submenu.classList.remove("open");
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================
+   CLOSE SETTINGS
+========================= */
+
 document.addEventListener(
     "click",
     () => {
 
-        languageMenu.classList.remove("open");
+        settingsMenu.classList.remove("open");
+
+        settingsSubmenus.forEach(
+            (submenu) => {
+
+                submenu.classList.remove("open");
+
+            }
+        );
 
     }
 );
+
 
 
 /* =========================
@@ -1002,6 +1285,49 @@ if (
     changeLanguage("it");
 
 }
+
+
+/* =========================
+   RESTORE THEME
+========================= */
+
+const savedTheme =
+    localStorage.getItem(
+        "annalisaTheme"
+    );
+
+
+if (savedTheme) {
+
+    changeTheme(savedTheme);
+
+} else {
+
+    changeTheme("light");
+
+}
+
+
+/* =========================
+   RESTORE USAGE
+========================= */
+
+const savedUsage =
+    localStorage.getItem(
+        "annalisaUsage"
+    );
+
+
+if (savedUsage) {
+
+    changeUsage(savedUsage);
+
+} else {
+
+    changeUsage("right");
+
+}
+
 
 
 /* =========================
