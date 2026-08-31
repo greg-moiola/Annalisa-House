@@ -49,54 +49,127 @@
 
         
 
-    <!-- SELETTORE LINGUA -->
+    <!-- IMPOSTAZIONI -->
 
-    <div class="language-selector">
+<div class="settings-selector">
+
+    <button
+        class="settings-button"
+        id="settingsButton"
+        aria-label="Impostazioni">
+
+        ⚙
+
+    </button>
+
+
+    <!-- MENU PRINCIPALE -->
+
+    <div
+        class="settings-menu"
+        id="settingsMenu">
 
         <button
-            class="language-button"
-            id="languageButton">
+            class="settings-option"
+            id="settingsLanguageButton">
 
-            IT ▾
+            <span data-i18n="settingsLanguage">
+                Lingua
+            </span>
+
+            <span class="settings-arrow">
+                ›
+            </span>
 
         </button>
 
 
-        <div
-            class="language-menu"
-            id="languageMenu">
+        <button
+            class="settings-option"
+            id="settingsThemeButton">
 
-            <button
-                class="language-option"
-                data-language="it">
+            <span data-i18n="settingsTheme">
+                Tema
+            </span>
 
-                🇮🇹 Italiano
+            <span class="settings-arrow">
+                ›
+            </span>
 
-            </button>
-
-
-            <button
-                class="language-option"
-                data-language="de">
-
-                🇩🇪 Deutsch
-
-            </button>
-
-
-            <button
-                class="language-option"
-                data-language="en">
-
-                🇬🇧 English
-
-            </button>
-
-        </div>
+        </button>
 
     </div>
 
-</header>
+
+    <!-- SOTTOMENU LINGUA -->
+
+    <div
+        class="settings-submenu"
+        id="languageSettingsMenu">
+
+        <button
+            class="settings-submenu-option language-option"
+            data-language="it">
+
+            🇮🇹 Italiano
+
+        </button>
+
+
+        <button
+            class="settings-submenu-option language-option"
+            data-language="de">
+
+            🇩🇪 Deutsch
+
+        </button>
+
+
+        <button
+            class="settings-submenu-option language-option"
+            data-language="en">
+
+            🇬🇧 English
+
+        </button>
+
+    </div>
+
+
+    <!-- SOTTOMENU TEMA -->
+
+    <div
+        class="settings-submenu"
+        id="themeSettingsMenu">
+
+        <button
+            class="settings-submenu-option"
+            data-theme="light">
+
+            ☀️
+
+            <span data-i18n="settingsLight">
+                Chiaro
+            </span>
+
+        </button>
+
+
+        <button
+            class="settings-submenu-option"
+            data-theme="dark">
+
+            🌙
+
+            <span data-i18n="settingsDark">
+                Scuro
+            </span>
+
+        </button>
+
+    </div>
+
+</div>
 
 
 
