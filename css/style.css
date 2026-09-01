@@ -306,16 +306,25 @@ body:has(.page.active:not(.page-home)) .language-button {
 
     .home-version-text {
 
-        bottom: 50px;
+        position: fixed;
 
-        right: 18px;
+        bottom: 30px;
 
-        font-size: 0.6rem;
+        right: 12px;
+
+        z-index: 9999;
+
+        font-size: 0.48rem;
+
+        letter-spacing: 0.02em;
+
+        white-space: nowrap;
+
+        color: white;
 
     }
 
 }
-
 /* =========================
    OTHER PAGES
 ========================= */
