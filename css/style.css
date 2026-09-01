@@ -306,7 +306,7 @@ body:has(.page.active:not(.page-home)) .language-button {
 
     .home-version-text {
 
-        bottom: 20px;
+        bottom: 50px;
 
         right: 18px;
 
