@@ -322,6 +322,10 @@ body:has(.page.active:not(.page-home)) .language-button {
 
         color: white;
 
+        display: block !important;
+        
+        transform: translateZ(0);
+
     }
 
 }
