@@ -281,13 +281,39 @@ body:has(.page.active:not(.page-home)) .language-button {
 }
 
 /* =========================
-   TESTO DEL TAG
+   TESTO VERSIONE
 ========================= */
-.home-logo-text {
-   
-  margin-top: 5px; 
-  color: white;
-  font-size: clamp(0.48rem, 0.81vw, 0.65rem);
+
+.home-version-text {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    right: 30px;
+
+    z-index: 5;
+
+    color: white;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.08em;
+
+}
+
+@media (max-width: 600px) {
+
+    .home-version-text {
+
+        bottom: 20px;
+
+        right: 18px;
+
+        font-size: 0.6rem;
+
+    }
+
 }
 
 /* =========================
