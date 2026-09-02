@@ -1602,7 +1602,7 @@ body:has(.page.active:not(.page-home)) .language-button {
 
 
 /* =========================
-   IMMAGINE PROVVISORIA
+   IMMAGINE ANNALISA
 ========================= */
 
 .curiosita-placeholder {
@@ -1613,7 +1613,7 @@ body:has(.page.active:not(.page-home)) .language-button {
 
     flex-shrink: 0;
 
-    background: #777;
+    overflow: hidden;
 
     display: flex;
 
@@ -1621,12 +1621,21 @@ body:has(.page.active:not(.page-home)) .language-button {
 
     justify-content: center;
 
-    color: white;
-
-    letter-spacing: 0.1em;
+    background: #777;
 
 }
 
+.curiosita-placeholder img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
 
 /* =========================
    CHECK-IN
@@ -1656,25 +1665,39 @@ body:has(.page.active:not(.page-home)) .language-button {
 
 .curiosita-animali {
 
-    background-image:
+    position: relative;
 
-        linear-gradient(
-            rgba(0,0,0,0.35),
-            rgba(0,0,0,0.35)
-        ),
-
-        url("/images/animali.jpeg");
-
-    background-size: cover;
-
-    background-position: center;
+    overflow: hidden;
 
     color: white;
 
 }
 
+.animali-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    z-index: 0;
+
+}
 
 .animali-overlay {
+
+    position: relative;
+
+    z-index: 1;
 
     width: 100%;
 
