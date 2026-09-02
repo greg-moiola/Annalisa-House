@@ -302,6 +302,20 @@ body:has(.page.active:not(.page-home)) .language-button {
 
 }
 
+@media (max-width: 600px) {
+
+    .home-version2-text {
+        position: fixed;
+        bottom: 12px;
+        right: 15px;
+        z-index: 100;
+        color: white;
+        font-size: 0.55rem;
+        letter-spacing: 0.05em;
+    }
+
+}
+
 
 
 /* =========================
