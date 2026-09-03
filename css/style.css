@@ -305,28 +305,28 @@ body:has(.page.active:not(.page-home)) .language-button {
 @media (max-width: 600px) {
 
     .home-version2-text {
+        display: none;
+    }
+
+    .menu-overlay.open::after {
+        content: "© 2026 | Designed & Developed by Gregorio Moiola | v1.0.0";
+
         position: absolute;
-        bottom: 12px;
-        left: 15px;
-        right: 15px;
-        z-index: 20;
+        left: 0;
+        right: 0;
+        bottom: 25px;
 
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
+        text-align: center;
 
-        color: white;
+        color: #222;
         font-size: 0.55rem;
         letter-spacing: 0.05em;
-        text-align: right;
-        white-space: nowrap;
+        font-family: "Times New Roman", Times, serif;
 
-        text-shadow:
-            0 1px 3px rgba(0, 0, 0, 0.8);
+        z-index: 110;
     }
 
 }
-
 
 
 /* =========================
