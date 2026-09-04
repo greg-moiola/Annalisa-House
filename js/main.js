@@ -1681,9 +1681,9 @@ async function loadAdminReviews() {
 
                 card.innerHTML = `
 
-                    <div class="review-top">
+                    <div class="admin-review-top">
 
-                        <span class="review-author">
+                        <span class="admin-review-author">
 
                             ${getCountryFlag(review.paese)}
 
@@ -1691,7 +1691,7 @@ async function loadAdminReviews() {
 
                         </span>
 
-                        <span class="review-date">
+                        <span class="admin-review-date">
 
                             ${formattedDate}
 
@@ -1700,14 +1700,14 @@ async function loadAdminReviews() {
                     </div>
 
 
-                    <div class="review-stars">
+                    <div class="admin-review-stars">
 
                         ${stars}
 
                     </div>
 
 
-                    <p class="review-text">
+                    <p class="admin-review-text">
 
                         ${escapeHTML(review.testo)}
 
