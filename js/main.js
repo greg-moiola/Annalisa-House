@@ -374,7 +374,7 @@ const translations = {
     
         themeDark: "Scuro",
 
-        settings: "IMPOSTAZIONI"
+        settings: "⚙️ IMPOSTAZIONI"
 },
                
 
@@ -600,7 +600,8 @@ service16:
     
         themeDark: "Dunkel",
 
-        settings: "EINSTELLUNGEN"
+        settings: "⚙️ EINSTELLUNGEN"
+        
 
 
     },
@@ -823,7 +824,7 @@ service16:
    
         themeDark: "Dark",
 
-        settings: "SETTINGS"
+        settings: "⚙️ SETTINGS"
 
     }
 
