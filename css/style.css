@@ -2829,3 +2829,29 @@ body.dark-theme .availability-button:hover {
     background: #eeeeee !important;
     color: #222 !important;
 }
+
+
+/* ULTIME CORREZIONI TEMA SCURO */
+
+/* Hamburger e impostazioni sempre bianchi */
+body.dark-theme .menu-button,
+body.dark-theme .language-button {
+    color: white !important;
+}
+
+/* Nome Annalisa House nel menu sempre nero */
+body.dark-theme .menu-panel .site-title,
+body.dark-theme .menu-panel h1,
+body.dark-theme .menu-panel h2,
+body.dark-theme .menu-panel .logo-text {
+    color: #222 !important;
+}
+
+/* Testo del popup "Come vuoi inviare la richiesta?" nero */
+body.dark-theme .availability-modal,
+body.dark-theme .availability-modal h2,
+body.dark-theme .availability-modal h3,
+body.dark-theme .availability-modal p,
+body.dark-theme .availability-modal label {
+    color: #222 !important;
+}
