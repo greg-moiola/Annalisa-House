@@ -2341,34 +2341,3 @@ document.addEventListener(
 
     }
 );
-
-
-/* =========================
-   SCHERMATA MANUTENZIONE
-========================= */
-
-const minutiTotali = 60; /*minuti totali*/
-
-let tempoRimanente = minutiTotali * 60;
-
-const timer = setInterval(function() {
-    const elementoTimer = document.getElementById("countdown");
-
-    if (tempoRimanente <= 0) {
-        clearInterval(timer);
-        if (elementoTimer) elementoTimer.innerHTML = "00:00";
-        return;
-    }
-
-    tempoRimanente--;
-
-    const minuti = Math.floor(tempoRimanente / 60);
-    const secondi = tempoRimanente % 60;
-
-    const m = minuti < 10 ? "0" + minuti : minuti;
-    const s = secondi < 10 ? "0" + secondi : secondi;
-
-    if (elementoTimer) {
-        elementoTimer.innerHTML = m + ":" + s;
-    }
-}, 1000);
