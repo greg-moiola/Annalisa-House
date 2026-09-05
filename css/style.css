@@ -2857,21 +2857,24 @@ body.dark-theme .availability-modal label {
 }
 
 
-/* MENU HAMBURGER IN TEMA SCURO */
+/* MENU HAMBURGER - TEMA SCURO */
 
-body.dark-theme .menu-panel {
+/* Sfondo del menu */
+body.dark-theme .menu-overlay {
     background: #171717 !important;
+}
+
+/* Scritte delle pagine */
+body.dark-theme .menu-links a {
     color: white !important;
 }
 
-body.dark-theme .menu-panel a,
-body.dark-theme .menu-panel button,
-body.dark-theme .menu-panel li,
-body.dark-theme .menu-panel span {
+/* Tre lineette hamburger */
+body.dark-theme .menu-button {
     color: white !important;
 }
 
-body.dark-theme .menu-panel a:hover,
-body.dark-theme .menu-panel button:hover {
-    color: #dddddd !important;
+/* Scritta IMPOSTAZIONI */
+body.dark-theme .language-button {
+    color: white !important;
 }
