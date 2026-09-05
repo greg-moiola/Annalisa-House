@@ -2709,3 +2709,38 @@ body.dark-theme .theme-option:hover {
     }
 
 }
+
+
+/* =========================
+   SCHERMATA MANUTENZIONE
+========================= */
+
+.manutenzione-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    font-family: sans-serif;
+}
+
+.manutenzione-titolo {
+    color: #333;
+    text-align: center;
+    font-size: 2rem;
+    padding: 10px;
+    margin: 0;
+}
+
+.manutenzione-timer {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-top: 15px;
+}
