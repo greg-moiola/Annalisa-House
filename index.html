@@ -37,14 +37,14 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // IMPOSTA QUI LA DATA E L'ORA DI FINE MANUTENZIONE PER TUTTI
-        // Formato: Anno-Mese-Giorno
-        const dataFine = new Date("2026-09-05T11:00:00").getTime();
+        // Inserisci la data e l'ora di fine indicando il fuso orario (es. +02:00 per l'Italia)
+        const dataFine = new Date("2026-09-05T12:00:00+02:00").getTime();
 
         const timer = setInterval(function() {
             const el = document.getElementById("countdown");
             if (!el) return;
 
+            // Prende l'orario attuale dell'utente convertito in timestamp UTC universale
             const adesso = new Date().getTime();
             const tempoRimanente = Math.floor((dataFine - adesso) / 1000);
 
