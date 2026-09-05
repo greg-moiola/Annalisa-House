@@ -49,52 +49,55 @@
 
         
 
-    <!-- SELETTORE LINGUA -->
+    <!-- IMPOSTAZIONI -->
 
-    <div class="language-selector">
+   <div class="language-selector">
 
-        <button
-            class="language-button"
-            id="languageButton">
+    <button class="language-button" id="languageButton">
+        IMPOSTAZIONI
+    </button>
 
-            IT ▾
+    <div class="language-menu" id="languageMenu">
 
+        <button class="settings-option" id="languageSettingsButton">
+            LINGUA <span>→</span>
         </button>
 
-
-        <div
-            class="language-menu"
-            id="languageMenu">
-
-            <button
-                class="language-option"
-                data-language="it">
-
-                🇮🇹 Italiano
-
-            </button>
-
-
-            <button
-                class="language-option"
-                data-language="de">
-
-                🇩🇪 Deutsch
-
-            </button>
-
-
-            <button
-                class="language-option"
-                data-language="en">
-
-                🇬🇧 English
-
-            </button>
-
-        </div>
+        <button class="settings-option" id="themeSettingsButton">
+            TEMA <span>→</span>
+        </button>
 
     </div>
+
+    <div class="settings-submenu" id="languageSubmenu">
+
+        <button class="language-option" data-language="it">
+            🇮🇹 Italiano
+        </button>
+
+        <button class="language-option" data-language="de">
+            🇩🇪 Deutsch
+        </button>
+
+        <button class="language-option" data-language="en">
+            🇬🇧 English
+        </button>
+
+    </div>
+
+    <div class="settings-submenu" id="themeSubmenu">
+
+        <button class="theme-option" data-theme="light">
+            ☀️ Chiaro
+        </button>
+
+        <button class="theme-option" data-theme="dark">
+            🌙 Scuro
+        </button>
+
+    </div>
+
+</div>
 
 </header>
 
