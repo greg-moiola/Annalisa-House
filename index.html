@@ -25,42 +25,45 @@
     ========================== -->
 
    <-- 
-     <!-- SCHERMATA MANUTENZIONE -->
+     
 <div id="schermata-manutenzione" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 999999; font-family: sans-serif;">
     <h1 style="color: #333; text-align: center; font-size: 2rem; padding: 20px; margin: 0;">
         Website under maintenance.<br>We will be back soon!
     </h1>
     <div id="countdown" style="color: #333; font-size: 2rem; font-weight: bold; margin-top: 10px;">
-        00:00
+        00:00:00
     </div>
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Inserisci la data e l'ora di fine indicando il fuso orario (es. +02:00 per l'Italia)
+        // DATA E ORA DI FINE MANUTENZIONE (Formato: YYYY-MM-DDTHH:MM:SS+FUSO)
         const dataFine = new Date("2026-09-05T12:00:00+02:00").getTime();
 
         const timer = setInterval(function() {
             const el = document.getElementById("countdown");
             if (!el) return;
 
-            // Prende l'orario attuale dell'utente convertito in timestamp UTC universale
             const adesso = new Date().getTime();
             const tempoRimanente = Math.floor((dataFine - adesso) / 1000);
 
             if (tempoRimanente <= 0) {
                 clearInterval(timer);
-                el.innerHTML = "00:00";
+                el.innerHTML = "00:00:00";
                 return;
             }
 
-            const minuti = Math.floor(tempoRimanente / 60);
+            // Calcolo di Ore, Minuti e Secondi
+            const ore = Math.floor(tempoRimanente / 3600);
+            const minuti = Math.floor((tempoRimanente % 3600) / 60);
             const secondi = tempoRimanente % 60;
 
+            // Formattazione con zeri iniziali (es. 01 invece di 1)
+            const h = ore < 10 ? "0" + ore : ore;
             const m = minuti < 10 ? "0" + minuti : minuti;
             const s = secondi < 10 ? "0" + secondi : secondi;
 
-            el.innerHTML = m + ":" + s;
+            el.innerHTML = h + ":" + m + ":" + s;
         }, 1000);
     });
 </script>
