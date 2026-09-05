@@ -25,8 +25,7 @@
     ========================== -->
 
    <-- 
-      <!-- SCHERMATA MANUTENZIONE -->
-<div id="schermata-manutenzione" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 999999; font-family: sans-serif;">
+      <div id="schermata-manutenzione" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 999999; font-family: sans-serif;">
     <h1 style="color: #333; text-align: center; font-size: 2rem; padding: 20px; margin: 0;">
         Website under maintenance.<br>We will be back soon!
     </h1>
@@ -36,22 +35,39 @@
 </div>
 
 <script>
-    const minutiTotali = 60; 
-    let tempoRimanente = minutiTotali * 60;
+    document.addEventListener("DOMContentLoaded", function() {
+        const minutiDurata = 60; // IMPOSTA QUI I MINUTI TOTALI
 
-    const timer = setInterval(function() {
-        if (tempoRimanente <= 0) {
-            clearInterval(timer);
-            document.getElementById("countdown").innerHTML = "00:00";
-            return;
+        // Recupera il momento di fine memorizzato o ne crea uno nuovo al primo accesso
+        let tempoFine = localStorage.getItem("manutenzione_fine");
+
+        if (!tempoFine) {
+            tempoFine = new Date().getTime() + (minutiDurata * 60 * 1000);
+            localStorage.setItem("manutenzione_fine", tempoFine);
         }
-        tempoRimanente--;
-        const minuti = Math.floor(tempoRimanente / 60);
-        const secondi = tempoRimanente % 60;
-        const m = minuti < 10 ? "0" + minuti : minuti;
-        const s = secondi < 10 ? "0" + secondi : secondi;
-        document.getElementById("countdown").innerHTML = m + ":" + s;
-    }, 1000);
+
+        const timer = setInterval(function() {
+            const el = document.getElementById("countdown");
+            if (!el) return;
+
+            const adesso = new Date().getTime();
+            const tempoRimanente = Math.floor((tempoFine - adesso) / 1000);
+
+            if (tempoRimanente <= 0) {
+                clearInterval(timer);
+                el.innerHTML = "00:00";
+                return;
+            }
+
+            const minuti = Math.floor(tempoRimanente / 60);
+            const secondi = tempoRimanente % 60;
+
+            const m = minuti < 10 ? "0" + minuti : minuti;
+            const s = secondi < 10 ? "0" + secondi : secondi;
+
+            el.innerHTML = m + ":" + s;
+        }, 1000);
+    });
 </script>
     -->
 
