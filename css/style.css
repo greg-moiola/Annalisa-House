@@ -2709,3 +2709,123 @@ body.dark-theme .theme-option:hover {
     }
 }
 
+
+/* =========================
+   CORREZIONI TEMA SCURO
+========================= */
+
+
+/* =========================
+   MENU E IMPOSTAZIONI
+========================= */
+
+/* In modalità scura rimangono sempre bianchi */
+body.dark-theme .menu-button,
+body.dark-theme .language-button {
+    color: white !important;
+}
+
+
+/* =========================
+   GALLERIA
+========================= */
+
+/* Titolo della galleria: sfondo scuro e testo bianco */
+body.dark-theme .gallery-content h2 {
+    background-color: #171717 !important;
+    color: white !important;
+}
+
+
+/* =========================
+   RECENSIONI
+========================= */
+
+/* Pulsante "Scrivi recensione" */
+body.dark-theme .write-review-button {
+    background: white !important;
+    border-color: white !important;
+    color: #222 !important;
+}
+
+/* Hover del pulsante */
+body.dark-theme .write-review-button:hover {
+    background: #eeeeee !important;
+    color: #222 !important;
+}
+
+
+/* Scheda del modulo recensione */
+body.dark-theme .review-modal-content {
+    background: #F4F1EB !important;
+    color: #222 !important;
+}
+
+/* Titolo, etichette e pulsante di chiusura */
+body.dark-theme .review-modal-content h2,
+body.dark-theme .review-modal-content label,
+body.dark-theme .review-modal-close {
+    color: #222 !important;
+}
+
+/* Campi del modulo */
+body.dark-theme .review-field input,
+body.dark-theme .review-field select,
+body.dark-theme .review-field textarea {
+    background: white !important;
+    color: #222 !important;
+}
+
+/* Stelle della valutazione */
+body.dark-theme .rating-stars button {
+    color: #222 !important;
+}
+
+/* Pulsante pubblicazione */
+body.dark-theme .publish-review-button {
+    background: #222 !important;
+    color: #F4F1EB !important;
+    border-color: #222 !important;
+}
+
+
+/* =========================
+   INFORMAZIONI
+========================= */
+
+/* Schede bianche con testo nero */
+body.dark-theme .curiosita-card {
+    background: #f5f5f5 !important;
+    color: #222 !important;
+}
+
+/* Tutti i testi delle schede */
+body.dark-theme .curiosita-card h3,
+body.dark-theme .curiosita-card p {
+    color: #222 !important;
+}
+
+/* La scheda animali rimane con testo bianco sopra la foto */
+body.dark-theme .curiosita-animali,
+body.dark-theme .curiosita-animali h3,
+body.dark-theme .curiosita-animali p {
+    color: white !important;
+}
+
+
+/* =========================
+   CONTATTI
+========================= */
+
+/* Pulsante "Richiedi disponibilità" */
+body.dark-theme .availability-button {
+    background: white !important;
+    border-color: white !important;
+    color: #222 !important;
+}
+
+/* Hover del pulsante */
+body.dark-theme .availability-button:hover {
+    background: #eeeeee !important;
+    color: #222 !important;
+}
