@@ -2603,6 +2603,109 @@ body:has(.page.active:not(.page-home)) .language-button {
     border-radius: 10px;
 }
 
+
+
+/* =========================
+   IMPOSTAZIONI
+========================= */
+
+.language-button {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.language-menu,
+.settings-submenu {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    min-width: 190px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 1000;
+}
+
+.language-menu.open,
+.settings-submenu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.settings-option,
+.language-option,
+.theme-option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 18px;
+    border: none;
+    background: transparent;
+    color: #222;
+    font-family: inherit;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.settings-option:hover,
+.language-option:hover,
+.theme-option:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.settings-option span {
+    font-size: 18px;
+}
+
+.settings-submenu {
+    min-width: 190px;
+}
+
+.settings-submenu.open {
+    display: block;
+}
+
+/* TEMA SCURO */
+
+body.dark-theme {
+    background: #171717;
+    color: #eeeeee;
+}
+
+body.dark-theme .page:not(.page-home) {
+    background: #171717;
+    color: #eeeeee;
+}
+
+body.dark-theme .language-menu,
+body.dark-theme .settings-submenu {
+    background: rgba(30, 30, 30, 0.97);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark-theme .settings-option,
+body.dark-theme .language-option,
+body.dark-theme .theme-option {
+    color: #eeeeee;
+}
+
+body.dark-theme .settings-option:hover,
+body.dark-theme .language-option:hover,
+body.dark-theme .theme-option:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
     }
 
 }
