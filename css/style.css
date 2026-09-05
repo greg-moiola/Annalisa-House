@@ -2855,3 +2855,23 @@ body.dark-theme .availability-modal p,
 body.dark-theme .availability-modal label {
     color: #222 !important;
 }
+
+
+/* MENU HAMBURGER IN TEMA SCURO */
+
+body.dark-theme .menu-panel {
+    background: #171717 !important;
+    color: white !important;
+}
+
+body.dark-theme .menu-panel a,
+body.dark-theme .menu-panel button,
+body.dark-theme .menu-panel li,
+body.dark-theme .menu-panel span {
+    color: white !important;
+}
+
+body.dark-theme .menu-panel a:hover,
+body.dark-theme .menu-panel button:hover {
+    color: #dddddd !important;
+}
