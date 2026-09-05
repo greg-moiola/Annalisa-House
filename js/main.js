@@ -372,7 +372,9 @@ const translations = {
    
         themeLight: "Chiaro",
     
-        themeDark: "Scuro"
+        themeDark: "Scuro",
+
+        settings: "IMPOSTAZIONI"
 },
                
 
@@ -596,7 +598,9 @@ service16:
     
         themeLight: "Hell",
     
-        themeDark: "Dunkel"
+        themeDark: "Dunkel",
+
+        settings: "EINSTELLUNGEN"
 
 
     },
@@ -817,7 +821,9 @@ service16:
    
         themeLight: "Light",
    
-        themeDark: "Dark"
+        themeDark: "Dark",
+
+        settings: "SETTINGS"
 
     }
 
