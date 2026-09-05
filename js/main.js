@@ -359,28 +359,11 @@ const translations = {
 
         service16:
                     "Culla per bambini",
-
-        settingsLanguage: "LINGUA",
-   
-        settingsTheme: "TEMA",
-  
-        italian: "Italiano",
-    
-        german: "Deutsch",
-    
-        english: "English",
-   
-        themeLight: "Chiaro",
-    
-        themeDark: "Scuro",
-
-        settings: "⚙️ IMPOSTAZIONI"
-},
                
 
 
        
-   
+    },
 
 
     de: {
@@ -585,24 +568,6 @@ service15:
 
 service16:
     "Babybett",
-
-        settingsLanguage: "SPRACHE",
-    
-        settingsTheme: "THEMA",
-    
-        italian: "Italienisch",
-    
-        german: "Deutsch",
-    
-        english: "Englisch",
-    
-        themeLight: "Hell",
-    
-        themeDark: "Dunkel",
-
-        settings: "⚙️ EINSTELLUNGEN"
-        
-
 
     },
 
@@ -810,22 +775,6 @@ service15:
 service16:
     "Baby cot",
 
-        settingsLanguage: "LANGUAGE",
-    
-        settingsTheme: "THEME",
-    
-        italian: "Italian",
-    
-        german: "German",
-    
-        english: "English",
-   
-        themeLight: "Light",
-   
-        themeDark: "Dark",
-
-        settings: "⚙️ SETTINGS"
-
     }
 
 };
@@ -841,23 +790,8 @@ const languageButton =
 const languageMenu =
     document.getElementById("languageMenu");
 
-const languageSettingsButton =
-    document.getElementById("languageSettingsButton");
-
-const themeSettingsButton =
-    document.getElementById("themeSettingsButton");
-
-const languageSubmenu =
-    document.getElementById("languageSubmenu");
-
-const themeSubmenu =
-    document.getElementById("themeSubmenu");
-
 const languageOptions =
     document.querySelectorAll(".language-option");
-
-const themeOptions =
-    document.querySelectorAll(".theme-option");
 
 
 function getCountryFlag(country) {
@@ -980,6 +914,10 @@ function changeLanguage(language) {
     );
 
 
+    languageButton.textContent =
+        language.toUpperCase() + " ▾";
+
+
     document.documentElement.lang =
         language;
 
@@ -994,32 +932,9 @@ function changeLanguage(language) {
 
 }
 
-/* =========================
-   CHANGE THEME
-========================= */
-
-function changeTheme(theme) {
-
-    if (theme === "dark") {
-
-        document.body.classList.add("dark-theme");
-
-    } else {
-
-        document.body.classList.remove("dark-theme");
-
-    }
-
-    localStorage.setItem(
-        "annalisaTheme",
-        theme
-    );
-
-}
-
 
 /* =========================
-   SETTINGS EVENTS
+   LANGUAGE EVENTS
 ========================= */
 
 languageButton.addEventListener(
@@ -1029,37 +944,6 @@ languageButton.addEventListener(
         event.stopPropagation();
 
         languageMenu.classList.toggle("open");
-
-        languageSubmenu.classList.remove("open");
-        themeSubmenu.classList.remove("open");
-
-    }
-);
-
-
-languageSettingsButton.addEventListener(
-    "click",
-    (event) => {
-
-        event.stopPropagation();
-
-        languageSubmenu.classList.toggle("open");
-
-        themeSubmenu.classList.remove("open");
-
-    }
-);
-
-
-themeSettingsButton.addEventListener(
-    "click",
-    (event) => {
-
-        event.stopPropagation();
-
-        themeSubmenu.classList.toggle("open");
-
-        languageSubmenu.classList.remove("open");
 
     }
 );
@@ -1086,39 +970,15 @@ languageOptions.forEach(
 );
 
 
-themeOptions.forEach(
-    (option) => {
-
-        option.addEventListener(
-            "click",
-            (event) => {
-
-                event.stopPropagation();
-
-                const theme =
-                    option.dataset.theme;
-
-                changeTheme(theme);
-
-            }
-        );
-
-    }
-);
-
-
 document.addEventListener(
     "click",
     () => {
 
         languageMenu.classList.remove("open");
 
-        languageSubmenu.classList.remove("open");
-
-        themeSubmenu.classList.remove("open");
-
     }
 );
+
 
 /* =========================
    RESTORE LANGUAGE
@@ -1142,19 +1002,6 @@ if (
     changeLanguage("it");
 
 }
-
-/* =========================
-   RESTORE THEME
-========================= */
-
-const savedTheme =
-    localStorage.getItem("annalisaTheme");
-
-changeTheme(
-    savedTheme === "dark"
-        ? "dark"
-        : "light"
-);
 
 
 /* =========================
