@@ -359,11 +359,26 @@ const translations = {
 
         service16:
                     "Culla per bambini",
+
+        settingsLanguage: "LINGUA",
+   
+        settingsTheme: "TEMA",
+  
+        italian: "Italiano",
+    
+        german: "Deutsch",
+    
+        english: "English",
+   
+        themeLight: "Chiaro",
+    
+        themeDark: "Scuro"
+},
                
 
 
        
-    },
+   
 
 
     de: {
@@ -568,6 +583,21 @@ service15:
 
 service16:
     "Babybett",
+
+        settingsLanguage: "SPRACHE",
+    
+        settingsTheme: "THEMA",
+    
+        italian: "Italienisch",
+    
+        german: "Deutsch",
+    
+        english: "Englisch",
+    
+        themeLight: "Hell",
+    
+        themeDark: "Dunkel"
+
 
     },
 
@@ -775,6 +805,20 @@ service15:
 service16:
     "Baby cot",
 
+        settingsLanguage: "LANGUAGE",
+    
+        settingsTheme: "THEME",
+    
+        italian: "Italian",
+    
+        german: "German",
+    
+        english: "English",
+   
+        themeLight: "Light",
+   
+        themeDark: "Dark"
+
     }
 
 };
@@ -943,6 +987,29 @@ function changeLanguage(language) {
 
 }
 
+/* =========================
+   CHANGE THEME
+========================= */
+
+function changeTheme(theme) {
+
+    if (theme === "dark") {
+
+        document.body.classList.add("dark-theme");
+
+    } else {
+
+        document.body.classList.remove("dark-theme");
+
+    }
+
+    localStorage.setItem(
+        "annalisaTheme",
+        theme
+    );
+
+}
+
 
 /* =========================
    SETTINGS EVENTS
@@ -1068,6 +1135,19 @@ if (
     changeLanguage("it");
 
 }
+
+/* =========================
+   RESTORE THEME
+========================= */
+
+const savedTheme =
+    localStorage.getItem("annalisaTheme");
+
+changeTheme(
+    savedTheme === "dark"
+        ? "dark"
+        : "light"
+);
 
 
 /* =========================
