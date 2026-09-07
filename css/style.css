@@ -2875,22 +2875,24 @@ body.dark-theme .menu-container {
 }
 
 
-/* 1. NELLE ALTRE PAGINE IN TEMA CHIARO: menu e impostazioni restano NERI */
-.menu-button,
-.language-button {
-  color: #000000;
-}
+/* ==========================================
+   GESTIONE COLORE MENU & IMPOSTAZIONI
+========================================== */
 
-/* 2. NELLE ALTRE PAGINE IN TEMA SCURO: diventano BIANCHI */
-/* Nota: se il tuo JS aggiunge un'altra classe al body (es. .dark-theme o [data-theme="dark"]), 
-   sostituisci "body.dark" con la regola che usa il tuo sito */
-body.dark .menu-button,
-body.dark .language-button {
-  color: #ffffff;
-}
-
-/* 3. IN HOMEPAGE: SEMPRE BIANCHI (sia in tema chiaro che scuro) */
+/* 1. HOMEPAGE: Sempre testo BIANCO (sia chiaro che scuro) */
 body:has(#homePage.active) .menu-button,
 body:has(#homePage.active) .language-button {
-  color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+/* 2. ALTRE PAGINE IN TEMA CHIARO: testo NERO */
+body:has(.page.active:not(#homePage)) .menu-button,
+body:has(.page.active:not(#homePage)) .language-button {
+    color: #222222 !important;
+}
+
+/* 3. ALTRE PAGINE IN TEMA SCURO: testo BIANCO/CHIARO */
+body.dark-theme:has(.page.active:not(#homePage)) .menu-button,
+body.dark-theme:has(.page.active:not(#homePage)) .language-button {
+    color: #eeeeee !important;
 }
