@@ -2873,3 +2873,22 @@ body.dark-theme .menu-container {
     }
 
 }
+
+
+/* 1. DEFAULT (Light Theme, other pages) -> BLACK */
+.menu-button,
+.language-button {
+  color: #000000;
+}
+
+/* 2. DARK THEME (Other pages) -> WHITE */
+body.dark .menu-button,
+body.dark .language-button {
+  color: #ffffff;
+}
+
+/* 3. HOME PAGE (ALWAYS WHITE, no matter light or dark theme) */
+body:has(#homePage.active) .menu-button,
+body:has(#homePage.active) .language-button {
+  color: #ffffff !important;
+}
