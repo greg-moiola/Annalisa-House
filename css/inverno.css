@@ -743,3 +743,19 @@ body {
     }
 
 }
+
+
+/* CORREZIONE VISIBILITÀ ZONA INVERNALE */
+
+#winterWelcome {
+    display: flex;
+    min-height: 100vh;
+}
+
+#winterApp {
+    display: none;
+}
+
+#winterApp.active {
+    display: block;
+}
