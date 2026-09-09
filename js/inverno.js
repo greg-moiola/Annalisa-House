@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const winterWelcome = document.getElementById("winterWelcome");
     const winterApp = document.getElementById("winterApp");
-    const winterAccessButton = document.getElementById("winterAccessButton");
 
     const winterMenuButton = document.getElementById("winterMenuButton");
     const winterMenuClose = document.getElementById("winterMenuClose");
@@ -21,21 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const winterPages = document.querySelectorAll(".winter-page");
     const winterPageLinks = document.querySelectorAll("[data-winter-page]");
 
-    /* STATO INIZIALE */
-
-    winterWelcome.style.display = "flex";
-    winterApp.classList.remove("active");
-
-    /* ACCESSO ALLA ZONA INVERNALE */
-
-    if (winterAccessButton) {
-        winterAccessButton.addEventListener("click", function () {
-
-            winterWelcome.style.display = "none";
-            winterApp.classList.add("active");
-
-        });
-    }
 
     /* MENU HAMBURGER */
 
