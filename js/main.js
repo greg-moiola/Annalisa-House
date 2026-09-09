@@ -371,8 +371,6 @@ const translations = {
     
         themeDark: "Scuro",
 
-        settings: "⚙️ IMPOSTAZIONI",
-
         navWinter: "PERIODO INVERNALE",
 },
                
@@ -598,8 +596,6 @@ service16:
         themeLight: "Hell",
     
         themeDark: "Dunkel",
-
-        settings: "⚙️ EINSTELLUNGEN",
         
         navWinter: "WINTERZEIT",
 
@@ -823,8 +819,6 @@ service16:
         themeLight: "Light",
    
         themeDark: "Dark",
-
-        settings: "⚙️ SETTINGS",
  
         navWinter: "WINTER SEASON",
 
