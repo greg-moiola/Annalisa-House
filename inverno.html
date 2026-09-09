@@ -1,1 +1,672 @@
+<!DOCTYPE html>
+<html lang="it">
 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Annalisa House | Periodo invernale</title>
+
+    <link rel="stylesheet" href="css/inverno.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="winter-header">
+
+        <!-- PULSANTE ESCI -->
+
+        <a href="index.html" class="exit-button">
+            ← ESCI
+        </a>
+
+
+        <!-- NOME CASA -->
+
+        <div class="winter-brand">
+
+            <h1>
+                ANNALISA HOUSE
+            </h1>
+
+            <p>
+                Lago di Garda
+            </p>
+
+        </div>
+
+
+        <!-- IMPOSTAZIONI -->
+
+        <button
+            class="settings-button"
+            id="settingsButton">
+
+            ⚙️ IMPOSTAZIONI
+
+        </button>
+
+
+        <!-- HAMBURGER -->
+
+        <button
+            class="winter-menu-button"
+            id="winterMenuButton"
+            aria-label="Apri menu">
+
+            ☰
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =========================
+         PANNELLO IMPOSTAZIONI
+    ========================== -->
+
+    <div
+        class="settings-panel"
+        id="settingsPanel">
+
+        <button
+            class="settings-close"
+            id="settingsClose">
+
+            ×
+
+        </button>
+
+
+        <h3>
+            IMPOSTAZIONI
+        </h3>
+
+
+        <button
+            class="settings-option"
+            id="winterLanguageButton">
+
+            LINGUA →
+
+        </button>
+
+
+        <button
+            class="settings-option"
+            id="winterThemeButton">
+
+            TEMA →
+
+        </button>
+
+
+        <!-- LINGUE -->
+
+        <div
+            class="settings-submenu"
+            id="winterLanguageSubmenu">
+
+            <button
+                class="winter-language-option"
+                data-language="it">
+
+                🇮🇹 Italiano
+
+            </button>
+
+            <button
+                class="winter-language-option"
+                data-language="de">
+
+                🇩🇪 Deutsch
+
+            </button>
+
+            <button
+                class="winter-language-option"
+                data-language="en">
+
+                🇬🇧 English
+
+            </button>
+
+        </div>
+
+
+        <!-- TEMI -->
+
+        <div
+            class="settings-submenu"
+            id="winterThemeSubmenu">
+
+            <button
+                class="winter-theme-option"
+                data-theme="light">
+
+                ☀️ Chiaro
+
+            </button>
+
+            <button
+                class="winter-theme-option"
+                data-theme="dark">
+
+                🌙 Scuro
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         MENU HAMBURGER
+    ========================== -->
+
+    <div
+        class="winter-menu-overlay"
+        id="winterMenuOverlay">
+
+
+        <div class="winter-menu">
+
+            <button
+                class="winter-menu-close"
+                id="winterMenuClose">
+
+                ×
+
+            </button>
+
+
+            <h2>
+                ANNALISA HOUSE
+            </h2>
+
+
+            <p class="winter-menu-subtitle">
+                PERIODO INVERNALE
+            </p>
+
+
+            <nav class="winter-menu-links">
+
+                <a
+                    href="#"
+                    data-winter-page="winterHomePage">
+
+                    HOME
+
+                </a>
+
+
+                <a
+                    href="#"
+                    data-winter-page="winterServicesPage">
+
+                    SERVIZI
+
+                </a>
+
+
+                <a
+                    href="#"
+                    data-winter-page="winterRentalsPage">
+
+                    AFFITTI INVERNALI
+
+                </a>
+
+
+                <a
+                    href="#"
+                    data-winter-page="winterContactsPage">
+
+                    CONTATTI
+
+                </a>
+
+            </nav>
+
+
+            <a
+                href="index.html"
+                class="winter-menu-exit">
+
+                ← TORNA AL SITO PRINCIPALE
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <main>
+
+
+        <section
+            class="winter-page winter-home-page active"
+            id="winterHomePage">
+
+
+            <div class="winter-home-content">
+
+
+                <p class="winter-season-label">
+                    OTTOBRE — MAGGIO
+                </p>
+
+
+                <h2>
+                    ANNALISA HOUSE
+                </h2>
+
+
+                <h3>
+                    FUORI INVERNO.<br>
+                    DENTRO CASA.
+                </h3>
+
+
+                <p class="winter-home-description">
+
+                    Vivi il Lago di Garda durante la stagione
+                    più tranquilla dell’anno, in una casa calda,
+                    accogliente e tutta per te.
+
+                </p>
+
+
+                <button
+                    class="winter-main-button"
+                    id="winterAccessButton">
+
+                    ACCEDI ALLA ZONA INVERNALE
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SERVIZI
+        ========================== -->
+
+        <section
+            class="winter-page"
+            id="winterServicesPage">
+
+
+            <div class="winter-content-container">
+
+
+                <p class="winter-section-label">
+                    ANNALISA HOUSE
+                </p>
+
+
+                <h2>
+                    SERVIZI
+                </h2>
+
+
+                <p class="winter-intro-text">
+
+                    Tutto ciò che serve per vivere
+                    l’inverno con il comfort di casa.
+
+                </p>
+
+
+                <div class="winter-services-grid">
+
+
+                    <div class="winter-service-card">
+
+                        <span class="winter-service-icon">
+                            🔥
+                        </span>
+
+                        <h3>
+                            RISCALDAMENTO
+                        </h3>
+
+                        <p>
+                            Ambienti caldi e confortevoli
+                            durante tutta la stagione.
+                        </p>
+
+                    </div>
+
+
+                    <div class="winter-service-card">
+
+                        <span class="winter-service-icon">
+                            🏡
+                        </span>
+
+                        <h3>
+                            CASA INTERA
+                        </h3>
+
+                        <p>
+                            La casa sarà disponibile
+                            esclusivamente per te.
+                        </p>
+
+                    </div>
+
+
+                    <div class="winter-service-card">
+
+                        <span class="winter-service-icon">
+                            📶
+                        </span>
+
+                        <h3>
+                            WI-FI
+                        </h3>
+
+                        <p>
+                            Connessione internet disponibile
+                            in tutta la casa.
+                        </p>
+
+                    </div>
+
+
+                    <div class="winter-service-card">
+
+                        <span class="winter-service-icon">
+                            🚗
+                        </span>
+
+                        <h3>
+                            POSTO AUTO
+                        </h3>
+
+                        <p>
+                            Un posto auto a disposizione
+                            durante il soggiorno.
+                        </p>
+
+                    </div>
+
+
+                    <div class="winter-service-card">
+
+                        <span class="winter-service-icon">
+                            ☕
+                        </span>
+
+                        <h3>
+                            COMFORT QUOTIDIANO
+                        </h3>
+
+                        <p>
+                            Tutto il necessario per sentirsi
+                            davvero a casa.
+                        </p>
+
+                    </div>
+
+
+                    <div class="winter-service-card">
+
+                        <span class="winter-service-icon">
+                            🛋️
+                        </span>
+
+                        <h3>
+                            ATMOSFERA ACCOGLIENTE
+                        </h3>
+
+                        <p>
+                            Un ambiente pensato per rilassarsi
+                            nelle giornate più fredde.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             AFFITTI INVERNALI
+        ========================== -->
+
+        <section
+            class="winter-page"
+            id="winterRentalsPage">
+
+
+            <div class="winter-content-container">
+
+
+                <p class="winter-section-label">
+                    ANNALISA HOUSE
+                </p>
+
+
+                <h2>
+                    AFFITTI INVERNALI
+                </h2>
+
+
+                <p class="winter-intro-text">
+
+                    Un soggiorno lungo, una casa tutta tua,
+                    il Lago di Garda da vivere in ogni stagione.
+
+                </p>
+
+
+                <div class="winter-rental-box">
+
+
+                    <div class="winter-rental-period">
+
+                        <span>
+                            PERIODO
+                        </span>
+
+                        <strong>
+                            OTTOBRE — MAGGIO
+                        </strong>
+
+                    </div>
+
+
+                    <div class="winter-rental-divider"></div>
+
+
+                    <div class="winter-rental-info">
+
+                        <h3>
+                            AFFITTO DELL’INTERA CASA
+                        </h3>
+
+                        <p>
+
+                            Annalisa House è disponibile per
+                            l’intero periodo invernale.
+
+                            <br><br>
+
+                            Non è possibile affittare singoli mesi:
+                            l’affitto riguarda tutta la stagione.
+
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="winter-main-button"
+                        id="winterAvailabilityButton">
+
+                        RICHIEDI DISPONIBILITÀ
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTATTI
+        ========================== -->
+
+        <section
+            class="winter-page"
+            id="winterContactsPage">
+
+
+            <div class="winter-content-container">
+
+
+                <p class="winter-section-label">
+                    ANNALISA HOUSE
+                </p>
+
+
+                <h2>
+                    CONTATTI
+                </h2>
+
+
+                <p class="winter-intro-text">
+
+                    Per informazioni sul periodo invernale,
+                    contattaci direttamente.
+
+                </p>
+
+
+                <div class="winter-contact-box">
+
+
+                    <div class="winter-contact-item">
+
+                        <span>
+                            ✉️
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                EMAIL
+                            </h3>
+
+                            <p>
+                                AnnalisaHouse2026@gmail.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="winter-contact-item">
+
+                        <span>
+                            📘
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                FACEBOOK
+                            </h3>
+
+                            <p>
+                                Annalisa House
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="winter-contact-item">
+
+                        <span>
+                            🏡
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                BOOKING
+                            </h3>
+
+                            <p>
+                                Annalisa House
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    class="winter-main-button"
+                    id="winterContactButton">
+
+                    RICHIEDI DISPONIBILITÀ
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script type="module" src="js/inverno.js"></script>
+
+</body>
+
+</html>
