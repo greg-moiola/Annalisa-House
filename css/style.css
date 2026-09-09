@@ -2896,3 +2896,8 @@ body.dark-theme:has(.page.active:not(#homePage)) .menu-button,
 body.dark-theme:has(.page.active:not(#homePage)) .language-button {
     color: #eeeeee !important;
 }
+
+
+#languageButton {
+    box-shadow: inset 0 0 0 2px #000000 !important;
+}
