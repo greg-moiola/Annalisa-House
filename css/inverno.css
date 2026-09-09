@@ -759,3 +759,8 @@ body {
 #winterApp.active {
     display: block;
 }
+
+#winterApp {
+    display: block !important;
+    min-height: 100vh;
+}
