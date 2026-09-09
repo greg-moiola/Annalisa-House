@@ -1,1048 +1,745 @@
-/* =========================
-   VARIABILI
-========================= */
+/* ========================================
+   ANNALISA HOUSE - ZONA INVERNALE
+======================================== */
+
 
 :root {
-    --winter-bg: #f3f5f7;
-    --winter-bg-soft: #e8edf1;
-    --winter-text: #26343d;
-    --winter-text-soft: #65737c;
-    --winter-accent: #8da5b3;
-    --winter-accent-dark: #607b8a;
-    --winter-card: rgba(255, 255, 255, 0.78);
-    --winter-border: rgba(38, 52, 61, 0.12);
-    --winter-shadow: 0 15px 45px rgba(38, 52, 61, 0.08);
-    --winter-overlay: rgba(240, 244, 247, 0.96);
+
+    --background: #f3eee7;
+    --surface: #fffaf4;
+    --text: #332b25;
+    --secondary: #75685d;
+    --border: #d8cec1;
+    --button: #5c5147;
+    --button-text: #ffffff;
+
 }
 
 
-/* =========================
-   RESET
-========================= */
+body.dark-theme {
+
+    --background: #1d1b19;
+    --surface: #292623;
+    --text: #f4eee7;
+    --secondary: #c8bdb1;
+    --border: #4a433d;
+    --button: #d7c5b3;
+    --button-text: #211d19;
+
+}
+
 
 * {
     box-sizing: border-box;
 }
 
+
 html,
 body {
-    margin: 0;
-    padding: 0;
+
     width: 100%;
     height: 100%;
-}
-
-body {
-    font-family: "Times New Roman", Times, serif;
-    background: var(--winter-bg);
-    color: var(--winter-text);
-    overflow: hidden;
-    transition:
-        background 0.35s ease,
-        color 0.35s ease;
-}
-
-button,
-a {
-    font-family: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-.winter-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-
-    width: 100%;
-    height: 90px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0 35px;
-
-    background: rgba(243, 245, 247, 0.78);
-    backdrop-filter: blur(12px);
-
-    border-bottom: 1px solid var(--winter-border);
-
-    transition:
-        background 0.35s ease,
-        border-color 0.35s ease;
-}
-
-
-/* =========================
-   BRAND
-========================= */
-
-.winter-brand {
-    text-align: center;
-    line-height: 1;
-}
-
-.winter-brand h1 {
     margin: 0;
 
-    font-size: 24px;
-    font-weight: normal;
-    letter-spacing: 4px;
-}
-
-.winter-brand p {
-    margin: 9px 0 0;
-
-    font-size: 13px;
-    letter-spacing: 2px;
-    color: var(--winter-text-soft);
 }
 
 
-/* =========================
-   ESCI
-========================= */
+body {
 
-.exit-button {
-    position: absolute;
-    left: 35px;
-    top: 50%;
+    font-family: Georgia, "Times New Roman", serif;
 
-    transform: translateY(-50%);
-
-    padding: 10px 18px;
-
-    font-size: 13px;
-    letter-spacing: 2px;
-
-    color: var(--winter-text);
-
-    border: 1px solid var(--winter-border);
-    border-radius: 30px;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
-}
-
-.exit-button:hover {
-    background: var(--winter-text);
-    color: white;
-    transform: translateY(-50%) translateX(-3px);
-}
-
-
-/* =========================
-   IMPOSTAZIONI
-========================= */
-
-.settings-button {
-    position: absolute;
-    right: 90px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    padding: 10px 15px;
-
-    border: none;
-    background: transparent;
-
-    color: var(--winter-text);
-
-    font-size: 12px;
-    letter-spacing: 1.5px;
-
-    transition: color 0.25s ease;
-}
-
-.settings-button:hover {
-    color: var(--winter-accent-dark);
-}
-
-
-/* =========================
-   HAMBURGER
-========================= */
-
-.winter-menu-button {
-    position: absolute;
-    right: 30px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 42px;
-    height: 42px;
-
-    border: 1px solid var(--winter-border);
-    border-radius: 50%;
-
-    background: transparent;
-    color: var(--winter-text);
-
-    font-size: 22px;
-    line-height: 1;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
-}
-
-.winter-menu-button:hover {
-    background: var(--winter-text);
-    color: white;
-    transform: translateY(-50%) rotate(90deg);
-}
-
-
-/* =========================
-   PAGINE
-========================= */
-
-.winter-page {
-    position: absolute;
-    inset: 0;
-
-    display: none;
-    align-items: center;
-    justify-content: center;
-
-    padding: 120px 35px 40px;
+    background: var(--background);
+    color: var(--text);
 
     overflow: hidden;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
 }
 
-.winter-page.active {
+
+/* ========================================
+   SCHERMATA DI INGRESSO
+======================================== */
+
+.winter-welcome {
+
+    position: fixed;
+
+    inset: 0;
+
     display: flex;
-}
 
+    justify-content: center;
+    align-items: center;
 
-/* =========================
-   HOME
-========================= */
-
-.winter-home-page {
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(255, 255, 255, 0.9),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 85% 75%,
-            rgba(141, 165, 179, 0.18),
-            transparent 40%
-        ),
-        var(--winter-bg);
-}
-
-.winter-home-content {
-    width: min(850px, 100%);
     text-align: center;
 
-    animation: winterFadeIn 0.8s ease both;
+    background:
+        linear-gradient(
+            rgba(35, 29, 24, 0.35),
+            rgba(35, 29, 24, 0.55)
+        ),
+        url("../images/winter-house.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    z-index: 100;
+
 }
 
-.winter-season-label,
-.winter-section-label {
-    margin: 0 0 25px;
 
-    color: var(--winter-accent-dark);
+.welcome-content {
 
-    font-size: 12px;
+    width: min(90%, 700px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+.welcome-small {
+
+    margin: 0;
+
+    font-size: 13px;
+
     letter-spacing: 5px;
+
 }
 
-.winter-home-content h2 {
+
+.welcome-content h1 {
+
     margin: 0;
 
     font-size: clamp(42px, 7vw, 82px);
+
     font-weight: normal;
-    letter-spacing: 8px;
-}
 
-.winter-home-content h3 {
-    margin: 25px 0 25px;
-
-    font-size: clamp(25px, 4vw, 45px);
-    font-weight: normal;
-    line-height: 1.25;
-    letter-spacing: 4px;
-}
-
-.winter-home-description {
-    width: min(500px, 100%);
-    margin: 0 auto 35px;
-
-    color: var(--winter-text-soft);
-
-    font-size: 17px;
-    line-height: 1.8;
 }
 
 
-/* =========================
-   PULSANTI PRINCIPALI
-========================= */
+.welcome-subtitle {
 
-.winter-main-button {
-    display: inline-block;
+    margin: 0 0 25px;
 
-    padding: 15px 30px;
+    font-size: 21px;
 
-    border: 1px solid var(--winter-text);
-    border-radius: 30px;
+    font-style: italic;
 
-    background: var(--winter-text);
-    color: white;
+}
+
+
+/* ========================================
+   PULSANTI
+======================================== */
+
+.main-winter-button {
+
+    border: 1px solid var(--border);
+
+    background: var(--button);
+
+    color: var(--button-text);
+
+    padding: 16px 28px;
+
+    font-family: inherit;
 
     font-size: 12px;
+
     letter-spacing: 2px;
 
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
+    cursor: pointer;
 
-.winter-main-button:hover {
-    background: transparent;
-    color: var(--winter-text);
+    transition: 0.25s ease;
 
-    transform: translateY(-3px);
-
-    box-shadow: 0 10px 25px rgba(38, 52, 61, 0.12);
 }
 
 
-/* =========================
-   CONTENITORE
-========================= */
+.main-winter-button:hover {
 
-.winter-content-container {
-    width: min(1100px, 100%);
-    max-height: calc(100vh - 150px);
+    transform: translateY(-2px);
 
-    text-align: center;
+    opacity: 0.85;
 
-    overflow-y: auto;
-    padding: 10px 15px 30px;
-
-    scrollbar-width: thin;
-    scrollbar-color: var(--winter-accent) transparent;
-
-    animation: winterFadeIn 0.7s ease both;
-}
-
-.winter-content-container h2 {
-    margin: 0 0 20px;
-
-    font-size: clamp(35px, 5vw, 60px);
-    font-weight: normal;
-    letter-spacing: 5px;
-}
-
-.winter-intro-text {
-    width: min(600px, 100%);
-    margin: 0 auto 35px;
-
-    color: var(--winter-text-soft);
-
-    font-size: 17px;
-    line-height: 1.7;
 }
 
 
-/* =========================
-   SERVIZI
-========================= */
+/* Pulsante ingresso sempre chiaro */
 
-.winter-services-grid {
-    display: grid;
+.winter-welcome .main-winter-button {
 
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    background: white;
+    color: #332b25;
+
+    border-color: white;
+
+}
+
+
+/* ========================================
+   APP INTERNA
+======================================== */
+
+.winter-app {
+
+    display: none;
 
     width: 100%;
-    max-width: 950px;
+    height: 100%;
 
-    margin: 0 auto;
 }
 
-.winter-service-card {
-    padding: 25px 20px;
 
-    background: var(--winter-card);
-    border: 1px solid var(--winter-border);
-    border-radius: 16px;
+.winter-app.active {
 
-    box-shadow: var(--winter-shadow);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.35s ease;
-}
-
-.winter-service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 45px rgba(38, 52, 61, 0.13);
-}
-
-.winter-service-icon {
     display: block;
 
-    margin-bottom: 15px;
-
-    font-size: 30px;
-}
-
-.winter-service-card h3 {
-    margin: 0 0 12px;
-
-    font-size: 16px;
-    font-weight: normal;
-    letter-spacing: 1.5px;
-}
-
-.winter-service-card p {
-    margin: 0;
-
-    color: var(--winter-text-soft);
-
-    font-size: 14px;
-    line-height: 1.6;
 }
 
 
-/* =========================
-   AFFITTI INVERNALI
-========================= */
+/* ========================================
+   HEADER
+======================================== */
 
-.winter-rental-box {
-    width: min(700px, 100%);
-    margin: 0 auto;
+.winter-header {
 
-    padding: 35px;
+    position: fixed;
 
-    background: var(--winter-card);
-    border: 1px solid var(--winter-border);
-    border-radius: 18px;
+    top: 0;
+    left: 0;
 
-    box-shadow: var(--winter-shadow);
-}
+    width: 100%;
 
-.winter-rental-period {
+    height: 80px;
+
     display: flex;
-    flex-direction: column;
-    gap: 12px;
 
-    margin-bottom: 25px;
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    border-bottom: 1px solid var(--border);
+
+    background: var(--background);
+
+    z-index: 20;
+
 }
 
-.winter-rental-period span {
-    color: var(--winter-text-soft);
+
+.exit-button {
+
+    color: var(--text);
+
+    text-decoration: none;
 
     font-size: 12px;
-    letter-spacing: 3px;
+
+    letter-spacing: 2px;
+
 }
 
-.winter-rental-period strong {
-    font-size: 28px;
-    font-weight: normal;
-    letter-spacing: 3px;
+
+.winter-brand {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
 }
 
-.winter-rental-divider {
-    width: 60px;
-    height: 1px;
 
-    margin: 0 auto 25px;
-
-    background: var(--winter-accent);
-}
-
-.winter-rental-info h3 {
-    margin: 0 0 15px;
+.winter-brand span {
 
     font-size: 22px;
-    font-weight: normal;
+
+}
+
+
+.winter-brand small {
+
+    color: var(--secondary);
+
+    font-size: 11px;
+
     letter-spacing: 2px;
-}
 
-.winter-rental-info p {
-    margin: 0 auto 30px;
-
-    color: var(--winter-text-soft);
-
-    font-size: 16px;
-    line-height: 1.8;
 }
 
 
-/* =========================
-   CONTATTI
-========================= */
+.settings-button,
+.winter-menu-button {
 
-.winter-contact-box {
-    display: grid;
+    border: 0;
 
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    background: transparent;
 
-    width: min(850px, 100%);
-    margin: 0 auto 35px;
-}
+    color: var(--text);
 
-.winter-contact-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    cursor: pointer;
 
-    gap: 12px;
+    font-family: inherit;
 
-    padding: 25px 15px;
-
-    background: var(--winter-card);
-    border: 1px solid var(--winter-border);
-    border-radius: 16px;
-
-    box-shadow: var(--winter-shadow);
-}
-
-.winter-contact-item > span {
-    font-size: 28px;
-}
-
-.winter-contact-item h3 {
-    margin: 0 0 8px;
-
-    font-size: 15px;
-    font-weight: normal;
-    letter-spacing: 2px;
-}
-
-.winter-contact-item p {
-    margin: 0;
-
-    color: var(--winter-text-soft);
-
-    font-size: 14px;
-    word-break: break-word;
 }
 
 
-/* =========================
-   MENU OVERLAY
-========================= */
+.settings-button {
 
-.winter-menu-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 200;
+    margin-left: auto;
 
-    display: flex;
-    align-items: center;
+    margin-right: 25px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.winter-menu-button {
+
+    font-size: 27px;
+
+}
+
+
+/* ========================================
+   PAGINE
+======================================== */
+
+.winter-main {
+
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.winter-page {
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 120px 30px 40px;
+
     justify-content: center;
-
-    background: rgba(38, 52, 61, 0.35);
-    backdrop-filter: blur(8px);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition:
-        opacity 0.35s ease,
-        visibility 0.35s ease;
-}
-
-.winter-menu-overlay.open {
-    opacity: 1;
-    visibility: visible;
-}
-
-
-/* =========================
-   MENU
-========================= */
-
-.winter-menu {
-    position: relative;
-
-    width: min(430px, calc(100% - 40px));
-    max-height: calc(100vh - 60px);
-
-    padding: 55px 35px 35px;
-
-    overflow-y: auto;
-
-    background: var(--winter-overlay);
-    color: var(--winter-text);
-
-    border-radius: 18px;
-    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+    align-items: center;
 
     text-align: center;
 
-    transform: translateY(25px);
-    transition:
-        transform 0.35s ease,
-        background 0.35s ease;
-}
-
-.winter-menu-overlay.open .winter-menu {
-    transform: translateY(0);
-}
-
-.winter-menu h2 {
-    margin: 0;
-
-    font-size: 25px;
-    font-weight: normal;
-    letter-spacing: 3px;
-}
-
-.winter-menu-subtitle {
-    margin: 12px 0 35px;
-
-    color: var(--winter-accent-dark);
-
-    font-size: 12px;
-    letter-spacing: 3px;
-}
-
-.winter-menu-close {
-    position: absolute;
-    top: 15px;
-    right: 18px;
-
-    width: 35px;
-    height: 35px;
-
-    border: none;
-    background: transparent;
-
-    color: var(--winter-text);
-
-    font-size: 28px;
-    font-weight: normal;
-}
-
-.winter-menu-close:hover {
-    color: var(--winter-accent-dark);
 }
 
 
-/* =========================
-   LINK MENU
-========================= */
+.winter-page.active {
 
-.winter-menu-links {
     display: flex;
-    flex-direction: column;
 
-    gap: 5px;
 }
 
-.winter-menu-links a {
-    display: block;
 
-    padding: 15px 10px;
+.winter-page-content {
 
-    border-bottom: 1px solid var(--winter-border);
+    width: min(90%, 850px);
 
-    font-size: 15px;
-    letter-spacing: 2px;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        padding-left 0.25s ease;
 }
 
-.winter-menu-links a:hover {
-    background: var(--winter-bg-soft);
-    color: var(--winter-accent-dark);
-    padding-left: 20px;
-}
 
-.winter-menu-exit {
-    display: inline-block;
+.page-small {
 
-    margin-top: 30px;
+    margin: 0 0 20px;
 
-    color: var(--winter-text-soft);
+    color: var(--secondary);
 
     font-size: 12px;
-    letter-spacing: 1.5px;
 
-    transition: color 0.25s ease;
-}
+    letter-spacing: 4px;
 
-.winter-menu-exit:hover {
-    color: var(--winter-text);
 }
 
 
-/* =========================
-   PANNELLO IMPOSTAZIONI
-========================= */
+.winter-page h1 {
 
-.settings-panel {
-    position: fixed;
-    top: 90px;
-    right: 25px;
-    z-index: 150;
+    margin: 0 0 25px;
 
-    width: 250px;
+    font-size: clamp(38px, 6vw, 70px);
+
+    font-weight: normal;
+
+}
+
+
+.winter-page p {
+
+    max-width: 650px;
+
+    margin: 0 auto 18px;
+
+    color: var(--secondary);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ========================================
+   SERVIZI
+======================================== */
+
+.winter-services-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 45px;
+
+}
+
+
+.winter-service {
 
     padding: 25px;
 
-    background: var(--winter-overlay);
-    color: var(--winter-text);
+    border: 1px solid var(--border);
 
-    border: 1px solid var(--winter-border);
-    border-radius: 15px;
+    background: var(--surface);
 
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-
-    transition:
-        opacity 0.25s ease,
-        visibility 0.25s ease,
-        transform 0.25s ease,
-        background 0.35s ease;
 }
 
-.settings-panel.open {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
 
-.settings-panel h3 {
-    margin: 0 0 20px;
+.winter-service h3 {
 
-    font-size: 17px;
+    margin: 0 0 12px;
+
+    font-size: 18px;
+
     font-weight: normal;
-    letter-spacing: 2px;
-    text-align: center;
+
 }
 
-.settings-close {
-    position: absolute;
-    top: 10px;
-    right: 12px;
 
-    border: none;
+.winter-service p {
+
+    margin: 0;
+
+    font-size: 15px;
+
+}
+
+
+/* ========================================
+   MENU HAMBURGER
+======================================== */
+
+.winter-menu-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    justify-content: flex-end;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    z-index: 50;
+
+}
+
+
+.winter-menu-overlay.open {
+
+    display: flex;
+
+}
+
+
+.winter-menu {
+
+    width: min(380px, 90%);
+
+    height: 100%;
+
+    padding: 35px;
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.winter-menu-close {
+
+    align-self: flex-end;
+
+    border: 0;
+
     background: transparent;
 
-    color: var(--winter-text);
+    color: var(--text);
 
-    font-size: 22px;
+    font-size: 32px;
+
+    cursor: pointer;
+
 }
 
+
+.winter-menu h2 {
+
+    margin: 50px 0;
+
+    font-size: 20px;
+
+    font-weight: normal;
+
+}
+
+
+.winter-menu nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 28px;
+
+}
+
+
+.winter-menu nav a {
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ========================================
+   IMPOSTAZIONI
+======================================== */
+
+.settings-panel {
+
+    position: fixed;
+
+    top: 80px;
+
+    right: 25px;
+
+    width: 260px;
+
+    padding: 25px;
+
+    display: none;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    z-index: 40;
+
+}
+
+
+.settings-panel.open {
+
+    display: block;
+
+}
+
+
+.settings-close {
+
+    float: right;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+}
+
+
+.settings-panel h2 {
+
+    margin: 0 0 25px;
+
+    font-size: 16px;
+
+    font-weight: normal;
+
+    letter-spacing: 2px;
+
+}
+
+
 .settings-option {
+
+    width: 100%;
+
+    padding: 14px 0;
+
+    border: 0;
+
+    border-bottom: 1px solid var(--border);
+
+    background: transparent;
+
+    color: var(--text);
+
+    text-align: left;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+}
+
+
+.settings-submenu {
+
+    display: none;
+
+    padding: 10px 0;
+
+}
+
+
+.settings-submenu.open {
+
+    display: block;
+
+}
+
+
+.settings-submenu button {
+
     display: block;
 
     width: 100%;
 
-    padding: 13px 0;
+    padding: 10px;
 
-    border: none;
-    border-bottom: 1px solid var(--winter-border);
+    border: 0;
 
     background: transparent;
-    color: var(--winter-text);
+
+    color: var(--text);
 
     text-align: left;
 
-    font-size: 13px;
-    letter-spacing: 1.5px;
-}
+    font-family: inherit;
 
-.settings-option:hover {
-    color: var(--winter-accent-dark);
-}
-
-.settings-submenu {
-    display: none;
-    flex-direction: column;
-
-    margin-top: 8px;
-    padding: 5px 0;
-
-    border-bottom: 1px solid var(--winter-border);
-}
-
-.settings-submenu.open {
-    display: flex;
-}
-
-.winter-language-option,
-.winter-theme-option {
-    width: 100%;
-
-    padding: 11px 0;
-
-    border: none;
-    background: transparent;
-    color: var(--winter-text);
-
-    text-align: left;
-
-    font-size: 13px;
-}
-
-.winter-language-option:hover,
-.winter-theme-option:hover {
-    color: var(--winter-accent-dark);
-}
-
-
-/* =========================
-   TEMA SCURO
-========================= */
-
-body.dark-theme {
-    --winter-bg: #182127;
-    --winter-bg-soft: #26343d;
-    --winter-text: #edf2f4;
-    --winter-text-soft: #aebbc2;
-    --winter-accent: #a9c0cc;
-    --winter-accent-dark: #c3d7df;
-    --winter-card: rgba(38, 52, 61, 0.78);
-    --winter-border: rgba(237, 242, 244, 0.14);
-    --winter-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
-    --winter-overlay: rgba(24, 33, 39, 0.97);
-}
-
-body.dark-theme .winter-header {
-    background: rgba(24, 33, 39, 0.82);
-}
-
-body.dark-theme .winter-home-page {
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(141, 165, 179, 0.12),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 85% 75%,
-            rgba(141, 165, 179, 0.08),
-            transparent 40%
-        ),
-        var(--winter-bg);
-}
-
-body.dark-theme .winter-menu-button:hover,
-body.dark-theme .exit-button:hover {
-    background: var(--winter-text);
-    color: var(--winter-bg);
-}
-
-body.dark-theme .winter-main-button:hover {
-    color: var(--winter-text);
-}
-
-body.dark-theme .winter-menu-links a:hover {
-    background: var(--winter-bg-soft);
-}
-
-
-/* =========================
-   ANIMAZIONI
-========================= */
-
-@keyframes winterFadeIn {
-
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    cursor: pointer;
 
 }
 
 
-/* =========================
+/* ========================================
    RESPONSIVE
-========================= */
+======================================== */
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
 
     .winter-header {
-        height: 75px;
-        padding: 0 15px;
+
+        padding: 0 18px;
+
     }
 
-    .winter-brand h1 {
-        font-size: 18px;
-        letter-spacing: 3px;
-    }
+    .winter-brand span {
 
-    .winter-brand p {
-        font-size: 11px;
-        letter-spacing: 1.5px;
-    }
+        font-size: 17px;
 
-    .exit-button {
-        left: 15px;
-        padding: 8px 10px;
-        font-size: 10px;
-        letter-spacing: 1px;
     }
 
     .settings-button {
-        right: 65px;
-        padding: 8px 5px;
-        font-size: 0;
-    }
 
-    .settings-button::after {
-        content: "⚙️";
-        font-size: 18px;
-    }
+        display: none;
 
-    .winter-menu-button {
-        right: 15px;
-
-        width: 36px;
-        height: 36px;
-
-        font-size: 19px;
-    }
-
-    .winter-page {
-        padding: 100px 20px 25px;
-    }
-
-    .winter-home-content h2 {
-        font-size: clamp(30px, 9vw, 55px);
-        letter-spacing: 4px;
-    }
-
-    .winter-home-content h3 {
-        font-size: clamp(22px, 6vw, 35px);
-        letter-spacing: 2px;
-    }
-
-    .winter-home-description {
-        font-size: 15px;
-        line-height: 1.6;
-    }
-
-    .winter-content-container {
-        max-height: calc(100vh - 115px);
     }
 
     .winter-services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
 
-    .winter-service-card {
-        padding: 20px 12px;
-    }
-
-    .winter-service-card h3 {
-        font-size: 13px;
-        letter-spacing: 1px;
-    }
-
-    .winter-service-card p {
-        font-size: 13px;
-    }
-
-    .winter-rental-box {
-        padding: 25px 20px;
-    }
-
-    .winter-rental-period strong {
-        font-size: 22px;
-    }
-
-    .winter-contact-box {
         grid-template-columns: 1fr;
+
         gap: 12px;
+
+        margin-top: 25px;
+
     }
 
-    .winter-contact-item {
-        flex-direction: row;
-        justify-content: flex-start;
-        text-align: left;
-        padding: 18px;
+    .winter-service {
+
+        padding: 15px;
+
     }
 
-    .winter-contact-item > span {
-        font-size: 25px;
+    .winter-service p {
+
+        font-size: 14px;
+
     }
 
-    .settings-panel {
-        top: 80px;
-        right: 15px;
-        width: 230px;
+    .winter-page p {
+
+        font-size: 16px;
+
     }
 
-}
+    .welcome-content h1 {
 
+        font-size: 45px;
 
-@media (max-width: 450px) {
-
-    .winter-services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .winter-service-card {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-
-        text-align: left;
-    }
-
-    .winter-service-icon {
-        margin: 0;
-        font-size: 25px;
-    }
-
-    .winter-service-card h3 {
-        margin-bottom: 5px;
-    }
-
-    .winter-main-button {
-        padding: 13px 20px;
-        font-size: 11px;
-    }
-
-    .winter-menu {
-        padding: 50px 25px 30px;
     }
 
 }
