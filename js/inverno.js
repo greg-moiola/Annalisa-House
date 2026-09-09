@@ -1,429 +1,151 @@
-// ========================================
-// ANNALISA HOUSE - ZONA INVERNALE
-// ========================================
+document.addEventListener("DOMContentLoaded", function () {
 
+    const winterWelcome = document.getElementById("winterWelcome");
+    const winterApp = document.getElementById("winterApp");
+    const winterAccessButton = document.getElementById("winterAccessButton");
 
-// ---------- ELEMENTI PRINCIPALI ----------
+    const winterMenuButton = document.getElementById("winterMenuButton");
+    const winterMenuClose = document.getElementById("winterMenuClose");
+    const winterMenuOverlay = document.getElementById("winterMenuOverlay");
 
-const winterWelcome = document.getElementById("winterWelcome");
-const winterApp = document.getElementById("winterApp");
+    const settingsButton = document.getElementById("settingsButton");
+    const settingsClose = document.getElementById("settingsClose");
+    const settingsPanel = document.getElementById("settingsPanel");
 
-const winterAccessButton =
-    document.getElementById("winterAccessButton");
+    const winterLanguageButton = document.getElementById("winterLanguageButton");
+    const winterLanguageSubmenu = document.getElementById("winterLanguageSubmenu");
 
-const settingsButton =
-    document.getElementById("settingsButton");
+    const winterThemeButton = document.getElementById("winterThemeButton");
+    const winterThemeSubmenu = document.getElementById("winterThemeSubmenu");
 
-const settingsPanel =
-    document.getElementById("settingsPanel");
+    const winterPages = document.querySelectorAll(".winter-page");
+    const winterPageLinks = document.querySelectorAll("[data-winter-page]");
 
-const settingsClose =
-    document.getElementById("settingsClose");
+    /* STATO INIZIALE */
 
-const winterMenuButton =
-    document.getElementById("winterMenuButton");
+    winterWelcome.style.display = "flex";
+    winterApp.classList.remove("active");
 
-const winterMenuOverlay =
-    document.getElementById("winterMenuOverlay");
+    /* ACCESSO ALLA ZONA INVERNALE */
 
-const winterMenuClose =
-    document.getElementById("winterMenuClose");
+    if (winterAccessButton) {
+        winterAccessButton.addEventListener("click", function () {
 
-const winterLanguageButton =
-    document.getElementById("winterLanguageButton");
+            winterWelcome.style.display = "none";
+            winterApp.classList.add("active");
 
-const winterThemeButton =
-    document.getElementById("winterThemeButton");
-
-const winterLanguageSubmenu =
-    document.getElementById("winterLanguageSubmenu");
-
-const winterThemeSubmenu =
-    document.getElementById("winterThemeSubmenu");
-
-
-// ========================================
-// ACCESSO ALLA ZONA INVERNALE
-// ========================================
-
-if (winterAccessButton) {
-
-    winterAccessButton.addEventListener("click", () => {
-
-        winterWelcome.style.display = "none";
-
-        winterApp.classList.add("active");
-
-        showWinterPage("winterHomePage");
-
-    });
-
-}
-
-
-// ========================================
-// MENU HAMBURGER
-// ========================================
-
-if (winterMenuButton) {
-
-    winterMenuButton.addEventListener("click", () => {
-
-        winterMenuOverlay.classList.add("open");
-
-    });
-
-}
-
-
-if (winterMenuClose) {
-
-    winterMenuClose.addEventListener("click", () => {
-
-        winterMenuOverlay.classList.remove("open");
-
-    });
-
-}
-
-
-if (winterMenuOverlay) {
-
-    winterMenuOverlay.addEventListener("click", (event) => {
-
-        if (event.target === winterMenuOverlay) {
-
-            winterMenuOverlay.classList.remove("open");
-
-        }
-
-    });
-
-}
-
-
-// ========================================
-// NAVIGAZIONE PAGINE
-// ========================================
-
-const winterLinks =
-    document.querySelectorAll("[data-winter-page]");
-
-const winterPages =
-    document.querySelectorAll(".winter-page");
-
-
-function showWinterPage(pageId) {
-
-    winterPages.forEach((page) => {
-
-        page.classList.remove("active");
-
-    });
-
-    const selectedPage =
-        document.getElementById(pageId);
-
-    if (selectedPage) {
-
-        selectedPage.classList.add("active");
-
+        });
     }
 
-    winterMenuOverlay.classList.remove("open");
-
-    settingsPanel.classList.remove("open");
-
-    winterLanguageSubmenu.classList.remove("open");
-
-    winterThemeSubmenu.classList.remove("open");
-
-}
-
-
-winterLinks.forEach((link) => {
-
-    link.addEventListener("click", (event) => {
-
-        event.preventDefault();
-
-        const pageId =
-            link.getAttribute("data-winter-page");
-
-        showWinterPage(pageId);
-
-    });
-
-});
-
-
-// ========================================
-// PULSANTE HOME → AFFITTI
-// ========================================
-
-const winterHomeRentalsButton =
-    document.getElementById("winterHomeRentalsButton");
-
-if (winterHomeRentalsButton) {
-
-    winterHomeRentalsButton.addEventListener("click", () => {
-
-        showWinterPage("winterRentalsPage");
-
-    });
-
-}
-
-
-// ========================================
-// IMPOSTAZIONI
-// ========================================
-
-if (settingsButton) {
-
-    settingsButton.addEventListener("click", () => {
-
-        settingsPanel.classList.add("open");
-
-    });
-
-}
-
-
-if (settingsClose) {
-
-    settingsClose.addEventListener("click", () => {
-
-        settingsPanel.classList.remove("open");
-
-    });
-
-}
-
-
-// ========================================
-// SOTTOMENU LINGUA
-// ========================================
-
-if (winterLanguageButton) {
-
-    winterLanguageButton.addEventListener("click", () => {
-
-        winterLanguageSubmenu.classList.toggle("open");
-
-        winterThemeSubmenu.classList.remove("open");
-
-    });
-
-}
-
-
-// ========================================
-// SOTTOMENU TEMA
-// ========================================
-
-if (winterThemeButton) {
-
-    winterThemeButton.addEventListener("click", () => {
-
-        winterThemeSubmenu.classList.toggle("open");
-
-        winterLanguageSubmenu.classList.remove("open");
-
-    });
-
-}
-
-
-// ========================================
-// TEMA CHIARO / SCURO
-// ========================================
-
-const savedWinterTheme =
-    localStorage.getItem("annalisaWinterTheme");
-
-if (savedWinterTheme === "dark") {
-
-    document.body.classList.add("dark-theme");
-
-}
-
-
-const themeButtons =
-    document.querySelectorAll("[data-theme]");
-
-
-themeButtons.forEach((button) => {
-
-    button.addEventListener("click", () => {
-
-        const selectedTheme =
-            button.getAttribute("data-theme");
-
-        if (selectedTheme === "dark") {
-
-            document.body.classList.add("dark-theme");
-
-            localStorage.setItem(
-                "annalisaWinterTheme",
-                "dark"
-            );
-
-        } else {
-
-            document.body.classList.remove("dark-theme");
-
-            localStorage.setItem(
-                "annalisaWinterTheme",
-                "light"
-            );
-
-        }
-
-        winterThemeSubmenu.classList.remove("open");
-
-    });
-
-});
-
-
-// ========================================
-// LINGUA
-// ========================================
-
-const winterTranslations = {
-
-    it: {
-        language: "LINGUA →",
-        theme: "TEMA →"
-    },
-
-    de: {
-        language: "SPRACHE →",
-        theme: "THEMA →"
-    },
-
-    en: {
-        language: "LANGUAGE →",
-        theme: "THEME →"
+    /* MENU HAMBURGER */
+
+    if (winterMenuButton) {
+        winterMenuButton.addEventListener("click", function () {
+            winterMenuOverlay.classList.add("active");
+        });
     }
 
-};
-
-
-function applyWinterLanguage(language) {
-
-    const translation =
-        winterTranslations[language];
-
-    if (!translation) {
-        return;
+    if (winterMenuClose) {
+        winterMenuClose.addEventListener("click", function () {
+            winterMenuOverlay.classList.remove("active");
+        });
     }
 
-    winterLanguageButton.textContent =
-        translation.language;
+    /* CAMBIO PAGINA */
 
-    winterThemeButton.textContent =
-        translation.theme;
+    winterPageLinks.forEach(function (link) {
 
-    localStorage.setItem(
-        "annalisaLanguage",
-        language
-    );
+        link.addEventListener("click", function (event) {
 
-}
+            event.preventDefault();
 
+            const targetPage = link.getAttribute("data-winter-page");
 
-const savedWinterLanguage =
-    localStorage.getItem("annalisaLanguage") || "it";
+            winterPages.forEach(function (page) {
+                page.classList.remove("active");
+            });
 
-applyWinterLanguage(savedWinterLanguage);
+            const selectedPage = document.getElementById(targetPage);
 
+            if (selectedPage) {
+                selectedPage.classList.add("active");
+            }
 
-const languageButtons =
-    document.querySelectorAll("[data-language]");
+            winterMenuOverlay.classList.remove("active");
 
-
-languageButtons.forEach((button) => {
-
-    button.addEventListener("click", () => {
-
-        const selectedLanguage =
-            button.getAttribute("data-language");
-
-        applyWinterLanguage(selectedLanguage);
-
-        winterLanguageSubmenu.classList.remove("open");
+        });
 
     });
 
-});
+    /* IMPOSTAZIONI */
 
-
-// ========================================
-// RICHIESTA DISPONIBILITÀ
-// ========================================
-
-function sendWinterEmail() {
-
-    const email =
-        "AnnalisaHouse2026@gmail.com";
-
-    const subject =
-        "Richiesta disponibilità invernale";
-
-    window.location.href =
-        "mailto:" +
-        email +
-        "?subject=" +
-        encodeURIComponent(subject);
-
-}
-
-
-const winterAvailabilityButton =
-    document.getElementById("winterAvailabilityButton");
-
-const winterContactButton =
-    document.getElementById("winterContactButton");
-
-
-if (winterAvailabilityButton) {
-
-    winterAvailabilityButton.addEventListener(
-        "click",
-        sendWinterEmail
-    );
-
-}
-
-
-if (winterContactButton) {
-
-    winterContactButton.addEventListener(
-        "click",
-        sendWinterEmail
-    );
-
-}
-
-
-// ========================================
-// TASTO ESC
-// ========================================
-
-document.addEventListener("keydown", (event) => {
-
-    if (event.key === "Escape") {
-
-        winterMenuOverlay.classList.remove("open");
-
-        settingsPanel.classList.remove("open");
-
-        winterLanguageSubmenu.classList.remove("open");
-
-        winterThemeSubmenu.classList.remove("open");
-
+    if (settingsButton) {
+        settingsButton.addEventListener("click", function () {
+            settingsPanel.classList.add("active");
+        });
     }
+
+    if (settingsClose) {
+        settingsClose.addEventListener("click", function () {
+            settingsPanel.classList.remove("active");
+        });
+    }
+
+    /* SOTTOMENU LINGUA */
+
+    if (winterLanguageButton) {
+        winterLanguageButton.addEventListener("click", function () {
+            winterLanguageSubmenu.classList.toggle("active");
+        });
+    }
+
+    /* SOTTOMENU TEMA */
+
+    if (winterThemeButton) {
+        winterThemeButton.addEventListener("click", function () {
+            winterThemeSubmenu.classList.toggle("active");
+        });
+    }
+
+    /* TEMA */
+
+    document.querySelectorAll("[data-theme]").forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const theme = button.getAttribute("data-theme");
+
+            document.body.classList.remove("light-theme", "dark-theme");
+            document.body.classList.add(theme + "-theme");
+
+            localStorage.setItem("winterTheme", theme);
+
+        });
+
+    });
+
+    const savedTheme = localStorage.getItem("winterTheme");
+
+    if (savedTheme) {
+        document.body.classList.add(savedTheme + "-theme");
+    } else {
+        document.body.classList.add("light-theme");
+    }
+
+    /* LINGUA */
+
+    document.querySelectorAll("[data-language]").forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const language = button.getAttribute("data-language");
+
+            localStorage.setItem("winterLanguage", language);
+
+            winterLanguageSubmenu.classList.remove("active");
+
+        });
+
+    });
 
 });
