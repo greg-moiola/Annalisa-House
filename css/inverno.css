@@ -2,7 +2,6 @@
    ANNALISA HOUSE - ZONA INVERNALE
 ======================================== */
 
-
 :root {
 
     --background: #f3eee7;
@@ -18,16 +17,20 @@
 
 body.dark-theme {
 
-    --background: #1d1b19;
-    --surface: #292623;
-    --text: #f4eee7;
-    --secondary: #c8bdb1;
-    --border: #4a433d;
-    --button: #d7c5b3;
-    --button-text: #211d19;
+    --background: #17130f;
+    --surface: #211c18;
+    --text: #ffffff;
+    --secondary: #e1d8cf;
+    --border: #51483f;
+    --button: #ffffff;
+    --button-text: #17130f;
 
 }
 
+
+/* ========================================
+   BASE
+======================================== */
 
 * {
     box-sizing: border-box;
@@ -61,152 +64,18 @@ body {
 
 
 /* ========================================
-   SCHERMATA DI INGRESSO
-======================================== */
-
-.winter-welcome {
-
-    position: fixed;
-
-    inset: 0;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            rgba(35, 29, 24, 0.35),
-            rgba(35, 29, 24, 0.55)
-        ),
-        url("../images/winter-house.jpg");
-
-    background-size: cover;
-    background-position: center;
-
-    color: white;
-
-    z-index: 100;
-
-}
-
-
-.welcome-content {
-
-    width: min(90%, 700px);
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 18px;
-
-}
-
-
-.welcome-small {
-
-    margin: 0;
-
-    font-size: 13px;
-
-    letter-spacing: 5px;
-
-}
-
-
-.welcome-content h1 {
-
-    margin: 0;
-
-    font-size: clamp(42px, 7vw, 82px);
-
-    font-weight: normal;
-
-}
-
-
-.welcome-subtitle {
-
-    margin: 0 0 25px;
-
-    font-size: 21px;
-
-    font-style: italic;
-
-}
-
-
-/* ========================================
-   PULSANTI
-======================================== */
-
-.main-winter-button {
-
-    border: 1px solid var(--border);
-
-    background: var(--button);
-
-    color: var(--button-text);
-
-    padding: 16px 28px;
-
-    font-family: inherit;
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
-    transition: 0.25s ease;
-
-}
-
-
-.main-winter-button:hover {
-
-    transform: translateY(-2px);
-
-    opacity: 0.85;
-
-}
-
-
-/* Pulsante ingresso sempre chiaro */
-
-.winter-welcome .main-winter-button {
-
-    background: white;
-    color: #332b25;
-
-    border-color: white;
-
-}
-
-
-/* ========================================
-   APP INTERNA
+   APP
 ======================================== */
 
 .winter-app {
 
-    display: none;
+    display: block;
 
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
-}
-
-
-.winter-app.active {
-
-    display: block;
+    background: var(--background);
+    color: var(--text);
 
 }
 
@@ -223,20 +92,18 @@ body {
     left: 0;
 
     width: 100%;
-
     height: 80px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     padding: 0 35px;
 
-    border-bottom: 1px solid var(--border);
-
     background: var(--background);
+
+    border-bottom: 1px solid var(--border);
 
     z-index: 20;
 
@@ -252,6 +119,13 @@ body {
     font-size: 12px;
 
     letter-spacing: 2px;
+
+}
+
+
+.exit-button:hover {
+
+    opacity: 0.65;
 
 }
 
@@ -336,7 +210,7 @@ body {
 .winter-main {
 
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
 }
 
@@ -346,7 +220,7 @@ body {
     display: none;
 
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
     padding: 120px 30px 40px;
 
@@ -354,6 +228,9 @@ body {
     align-items: center;
 
     text-align: center;
+
+    background: var(--background);
+    color: var(--text);
 
 }
 
@@ -407,6 +284,50 @@ body {
     font-size: 18px;
 
     line-height: 1.7;
+
+}
+
+
+/* ========================================
+   PULSANTI
+======================================== */
+
+.main-winter-button {
+
+    border: 1px solid var(--border);
+
+    background: var(--button);
+
+    color: var(--button-text);
+
+    padding: 16px 28px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    display: inline-block;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        opacity 0.25s ease;
+
+}
+
+
+.main-winter-button:hover {
+
+    transform: translateY(-2px);
+
+    opacity: 0.85;
 
 }
 
@@ -473,7 +394,7 @@ body {
 
     justify-content: flex-end;
 
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.55);
 
     z-index: 50;
 
@@ -558,6 +479,13 @@ body {
 }
 
 
+.winter-menu nav a:hover {
+
+    opacity: 0.6;
+
+}
+
+
 /* ========================================
    IMPOSTAZIONI
 ======================================== */
@@ -577,6 +505,8 @@ body {
     display: none;
 
     background: var(--surface);
+
+    color: var(--text);
 
     border: 1px solid var(--border);
 
@@ -696,17 +626,20 @@ body {
 
     }
 
+
     .winter-brand span {
 
         font-size: 17px;
 
     }
 
+
     .settings-button {
 
         display: none;
 
     }
+
 
     .winter-services-grid {
 
@@ -718,11 +651,13 @@ body {
 
     }
 
+
     .winter-service {
 
         padding: 15px;
 
     }
+
 
     .winter-service p {
 
@@ -730,37 +665,11 @@ body {
 
     }
 
+
     .winter-page p {
 
         font-size: 16px;
 
     }
 
-    .welcome-content h1 {
-
-        font-size: 45px;
-
-    }
-
-}
-
-
-/* CORREZIONE VISIBILITÀ ZONA INVERNALE */
-
-#winterWelcome {
-    display: flex;
-    min-height: 100vh;
-}
-
-#winterApp {
-    display: none;
-}
-
-#winterApp.active {
-    display: block;
-}
-
-#winterApp {
-    display: block !important;
-    min-height: 100vh;
 }
