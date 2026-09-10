@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const winterApp = document.getElementById("winterApp");
+    /* ========================================
+       ELEMENTI
+    ======================================== */
 
     const winterMenuButton = document.getElementById("winterMenuButton");
     const winterMenuClose = document.getElementById("winterMenuClose");
@@ -20,21 +22,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const winterPageLinks = document.querySelectorAll("[data-winter-page]");
 
 
-    /* MENU HAMBURGER */
+    /* ========================================
+       MENU HAMBURGER
+    ======================================== */
 
-    if (winterMenuButton) {
+    if (winterMenuButton && winterMenuOverlay) {
+
         winterMenuButton.addEventListener("click", function () {
-            winterMenuOverlay.classList.add("active");
+            winterMenuOverlay.classList.add("open");
         });
+
     }
 
-    if (winterMenuClose) {
+
+    if (winterMenuClose && winterMenuOverlay) {
+
         winterMenuClose.addEventListener("click", function () {
-            winterMenuOverlay.classList.remove("active");
+            winterMenuOverlay.classList.remove("open");
         });
+
     }
 
-    /* CAMBIO PAGINA */
+
+    /* ========================================
+       CAMBIO PAGINA
+    ======================================== */
 
     winterPageLinks.forEach(function (link) {
 
@@ -54,43 +66,62 @@ document.addEventListener("DOMContentLoaded", function () {
                 selectedPage.classList.add("active");
             }
 
-            winterMenuOverlay.classList.remove("active");
+            if (winterMenuOverlay) {
+                winterMenuOverlay.classList.remove("open");
+            }
 
         });
 
     });
 
-    /* IMPOSTAZIONI */
 
-    if (settingsButton) {
+    /* ========================================
+       IMPOSTAZIONI
+    ======================================== */
+
+    if (settingsButton && settingsPanel) {
+
         settingsButton.addEventListener("click", function () {
-            settingsPanel.classList.add("active");
+            settingsPanel.classList.toggle("open");
         });
+
     }
 
-    if (settingsClose) {
+
+    if (settingsClose && settingsPanel) {
+
         settingsClose.addEventListener("click", function () {
-            settingsPanel.classList.remove("active");
+            settingsPanel.classList.remove("open");
         });
+
     }
 
-    /* SOTTOMENU LINGUA */
 
-    if (winterLanguageButton) {
+    /* ========================================
+       LINGUA
+    ======================================== */
+
+    if (winterLanguageButton && winterLanguageSubmenu) {
+
         winterLanguageButton.addEventListener("click", function () {
-            winterLanguageSubmenu.classList.toggle("active");
+            winterLanguageSubmenu.classList.toggle("open");
         });
+
     }
 
-    /* SOTTOMENU TEMA */
 
-    if (winterThemeButton) {
+    /* ========================================
+       TEMA
+    ======================================== */
+
+    if (winterThemeButton && winterThemeSubmenu) {
+
         winterThemeButton.addEventListener("click", function () {
-            winterThemeSubmenu.classList.toggle("active");
+            winterThemeSubmenu.classList.toggle("open");
         });
+
     }
 
-    /* TEMA */
 
     document.querySelectorAll("[data-theme]").forEach(function (button) {
 
@@ -99,23 +130,40 @@ document.addEventListener("DOMContentLoaded", function () {
             const theme = button.getAttribute("data-theme");
 
             document.body.classList.remove("light-theme", "dark-theme");
+
             document.body.classList.add(theme + "-theme");
 
             localStorage.setItem("winterTheme", theme);
+
+            if (winterThemeSubmenu) {
+                winterThemeSubmenu.classList.remove("open");
+            }
 
         });
 
     });
 
+
+    /* ========================================
+       TEMA SALVATO
+    ======================================== */
+
     const savedTheme = localStorage.getItem("winterTheme");
 
-    if (savedTheme) {
+    if (savedTheme === "dark" || savedTheme === "light") {
+
         document.body.classList.add(savedTheme + "-theme");
+
     } else {
+
         document.body.classList.add("light-theme");
+
     }
 
-    /* LINGUA */
+
+    /* ========================================
+       LINGUA
+    ======================================== */
 
     document.querySelectorAll("[data-language]").forEach(function (button) {
 
@@ -125,7 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             localStorage.setItem("winterLanguage", language);
 
-            winterLanguageSubmenu.classList.remove("active");
+            if (winterLanguageSubmenu) {
+                winterLanguageSubmenu.classList.remove("open");
+            }
 
         });
 
