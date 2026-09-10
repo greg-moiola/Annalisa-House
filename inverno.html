@@ -28,8 +28,8 @@
             </a>
 
             <div class="winter-brand">
-                <span>Annalisa House</span>
-                <small>Lago di Garda</small>
+                <span data-i18n="winterBrand">Annalisa House</span>
+                <small data-i18n="winterLocation">Lago di Garda</small>
             </div>
 
             <button id="settingsButton" class="settings-button">
@@ -51,11 +51,11 @@
                 ×
             </button>
 
-            <h2>IMPOSTAZIONI</h2>
+            <h2 data-i18n="settingsTitle">IMPOSTAZIONI</h2>
 
             <button id="winterLanguageButton" class="settings-option">
-                LINGUA →
-            </button>
+           <span data-i18n="settingsLanguage">LINGUA</span> →
+           </button>
 
             <div id="winterLanguageSubmenu" class="settings-submenu">
 
@@ -75,8 +75,8 @@
 
 
             <button id="winterThemeButton" class="settings-option">
-                TEMA →
-            </button>
+              <span data-i18n="settingsTheme">TEMA</span> →
+             </button>
 
             <div id="winterThemeSubmenu" class="settings-submenu">
 
@@ -107,21 +107,21 @@
 
                 <nav>
 
-                    <a href="#" data-winter-page="winterHomePage">
-                        HOME
-                    </a>
+                    <a href="#" data-winter-page="winterHomePage" data-i18n="winterNavHome">
+                         HOME
+                        </a>
 
-                    <a href="#" data-winter-page="winterServicesPage">
-                        SERVIZI
-                    </a>
+                   <a href="#" data-winter-page="winterServicesPage" data-i18n="winterNavServices">
+                     SERVIZI
+                        </a>
 
-                    <a href="#" data-winter-page="winterRentalsPage">
-                        AFFITTI INVERNALI
-                    </a>
+                        <a href="#" data-winter-page="winterRentalsPage" data-i18n="winterNavRentals">
+                          AFFITTI INVERNALI
+                              </a>
 
-                    <a href="#" data-winter-page="winterContactsPage">
-                        CONTATTI
-                    </a>
+                       <a href="#" data-winter-page="winterContactsPage" data-i18n="winterNavContacts">
+                           CONTATTI
+                                 </a>
 
                 </nav>
 
@@ -141,143 +141,161 @@
 
             <section id="winterHomePage" class="winter-page active">
 
-                <div class="winter-page-content">
+    <div class="winter-page-content">
 
-                    <p class="page-small">
-                        ANNALISA HOUSE
-                    </p>
+        <p class="page-small" data-i18n="winterSmallTitle">
+            ANNALISA HOUSE
+        </p>
 
-                    <h1>
-                        La tua casa d'inverno.
-                    </h1>
+        <h1 data-i18n="winterHomeTitle">
+            La tua casa d'inverno.
+        </h1>
 
-                    <p>
-                        Un luogo caldo e accogliente dove vivere il Lago di Garda
-                        durante i mesi più tranquilli dell'anno.
-                    </p>
+        <p data-i18n="winterHomeText">
+            Un luogo caldo e accogliente dove vivere il Lago di Garda
+            durante i mesi più tranquilli dell'anno.
+        </p>
 
-                    <button
-                        id="winterHomeRentalsButton"
-                        class="main-winter-button">
-                        SCOPRI GLI AFFITTI INVERNALI
-                    </button>
+        <button
+            id="winterHomeRentalsButton"
+            class="main-winter-button"
+            data-i18n="winterHomeButton">
+            SCOPRI GLI AFFITTI INVERNALI
+        </button>
 
-                </div>
+    </div>
 
-            </section>
+</section>
 
 
             <!-- SERVIZI -->
 
             <section id="winterServicesPage" class="winter-page">
 
-                <div class="winter-page-content">
+    <div class="winter-page-content">
 
-                    <p class="page-small">
-                        ANNALISA HOUSE
-                    </p>
+        <p class="page-small" data-i18n="winterSmallTitle">
+            ANNALISA HOUSE
+        </p>
 
-                    <h1>
-                        Servizi
-                    </h1>
+        <h1 data-i18n="winterServicesTitle">
+            Servizi
+        </h1>
 
-                    <p>
-                        Tutto ciò che serve per sentirsi a casa anche durante
-                        l'inverno.
-                    </p>
+        <p data-i18n="winterServicesText">
+            Tutto ciò che serve per sentirsi a casa anche durante
+            l'inverno.
+        </p>
 
-                    <div class="winter-services-grid">
+        <div class="winter-services-grid">
 
-                        <div class="winter-service">
-                            <h3>Casa completa</h3>
-                            <p>
-                                L'intera casa a tua disposizione.
-                            </p>
-                        </div>
+            <div class="winter-service">
 
-                        <div class="winter-service">
-                            <h3>Atmosfera calda</h3>
-                            <p>
-                                Spazi accoglienti per vivere ogni giornata.
-                            </p>
-                        </div>
+                <h3 data-i18n="winterService1Title">
+                    Casa completa
+                </h3>
 
-                        <div class="winter-service">
-                            <h3>Lago di Garda</h3>
-                            <p>
-                                Natura, tranquillità e borghi da scoprire.
-                            </p>
-                        </div>
+                <p data-i18n="winterService1Text">
+                    L'intera casa a tua disposizione.
+                </p>
 
-                    </div>
+            </div>
 
-                </div>
 
-            </section>
+            <div class="winter-service">
 
+                <h3 data-i18n="winterService2Title">
+                    Atmosfera calda
+                </h3>
+
+                <p data-i18n="winterService2Text">
+                    Spazi accoglienti per vivere ogni giornata.
+                </p>
+
+            </div>
+
+
+            <div class="winter-service">
+
+                <h3 data-i18n="winterService3Title">
+                    Lago di Garda
+                </h3>
+
+                <p data-i18n="winterService3Text">
+                    Natura, tranquillità e borghi da scoprire.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
             <!-- AFFITTI INVERNALI -->
 
             <section id="winterRentalsPage" class="winter-page">
 
-                <div class="winter-page-content">
+    <div class="winter-page-content">
 
-                    <p class="page-small">
-                        ANNALISA HOUSE
-                    </p>
+        <p class="page-small" data-i18n="winterSmallTitle">
+            ANNALISA HOUSE
+        </p>
 
-                    <h1>
-                        Affitti invernali
-                    </h1>
+        <h1 data-i18n="winterRentalsTitle">
+            Affitti invernali
+        </h1>
 
-                    <p>
-                        La casa viene affittata per l'intero periodo invernale,
-                        indicativamente da ottobre a maggio.
-                    </p>
+        <p data-i18n="winterRentalsText">
+            La casa viene affittata per l'intero periodo invernale,
+            indicativamente da ottobre a maggio.
+        </p>
 
-                    <p>
-                        Non è possibile affittare singoli mesi.
-                    </p>
+        <p data-i18n="winterRentalsNoMonths">
+            Non è possibile affittare singoli mesi.
+        </p>
 
-                    <button
-                        id="winterAvailabilityButton"
-                        class="main-winter-button">
-                        RICHIEDI DISPONIBILITÀ
-                    </button>
+        <button
+            id="winterAvailabilityButton"
+            class="main-winter-button"
+            data-i18n="winterAvailabilityButton">
+            RICHIEDI DISPONIBILITÀ
+        </button>
 
-                </div>
+    </div>
 
-            </section>
-
+</section>
 
             <!-- CONTATTI -->
 
             <section id="winterContactsPage" class="winter-page">
 
-                <div class="winter-page-content">
+    <div class="winter-page-content">
 
-                    <p class="page-small">
-                        ANNALISA HOUSE
-                    </p>
+        <p class="page-small" data-i18n="winterSmallTitle">
+            ANNALISA HOUSE
+        </p>
 
-                    <h1>
-                        Contatti
-                    </h1>
+        <h1 data-i18n="winterContactsTitle">
+            Contatti
+        </h1>
 
-                    <p>
-                        Per informazioni e richieste di disponibilità
-                        invernale, contattaci.
-                    </p>
+        <p data-i18n="winterContactsText">
+            Per informazioni e richieste di disponibilità
+            invernale, contattaci.
+        </p>
 
-                    <button
-                        id="winterContactButton"
-                        class="main-winter-button">
-                        CONTATTACI
-                    </button>
+        <button
+            id="winterContactButton"
+            class="main-winter-button"
+            data-i18n="winterContactButton">
+            CONTATTACI
+        </button>
 
-                </div>
+    </div>
 
-            </section>
+</section>
 
         </main>
 
