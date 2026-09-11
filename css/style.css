@@ -3002,7 +3002,9 @@ body.dark-theme:has(.page.active:not(#homePage)) .language-button {
     padding: 13px 28px;
 
     background: transparent;
+
     border: 1px solid #222;
+
     color: #222;
 
     font-family:
@@ -3011,22 +3013,20 @@ body.dark-theme:has(.page.active:not(#homePage)) .language-button {
         serif;
 
     font-size: 0.95rem;
-    letter-spacing: 0.1em;
 
-    text-decoration: none;
+    letter-spacing: 0.1em;
 
     cursor: pointer;
 
     transition:
         background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+        color 0.3s ease;
 }
 
 .winter-intro-button:hover {
     background: #222;
-    color: #222;
-    transform: translateY(-2px);
+
+    color: #f4f1eb;
 }
 
 
@@ -3035,14 +3035,14 @@ body.dark-theme:has(.page.active:not(#homePage)) .language-button {
 ========================= */
 
 body.dark-theme .winter-intro-button {
-    background: #fff;
-    border-color: #fff;
-    color: #222;
+    background: white !important;
+    border-color: white !important;
+    color: #222 !important;
 }
 
 body.dark-theme .winter-intro-button:hover {
-    background: transparent;
-    color: #fff;
+    background: #eeeeee !important;
+    color: #222 !important;
 }
 
 
