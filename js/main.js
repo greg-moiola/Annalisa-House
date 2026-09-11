@@ -372,6 +372,8 @@ const translations = {
         themeDark: "Scuro",
 
         navWinter: "PERIODO INVERNALE",
+
+        winterButton: "ACCEDI ALLA ZONA INVERNALE"
 },
                
 
@@ -599,6 +601,8 @@ service16:
         
         navWinter: "WINTERZEIT",
 
+        winterButton: "ZUR WINTERZONE",
+
 
     },
 
@@ -821,6 +825,8 @@ service16:
         themeDark: "Dark",
  
         navWinter: "WINTER SEASON",
+
+        winterButton: "ENTER WINTER ZONE",
 
     }
 
