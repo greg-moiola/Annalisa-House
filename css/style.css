@@ -3001,11 +3001,9 @@ body.dark-theme:has(.page.active:not(#homePage)) .language-button {
 
     padding: 13px 28px;
 
-    background: transparent;
-
-    border: 1px solid #222;
-
-    color: #222;
+    background: transparent !important;
+    border: 1px solid #222 !important;
+    color: #222 !important;
 
     font-family:
         "Times New Roman",
@@ -3013,9 +3011,9 @@ body.dark-theme:has(.page.active:not(#homePage)) .language-button {
         serif;
 
     font-size: 0.95rem;
-
     letter-spacing: 0.1em;
 
+    text-decoration: none !important;
     cursor: pointer;
 
     transition:
@@ -3024,9 +3022,9 @@ body.dark-theme:has(.page.active:not(#homePage)) .language-button {
 }
 
 .winter-intro-button:hover {
-    background: #222;
-
-    color: #222;
+    background: #222 !important;
+    border-color: #222 !important;
+    color: #f4f1eb !important;
 }
 
 
