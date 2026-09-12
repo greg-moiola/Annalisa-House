@@ -673,3 +673,143 @@ body {
     }
 
 }
+
+
+
+/* =========================
+   SERVIZI INVERNALI
+========================= */
+
+.winter-services-content {
+    width: 90%;
+    max-width: 1100px;
+    text-align: center;
+}
+
+.winter-services-content > h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: normal;
+    letter-spacing: 0.12em;
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   I TRE PANNELLI
+========================= */
+
+.winter-services-panels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+
+.winter-service-panel {
+    height: 390px;
+
+    border: 1px solid #222;
+
+    padding: 35px 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    text-align: center;
+}
+
+
+/* TITOLO */
+
+.winter-service-panel h2 {
+    font-size: 1.15rem;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+
+    margin-bottom: 18px;
+
+    flex-shrink: 0;
+}
+
+
+/* DESCRIZIONE */
+
+.winter-service-panel > p {
+    font-size: 1rem;
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+
+    flex-shrink: 0;
+}
+
+
+/* ELENCO SCORRIBILE */
+
+.winter-service-list {
+    overflow-y: auto;
+
+    padding-right: 10px;
+
+    text-align: left;
+
+    flex: 1;
+
+    scrollbar-width: thin;
+}
+
+
+/* SINGOLO SERVIZIO */
+
+.winter-service-list p {
+    font-size: 1rem;
+    line-height: 1.5;
+
+    margin: 0 0 18px;
+}
+
+
+/* =========================
+   DARK THEME
+========================= */
+
+body.dark-theme .winter-service-panel {
+    border-color: #fff;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .winter-services-content {
+        width: 88%;
+    }
+
+    .winter-services-panels {
+        gap: 15px;
+    }
+
+    .winter-service-panel {
+        height: 350px;
+        padding: 25px 18px;
+    }
+
+    .winter-service-panel h2 {
+        font-size: 1rem;
+    }
+
+    .winter-service-panel > p {
+        font-size: 0.9rem;
+    }
+
+    .winter-service-list p {
+        font-size: 0.9rem;
+    }
+
+}
