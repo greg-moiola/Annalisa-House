@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-
-    /* ========================================
+    /* =========================
        ELEMENTI
-    ======================================== */
+    ========================= */
 
     const winterMenuButton =
         document.getElementById("winterMenuButton");
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const winterMenuOverlay =
         document.getElementById("winterMenuOverlay");
 
-
     const settingsButton =
         document.getElementById("settingsButton");
 
@@ -24,20 +22,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const settingsPanel =
         document.getElementById("settingsPanel");
 
-
     const winterLanguageButton =
         document.getElementById("winterLanguageButton");
 
     const winterLanguageSubmenu =
         document.getElementById("winterLanguageSubmenu");
 
-
     const winterThemeButton =
         document.getElementById("winterThemeButton");
 
     const winterThemeSubmenu =
         document.getElementById("winterThemeSubmenu");
-
 
     const winterPages =
         document.querySelectorAll(".winter-page");
@@ -46,140 +41,31 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll("[data-winter-page]");
 
 
-    /* ========================================
-       MENU HAMBURGER
-    ======================================== */
+    /* =========================
+       TRADUZIONI
+    ========================= */
 
-    if (winterMenuButton && winterMenuOverlay) {
-
-        winterMenuButton.addEventListener(
-            "click",
-            function () {
-
-                winterMenuOverlay.classList.add("open");
-
-            }
-        );
-
-    }
-
-
-    if (winterMenuClose && winterMenuOverlay) {
-
-        winterMenuClose.addEventListener(
-            "click",
-            function () {
-
-                winterMenuOverlay.classList.remove("open");
-
-            }
-        );
-
-    }
-
-
-    /* ========================================
-       CAMBIO PAGINA
-    ======================================== */
-
-    winterPageLinks.forEach(
-        function (link) {
-
-            link.addEventListener(
-                "click",
-                function (event) {
-
-                    event.preventDefault();
-
-
-                    const targetPage =
-                        link.getAttribute(
-                            "data-winter-page"
-                        );
-
-
-                    winterPages.forEach(
-                        function (page) {
-
-                            page.classList.remove("active");
-
-                        }
-                    );
-
-
-                    const selectedPage =
-                        document.getElementById(
-                            targetPage
-                        );
-
-
-                    if (selectedPage) {
-
-                        selectedPage.classList.add("active");
-
-                    }
-
-
-                    if (winterMenuOverlay) {
-
-                        winterMenuOverlay.classList.remove("open");
-
-                    }
-
-                }
-            );
-
-        }
-    );
-
-
-    /* ========================================
-       TRADUZIONI INVERNALI
-    ======================================== */
-
-    const winterTranslations = {
-
+    const translations = {
 
         it: {
 
-            winterBrand:
-                "Annalisa House",
+            winterBrand: "Annalisa House",
 
-            winterLocation:
-                "Lago di Garda",
+            settingsTitle: "IMPOSTAZIONI",
+            settingsLanguage: "LINGUA",
+            settingsTheme: "TEMA",
 
-            settingsTitle:
-                "IMPOSTAZIONI",
+            winterNavHome: "HOME",
+            winterNavServices: "SERVIZI",
+            winterNavRentals: "AFFITTI INVERNALI",
 
-            settingsLanguage:
-                "LINGUA",
-
-            settingsTheme:
-                "TEMA",
-
-            winterNavHome:
-                "HOME",
-
-            winterNavServices:
-                "SERVIZI",
-
-            winterNavRentals:
-                "AFFITTI INVERNALI",
-
-            winterNavContacts:
-                "CONTATTI",
-
-            winterSmallTitle:
-                "ANNALISA HOUSE",
+            winterSmallTitle: "ANNALISA HOUSE",
 
             winterHomeTitle:
                 "La tua casa d'inverno.",
 
             winterHomeText:
                 "Un luogo caldo e accogliente dove vivere il Lago di Garda durante i mesi più tranquilli dell'anno.",
-
-            winterHomeButton:
-                "SCOPRI GLI AFFITTI INVERNALI",
 
             winterServicesTitle:
                 "Servizi",
@@ -215,51 +101,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Non è possibile affittare singoli mesi.",
 
             winterAvailabilityButton:
-                "RICHIEDI DISPONIBILITÀ",
-
-            winterContactsTitle:
-                "Contatti",
-
-            winterContactsText:
-                "Per informazioni e richieste di disponibilità invernale, contattaci.",
-
-            winterContactButton:
-                "CONTATTACI"
-
+                "RICHIEDI DISPONIBILITÀ"
         },
 
 
         de: {
 
-            winterBrand:
-                "Annalisa House",
+            winterBrand: "Annalisa House",
 
-            winterLocation:
-                "Gardasee",
+            settingsTitle: "EINSTELLUNGEN",
+            settingsLanguage: "SPRACHE",
+            settingsTheme: "THEMA",
 
-            settingsTitle:
-                "EINSTELLUNGEN",
+            winterNavHome: "STARTSEITE",
+            winterNavServices: "DIENSTLEISTUNGEN",
+            winterNavRentals: "WINTERVERMIETUNG",
 
-            settingsLanguage:
-                "SPRACHE",
-
-            settingsTheme:
-                "THEMA",
-
-            winterNavHome:
-                "HOME",
-
-            winterNavServices:
-                "SERVICES",
-
-            winterNavRentals:
-                "WINTERVERMIETUNG",
-
-            winterNavContacts:
-                "KONTAKT",
-
-            winterSmallTitle:
-                "ANNALISA HOUSE",
+            winterSmallTitle: "ANNALISA HOUSE",
 
             winterHomeTitle:
                 "Ihr Zuhause im Winter.",
@@ -267,17 +125,14 @@ document.addEventListener("DOMContentLoaded", function () {
             winterHomeText:
                 "Ein warmer und gemütlicher Ort, um den Gardasee während der ruhigeren Monate des Jahres zu erleben.",
 
-            winterHomeButton:
-                "WINTERVERMIETUNG ENTDECKEN",
-
             winterServicesTitle:
-                "Services",
+                "Dienstleistungen",
 
             winterServicesText:
                 "Alles, was Sie brauchen, um sich auch im Winter wie zu Hause zu fühlen.",
 
             winterService1Title:
-                "Komplettes Haus",
+                "Das komplette Haus",
 
             winterService1Text:
                 "Das gesamte Haus steht Ihnen zur Verfügung.",
@@ -292,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Gardasee",
 
             winterService3Text:
-                "Natur, Ruhe und sehenswerte Orte entdecken.",
+                "Natur, Ruhe und sehenswerte Dörfer.",
 
             winterRentalsTitle:
                 "Wintervermietung",
@@ -304,51 +159,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Einzelne Monate können nicht gemietet werden.",
 
             winterAvailabilityButton:
-                "VERFÜGBARKEIT ANFRAGEN",
-
-            winterContactsTitle:
-                "Kontakt",
-
-            winterContactsText:
-                "Für Informationen und Anfragen zur Winterverfügbarkeit kontaktieren Sie uns.",
-
-            winterContactButton:
-                "KONTAKTIEREN SIE UNS"
-
+                "VERFÜGBARKEIT ANFRAGEN"
         },
 
 
         en: {
 
-            winterBrand:
-                "Annalisa House",
+            winterBrand: "Annalisa House",
 
-            winterLocation:
-                "Lake Garda",
+            settingsTitle: "SETTINGS",
+            settingsLanguage: "LANGUAGE",
+            settingsTheme: "THEME",
 
-            settingsTitle:
-                "SETTINGS",
+            winterNavHome: "HOME",
+            winterNavServices: "SERVICES",
+            winterNavRentals: "WINTER RENTALS",
 
-            settingsLanguage:
-                "LANGUAGE",
-
-            settingsTheme:
-                "THEME",
-
-            winterNavHome:
-                "HOME",
-
-            winterNavServices:
-                "SERVICES",
-
-            winterNavRentals:
-                "WINTER RENTALS",
-
-            winterNavContacts:
-                "CONTACT",
-
-            winterSmallTitle:
-                "ANNALISA HOUSE",
+            winterSmallTitle: "ANNALISA HOUSE",
 
             winterHomeTitle:
                 "Your winter home.",
@@ -356,32 +183,29 @@ document.addEventListener("DOMContentLoaded", function () {
             winterHomeText:
                 "A warm and welcoming place to experience Lake Garda during the quieter months of the year.",
 
-            winterHomeButton:
-                "DISCOVER WINTER RENTALS",
-
             winterServicesTitle:
                 "Services",
 
             winterServicesText:
-                "Everything you need to feel at home during the winter.",
+                "Everything you need to feel at home even during winter.",
 
             winterService1Title:
                 "Entire house",
 
             winterService1Text:
-                "The whole house is at your disposal.",
+                "The entire house is at your disposal.",
 
             winterService2Title:
                 "Warm atmosphere",
 
             winterService2Text:
-                "Welcoming spaces to enjoy every day.",
+                "Cozy spaces for every day.",
 
             winterService3Title:
                 "Lake Garda",
 
             winterService3Text:
-                "Nature, tranquillity and villages to discover.",
+                "Nature, tranquility and villages to discover.",
 
             winterRentalsTitle:
                 "Winter rentals",
@@ -393,62 +217,43 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Individual months cannot be rented.",
 
             winterAvailabilityButton:
-                "REQUEST AVAILABILITY",
-
-            winterContactsTitle:
-                "Contact",
-
-            winterContactsText:
-                "For information and winter availability requests, contact us.",
-
-            winterContactButton:
-                "CONTACT US"
-
+                "REQUEST AVAILABILITY"
         }
 
     };
 
 
-    /* ========================================
+    /* =========================
        CAMBIO LINGUA
-    ======================================== */
+    ========================= */
 
-    function changeWinterLanguage(language) {
+    function changeLanguage(language) {
 
         const selectedLanguage =
-            winterTranslations[language];
+            translations[language];
 
-
-        if (!selectedLanguage) {
-
-            return;
-
-        }
+        if (!selectedLanguage) return;
 
 
         document
             .querySelectorAll("[data-i18n]")
-            .forEach(
-                function (element) {
+            .forEach(function (element) {
 
-                    const key =
-                        element.dataset.i18n;
+                const key =
+                    element.getAttribute("data-i18n");
 
+                if (selectedLanguage[key]) {
 
-                    if (selectedLanguage[key]) {
-
-                        element.textContent =
-                            selectedLanguage[key];
-
-                    }
+                    element.textContent =
+                        selectedLanguage[key];
 
                 }
-            );
+
+            });
 
 
         document.documentElement.lang =
             language;
-
 
         localStorage.setItem(
             "annalisaLanguage",
@@ -458,59 +263,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (winterLanguageSubmenu) {
 
-            winterLanguageSubmenu.classList.remove(
-                "open"
-            );
+            winterLanguageSubmenu
+                .classList
+                .remove("open");
 
         }
 
     }
 
 
-    /* ========================================
-       LINGUA
-    ======================================== */
+    /* =========================
+       CAMBIO TEMA
+    ========================= */
 
-    document
-        .querySelectorAll("[data-language]")
-        .forEach(
-            function (button) {
+    function changeTheme(theme) {
 
-                button.addEventListener(
-                    "click",
-                    function () {
-
-                        const language =
-                            button.getAttribute(
-                                "data-language"
-                            );
-
-
-                        changeWinterLanguage(
-                            language
-                        );
-
-                    }
-                );
-
-            }
+        document.body.classList.remove(
+            "light-theme",
+            "dark-theme"
         );
 
 
+        if (theme === "dark") {
+
+            document.body.classList.add(
+                "dark-theme"
+            );
+
+        } else {
+
+            document.body.classList.add(
+                "light-theme"
+            );
+
+        }
+
+
+        localStorage.setItem(
+            "annalisaTheme",
+            theme
+        );
+
+    }
+
+
+    /* =========================
+       MENU HAMBURGER
+    ========================= */
+
     if (
-        winterLanguageButton &&
-        winterLanguageSubmenu
+        winterMenuButton &&
+        winterMenuOverlay
     ) {
 
-        winterLanguageButton.addEventListener(
+        winterMenuButton.addEventListener(
             "click",
-            function (event) {
+            function () {
 
-                event.stopPropagation();
-
-                winterLanguageSubmenu.classList.toggle(
-                    "open"
-                );
+                winterMenuOverlay
+                    .classList
+                    .add("open");
 
             }
         );
@@ -518,9 +330,87 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ========================================
+    if (
+        winterMenuClose &&
+        winterMenuOverlay
+    ) {
+
+        winterMenuClose.addEventListener(
+            "click",
+            function () {
+
+                winterMenuOverlay
+                    .classList
+                    .remove("open");
+
+            }
+        );
+
+    }
+
+
+    /* =========================
+       CAMBIO PAGINA
+    ========================= */
+
+    winterPageLinks.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const targetPage =
+                    link.getAttribute(
+                        "data-winter-page"
+                    );
+
+
+                winterPages.forEach(
+                    function (page) {
+
+                        page.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                const selectedPage =
+                    document.getElementById(
+                        targetPage
+                    );
+
+
+                if (selectedPage) {
+
+                    selectedPage.classList.add(
+                        "active"
+                    );
+
+                }
+
+
+                if (winterMenuOverlay) {
+
+                    winterMenuOverlay
+                        .classList
+                        .remove("open");
+
+                }
+
+            }
+        );
+
+    });
+
+
+    /* =========================
        IMPOSTAZIONI
-    ======================================== */
+    ========================= */
 
     if (
         settingsButton &&
@@ -531,9 +421,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
-                settingsPanel.classList.toggle(
-                    "open"
-                );
+                settingsPanel
+                    .classList
+                    .toggle("open");
 
             }
         );
@@ -550,9 +440,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
-                settingsPanel.classList.remove(
-                    "open"
-                );
+                settingsPanel
+                    .classList
+                    .remove("open");
 
             }
         );
@@ -560,9 +450,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ========================================
-       TEMA
-    ======================================== */
+    /* =========================
+       SOTTOMENU LINGUA
+    ========================= */
+
+    if (
+        winterLanguageButton &&
+        winterLanguageSubmenu
+    ) {
+
+        winterLanguageButton.addEventListener(
+            "click",
+            function () {
+
+                winterLanguageSubmenu
+                    .classList
+                    .toggle("open");
+
+            }
+        );
+
+    }
+
+
+    /* =========================
+       SOTTOMENU TEMA
+    ========================= */
 
     if (
         winterThemeButton &&
@@ -571,13 +484,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         winterThemeButton.addEventListener(
             "click",
-            function (event) {
+            function () {
 
-                event.stopPropagation();
-
-                winterThemeSubmenu.classList.toggle(
-                    "open"
-                );
+                winterThemeSubmenu
+                    .classList
+                    .toggle("open");
 
             }
         );
@@ -585,76 +496,68 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    /* =========================
+       PULSANTI LINGUA
+    ========================= */
+
+    document
+        .querySelectorAll("[data-language]")
+        .forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const language =
+                        button.getAttribute(
+                            "data-language"
+                        );
+
+                    changeLanguage(language);
+
+                }
+            );
+
+        });
+
+
+    /* =========================
+       PULSANTI TEMA
+    ========================= */
+
     document
         .querySelectorAll("[data-theme]")
-        .forEach(
-            function (button) {
+        .forEach(function (button) {
 
-                button.addEventListener(
-                    "click",
-                    function () {
+            button.addEventListener(
+                "click",
+                function () {
 
-                        const theme =
-                            button.getAttribute(
-                                "data-theme"
-                            );
-
-
-                        document.body.classList.remove(
-                            "light-theme",
-                            "dark-theme"
+                    const theme =
+                        button.getAttribute(
+                            "data-theme"
                         );
 
-
-                        document.body.classList.add(
-                            theme + "-theme"
-                        );
+                    changeTheme(theme);
 
 
-                        localStorage.setItem(
-                            "annalisaTheme",
-                            theme
-                        );
+                    if (winterThemeSubmenu) {
 
-
-                        if (winterThemeSubmenu) {
-
-                            winterThemeSubmenu.classList.remove(
-                                "open"
-                            );
-
-                        }
+                        winterThemeSubmenu
+                            .classList
+                            .remove("open");
 
                     }
-                );
 
-            }
-        );
+                }
+            );
 
-
-    /* ========================================
-       CHIUDI MENU CLICCANDO FUORI
-    ======================================== */
-
-    document.addEventListener(
-        "click",
-        function () {
-
-            if (winterLanguageSubmenu) {
-
-                winterLanguageSubmenu.classList.remove(
-                    "open"
-                );
-
-            }
-
-        }
-    );
+        });
 
 
-    /* ========================================
-       RESTORE LINGUA
-    ======================================== */
+    /* =========================
+       RIPRISTINO LINGUA
+    ========================= */
 
     const savedLanguage =
         localStorage.getItem(
@@ -664,23 +567,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (
         savedLanguage &&
-        winterTranslations[savedLanguage]
+        translations[savedLanguage]
     ) {
 
-        changeWinterLanguage(
+        changeLanguage(
             savedLanguage
         );
 
     } else {
 
-        changeWinterLanguage("it");
+        changeLanguage("it");
 
     }
 
 
-    /* ========================================
-       RESTORE TEMA
-    ======================================== */
+    /* =========================
+       RIPRISTINO TEMA
+    ========================= */
 
     const savedTheme =
         localStorage.getItem(
@@ -690,15 +593,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (savedTheme === "dark") {
 
-        document.body.classList.add(
-            "dark-theme"
-        );
+        changeTheme("dark");
 
     } else {
 
-        document.body.classList.add(
-            "light-theme"
-        );
+        changeTheme("light");
 
     }
 
