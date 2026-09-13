@@ -788,28 +788,77 @@ body.dark-theme .winter-service-panel {
 @media (max-width: 800px) {
 
     .winter-services-content {
-        width: 88%;
+        width: 90%;
+        max-width: none;
+    }
+
+    .winter-services-content > h1 {
+        font-size: 2rem;
+        margin-bottom: 25px;
     }
 
     .winter-services-panels {
-        gap: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        width: 100%;
     }
 
     .winter-service-panel {
-        height: 350px;
-        padding: 25px 18px;
+        width: 100%;
+        height: 250px;
+        min-height: 250px;
+
+        padding: 22px 18px;
+
+        display: flex;
+        flex-direction: column;
+
+        overflow: hidden;
     }
 
     .winter-service-panel h2 {
         font-size: 1rem;
+        letter-spacing: 0.08em;
+        margin-bottom: 12px;
     }
 
     .winter-service-panel > p {
         font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+
+    .winter-service-list {
+        flex: 1;
+        min-height: 0;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        padding-right: 8px;
     }
 
     .winter-service-list p {
         font-size: 0.9rem;
+        line-height: 1.45;
+        margin-bottom: 14px;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    #winterServicesPage {
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        padding-top: 105px;
+        padding-bottom: 35px;
     }
 
 }
