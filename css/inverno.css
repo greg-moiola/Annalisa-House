@@ -635,10 +635,14 @@ body {
 
 
     .settings-button {
+    display: block;
 
-        display: none;
+    margin-left: auto;
+    margin-right: 12px;
 
-    }
+    font-size: 10px;
+    letter-spacing: 0.8px;
+}
 
 
     .winter-services-grid {
@@ -788,9 +792,13 @@ body.dark-theme .winter-service-panel {
 @media (max-width: 800px) {
 
     .winter-services-content {
-        width: 90%;
-        max-width: none;
-    }
+    width: 90%;
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
 
     .winter-services-content > h1 {
         font-size: 2rem;
@@ -830,14 +838,42 @@ body.dark-theme .winter-service-panel {
     }
 
     .winter-service-list {
-        flex: 1;
-        min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-        overflow-y: auto;
-        overflow-x: hidden;
+    padding-right: 10px;
 
-        padding-right: 8px;
-    }
+    text-align: left;
+
+    flex: 1;
+    min-height: 0;
+
+    scrollbar-width: auto;
+    scrollbar-color: #aaa transparent;
+}
+
+/* Chrome / Edge / Safari */
+
+.winter-service-list::-webkit-scrollbar {
+    width: 7px;
+}
+
+.winter-service-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.winter-service-list::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+body.dark-theme .winter-service-list {
+    scrollbar-color: #777 transparent;
+}
+
+body.dark-theme .winter-service-list::-webkit-scrollbar-thumb {
+    background: #777;
+}
 
     .winter-service-list p {
         font-size: 0.9rem;
@@ -852,7 +888,7 @@ body.dark-theme .winter-service-panel {
 
     #winterServicesPage {
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: center;
 
         overflow-y: auto;
         overflow-x: hidden;
