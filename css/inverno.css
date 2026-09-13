@@ -195,6 +195,14 @@ body {
 
 }
 
+#settings-button {
+    /* Crea un contorno netto attorno alla sagoma dell'ingranaggio */
+    filter: drop-shadow(1px 0 0 #000) 
+            drop-shadow(-1px 0 0 #000) 
+            drop-shadow(0 1px 0 #000) 
+            drop-shadow(0 -1px 0 #000) !important;
+}
+
 
 .winter-menu-button {
 
