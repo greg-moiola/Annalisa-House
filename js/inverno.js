@@ -4,42 +4,29 @@ document.addEventListener("DOMContentLoaded", function () {
        ELEMENTI
     ========================= */
 
-    const winterMenuButton =
-        document.getElementById("winterMenuButton");
+    const languageButton =
+    document.getElementById("languageButton");
 
-    const winterMenuClose =
-        document.getElementById("winterMenuClose");
+const languageMenu =
+    document.getElementById("languageMenu");
 
-    const winterMenuOverlay =
-        document.getElementById("winterMenuOverlay");
+const languageSettingsButton =
+    document.getElementById("languageSettingsButton");
 
-    const settingsButton =
-        document.getElementById("settingsButton");
+const themeSettingsButton =
+    document.getElementById("themeSettingsButton");
 
-    const settingsClose =
-        document.getElementById("settingsClose");
+const languageSubmenu =
+    document.getElementById("languageSubmenu");
 
-    const settingsPanel =
-        document.getElementById("settingsPanel");
+const themeSubmenu =
+    document.getElementById("themeSubmenu");
 
-    const winterLanguageButton =
-        document.getElementById("winterLanguageButton");
+const languageOptions =
+    document.querySelectorAll(".language-option");
 
-    const winterLanguageSubmenu =
-        document.getElementById("winterLanguageSubmenu");
-
-    const winterThemeButton =
-        document.getElementById("winterThemeButton");
-
-    const winterThemeSubmenu =
-        document.getElementById("winterThemeSubmenu");
-
-    const winterPages =
-        document.querySelectorAll(".winter-page");
-
-    const winterPageLinks =
-        document.querySelectorAll("[data-winter-page]");
-
+const themeOptions =
+    document.querySelectorAll(".theme-option");
 
     /* =========================
        TRADUZIONI
@@ -261,13 +248,17 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        if (winterLanguageSubmenu) {
+        if (languageMenu) {
+    languageMenu.classList.remove("open");
+}
 
-            winterLanguageSubmenu
-                .classList
-                .remove("open");
+if (languageSubmenu) {
+    languageSubmenu.classList.remove("open");
+}
 
-        }
+if (themeSubmenu) {
+    themeSubmenu.classList.remove("open");
+}
 
     }
 
@@ -278,33 +269,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function changeTheme(theme) {
 
-        document.body.classList.remove(
-            "light-theme",
-            "dark-theme"
-        );
+    if (theme === "dark") {
 
+        document.body.classList.add("dark-theme");
 
-        if (theme === "dark") {
+    } else {
 
-            document.body.classList.add(
-                "dark-theme"
-            );
-
-        } else {
-
-            document.body.classList.add(
-                "light-theme"
-            );
-
-        }
-
-
-        localStorage.setItem(
-            "annalisaTheme",
-            theme
-        );
+        document.body.classList.remove("dark-theme");
 
     }
+
+    localStorage.setItem(
+        "annalisaTheme",
+        theme
+    );
+
+    if (languageMenu) {
+        languageMenu.classList.remove("open");
+    }
+
+    if (languageSubmenu) {
+        languageSubmenu.classList.remove("open");
+    }
+
+    if (themeSubmenu) {
+        themeSubmenu.classList.remove("open");
+    }
+
+}
 
 
     /* =========================
@@ -407,153 +399,112 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+/* =========================
+   SETTINGS EVENTS
+========================= */
+
+if (languageButton && languageMenu) {
+
+    languageButton.addEventListener(
+        "click",
+        function (event) {
+
+            event.stopPropagation();
+
+            languageMenu.classList.toggle("open");
+
+            languageSubmenu.classList.remove("open");
+            themeSubmenu.classList.remove("open");
+
+        }
+    );
+
+}
+
+
+if (
+    languageSettingsButton &&
+    languageSubmenu
+) {
+
+    languageSettingsButton.addEventListener(
+        "click",
+        function (event) {
+
+            event.stopPropagation();
+
+            languageSubmenu.classList.toggle("open");
+
+            themeSubmenu.classList.remove("open");
+
+        }
+    );
+
+}
+
+
+if (
+    themeSettingsButton &&
+    themeSubmenu
+) {
+
+    themeSettingsButton.addEventListener(
+        "click",
+        function (event) {
+
+            event.stopPropagation();
+
+            themeSubmenu.classList.toggle("open");
+
+            languageSubmenu.classList.remove("open");
+
+        }
+    );
+
+}
 
     /* =========================
-       IMPOSTAZIONI
-    ========================= */
+   PULSANTI LINGUA
+========================= */
 
-    if (
-        settingsButton &&
-        settingsPanel
-    ) {
+languageOptions.forEach(function (button) {
 
-        settingsButton.addEventListener(
-            "click",
-            function () {
+    button.addEventListener(
+        "click",
+        function () {
 
-                settingsPanel
-                    .classList
-                    .toggle("open");
+            const language =
+                button.getAttribute("data-language");
 
-            }
-        );
+            changeLanguage(language);
 
-    }
+        }
+    );
+
+});
 
 
-    if (
-        settingsClose &&
-        settingsPanel
-    ) {
+/* =========================
+   PULSANTI TEMA
+========================= */
 
-        settingsClose.addEventListener(
-            "click",
-            function () {
+themeOptions.forEach(function (button) {
 
-                settingsPanel
-                    .classList
-                    .remove("open");
+    button.addEventListener(
+        "click",
+        function () {
 
-            }
-        );
+            const theme =
+                button.getAttribute("data-theme");
 
-    }
+            changeTheme(theme);
 
+        }
+    );
 
-    /* =========================
-       SOTTOMENU LINGUA
-    ========================= */
+});
 
-    if (
-        winterLanguageButton &&
-        winterLanguageSubmenu
-    ) {
-
-        winterLanguageButton.addEventListener(
-            "click",
-            function () {
-
-                winterLanguageSubmenu
-                    .classList
-                    .toggle("open");
-
-            }
-        );
-
-    }
-
-
-    /* =========================
-       SOTTOMENU TEMA
-    ========================= */
-
-    if (
-        winterThemeButton &&
-        winterThemeSubmenu
-    ) {
-
-        winterThemeButton.addEventListener(
-            "click",
-            function () {
-
-                winterThemeSubmenu
-                    .classList
-                    .toggle("open");
-
-            }
-        );
-
-    }
-
-
-    /* =========================
-       PULSANTI LINGUA
-    ========================= */
-
-    document
-        .querySelectorAll("[data-language]")
-        .forEach(function (button) {
-
-            button.addEventListener(
-                "click",
-                function () {
-
-                    const language =
-                        button.getAttribute(
-                            "data-language"
-                        );
-
-                    changeLanguage(language);
-
-                }
-            );
-
-        });
-
-
-    /* =========================
-       PULSANTI TEMA
-    ========================= */
-
-    document
-        .querySelectorAll("[data-theme]")
-        .forEach(function (button) {
-
-            button.addEventListener(
-                "click",
-                function () {
-
-                    const theme =
-                        button.getAttribute(
-                            "data-theme"
-                        );
-
-                    changeTheme(theme);
-
-
-                    if (winterThemeSubmenu) {
-
-                        winterThemeSubmenu
-                            .classList
-                            .remove("open");
-
-                    }
-
-                }
-            );
-
-        });
-
+    
 
     /* =========================
        RIPRISTINO LINGUA
