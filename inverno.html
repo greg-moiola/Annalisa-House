@@ -42,54 +42,55 @@
         </header>
 
 
-        <!-- PANNELLO IMPOSTAZIONI -->
+        <!-- IMPOSTAZIONI -->
 
-        <div id="settingsPanel" class="settings-panel">
+<div class="language-selector">
 
-            <button id="settingsClose" class="settings-close">
-                ×
+    <button class="language-button" id="languageButton">
+        <span class="settings-icon">⚙️</span>
+    </button>
+
+    <div class="language-menu" id="languageMenu">
+
+        <button class="settings-option" id="languageSettingsButton">
+            <span data-i18n="settingsLanguage">LINGUA</span> →
+        </button>
+
+        <button class="settings-option" id="themeSettingsButton">
+            <span data-i18n="settingsTheme">TEMA</span> →
+        </button>
+
+        <div class="settings-submenu" id="languageSubmenu">
+
+            <button class="language-option" data-language="it">
+                🇮🇹 <span>Italiano</span>
             </button>
 
-            <h2 data-i18n="settingsTitle">IMPOSTAZIONI</h2>
+            <button class="language-option" data-language="de">
+                🇩🇪 <span>Deutsch</span>
+            </button>
 
-            <button id="winterLanguageButton" class="settings-option">
-           <span data-i18n="settingsLanguage">LINGUA</span> →
-           </button>
-
-            <div id="winterLanguageSubmenu" class="settings-submenu">
-
-                <button data-language="it">
-                    ITALIANO
-                </button>
-
-                <button data-language="de">
-                    DEUTSCH
-                </button>
-
-                <button data-language="en">
-                    ENGLISH
-                </button>
-
-            </div>
-
-
-            <button id="winterThemeButton" class="settings-option">
-              <span data-i18n="settingsTheme">TEMA</span> →
-             </button>
-
-            <div id="winterThemeSubmenu" class="settings-submenu">
-
-                <button data-theme="light">
-                    CHIARO
-                </button>
-
-                <button data-theme="dark">
-                    SCURO
-                </button>
-
-            </div>
+            <button class="language-option" data-language="en">
+                🇬🇧 <span>English</span>
+            </button>
 
         </div>
+
+        <div class="settings-submenu" id="themeSubmenu">
+
+            <button class="theme-option" data-theme="light">
+                ☀️ <span>Chiaro</span>
+            </button>
+
+            <button class="theme-option" data-theme="dark">
+                🌙 <span>Scuro</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 
 
         <!-- MENU HAMBURGER -->
