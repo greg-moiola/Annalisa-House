@@ -28,6 +28,21 @@ const languageOptions =
 const themeOptions =
     document.querySelectorAll(".theme-option");
 
+const winterMenuButton =
+    document.getElementById("winterMenuButton");
+
+const winterMenuClose =
+    document.getElementById("winterMenuClose");
+
+const winterMenuOverlay =
+    document.getElementById("winterMenuOverlay");
+
+const winterPages =
+    document.querySelectorAll(".winter-page");
+
+const winterPageLinks =
+    document.querySelectorAll("[data-winter-page]");
+
     /* =========================
        TRADUZIONI
     ========================= */
