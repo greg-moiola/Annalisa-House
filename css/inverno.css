@@ -496,87 +496,107 @@ body {
    IMPOSTAZIONI
 ======================================== */
 
-.settings-panel {
+.language-selector {
+    position: relative;
+}
 
-    position: fixed;
 
-    top: 80px;
+.language-button {
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+}
 
-    right: 25px;
 
-    width: 260px;
+.settings-icon {
+    display: inline-block;
 
-    padding: 25px;
+    filter:
+        drop-shadow(1px 0 0 #000)
+        drop-shadow(-1px 0 0 #000)
+        drop-shadow(0 1px 0 #000)
+        drop-shadow(0 -1px 0 #000) !important;
+}
 
-    display: none;
+
+.language-menu {
+    position: absolute;
+
+    top: 35px;
+    right: 0;
+
+    min-width: 260px;
+
+    padding: 10px 0;
 
     background: var(--surface);
 
-    color: var(--text);
-
     border: 1px solid var(--border);
 
-    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
 
+    transform: translateY(-8px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
+    z-index: 1000;
 }
 
 
-.settings-panel.open {
+.language-menu.open {
+    opacity: 1;
+    visibility: visible;
 
-    display: block;
-
+    transform: translateY(0);
 }
 
 
-.settings-close {
-
-    float: right;
-
-    border: 0;
-
-    background: transparent;
-
-    color: var(--text);
-
-    font-size: 25px;
-
-    cursor: pointer;
-
-}
-
-
-.settings-panel h2 {
-
-    margin: 0 0 25px;
-
-    font-size: 16px;
-
-    font-weight: normal;
-
-    letter-spacing: 2px;
-
-}
-
-
-.settings-option {
+.settings-option,
+.language-option,
+.theme-option {
 
     width: 100%;
 
-    padding: 14px 0;
+    display: flex;
 
-    border: 0;
+    align-items: center;
 
-    border-bottom: 1px solid var(--border);
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 14px 18px;
+
+    border: none;
 
     background: transparent;
 
     color: var(--text);
 
-    text-align: left;
-
     font-family: inherit;
 
+    font-size: 14px;
+
+    text-align: left;
+
     cursor: pointer;
+
+    transition: background 0.2s ease;
+
+}
+
+
+.settings-option:hover,
+.language-option:hover,
+.theme-option:hover {
+
+    background: rgba(0, 0, 0, 0.06);
 
 }
 
@@ -585,7 +605,7 @@ body {
 
     display: none;
 
-    padding: 10px 0;
+    min-width: 190px;
 
 }
 
@@ -597,25 +617,30 @@ body {
 }
 
 
-.settings-submenu button {
+body.dark-theme .language-menu,
+body.dark-theme .settings-submenu {
 
-    display: block;
+    background: rgba(30, 30, 30, 0.97);
 
-    width: 100%;
+    border-color: rgba(255, 255, 255, 0.15);
 
-    padding: 10px;
+}
 
-    border: 0;
 
-    background: transparent;
+body.dark-theme .settings-option,
+body.dark-theme .language-option,
+body.dark-theme .theme-option {
 
-    color: var(--text);
+    color: #eeeeee;
 
-    text-align: left;
+}
 
-    font-family: inherit;
 
-    cursor: pointer;
+body.dark-theme .settings-option:hover,
+body.dark-theme .language-option:hover,
+body.dark-theme .theme-option:hover {
+
+    background: rgba(255, 255, 255, 0.08);
 
 }
 
@@ -640,16 +665,7 @@ body {
     }
 
 
-    .settings-button {
-    display: block;
-
-    margin-left: auto;
-    margin-right: 12px;
-
-    font-size: 10px;
-    letter-spacing: 0.8px;
-}
-
+    
 
     .winter-services-grid {
 
