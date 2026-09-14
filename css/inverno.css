@@ -497,7 +497,10 @@ body {
 ======================================== */
 
 .language-selector {
-    position: relative;
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 
