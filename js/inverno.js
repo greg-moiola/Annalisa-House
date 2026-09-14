@@ -103,7 +103,10 @@ const winterPageLinks =
                 "Non è possibile affittare singoli mesi.",
 
             winterAvailabilityButton:
-                "RICHIEDI DISPONIBILITÀ"
+                "RICHIEDI DISPONIBILITÀ",
+
+            ExitButton:
+                "ESCI",
         },
 
 
@@ -161,7 +164,10 @@ const winterPageLinks =
                 "Einzelne Monate können nicht gemietet werden.",
 
             winterAvailabilityButton:
-                "VERFÜGBARKEIT ANFRAGEN"
+                "VERFÜGBARKEIT ANFRAGEN",
+
+            ExitButton:
+                "BEENDEN",
         },
 
 
@@ -219,7 +225,10 @@ const winterPageLinks =
                 "Individual months cannot be rented.",
 
             winterAvailabilityButton:
-                "REQUEST AVAILABILITY"
+                "REQUEST AVAILABILITY",
+
+            ExitButton:
+                "EXIT",
         }
 
     };
