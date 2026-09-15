@@ -107,6 +107,10 @@ const winterPageLinks =
 
             ExitButton:
                 "ESCI",
+
+            howToSendRequest: "COME VUOI INVIARE LA RICHIESTA?",
+
+            mailAppOption: "PROGRAMMA EMAIL",
         },
 
 
@@ -168,6 +172,10 @@ const winterPageLinks =
 
             ExitButton:
                 "BEENDEN",
+
+            howToSendRequest: "WIE MÖCHTEN SIE DIE ANFRAGE SENDEN?",
+
+            mailAppOption: "E-MAIL-PROGRAMM",
         },
 
 
@@ -229,6 +237,10 @@ const winterPageLinks =
 
             ExitButton:
                 "EXIT",
+
+            howToSendRequest: "HOW WOULD YOU LIKE TO SEND THE REQUEST?",
+
+            mailAppOption: "EMAIL CLIENT",
         }
 
     };
@@ -528,6 +540,157 @@ themeOptions.forEach(function (button) {
 
 });
 
+
+    /* =========================
+   RICHIEDI DISPONIBILITÀ
+========================= */
+
+const winterAvailabilityButton =
+    document.getElementById("winterAvailabilityButton");
+
+const availabilityModal =
+    document.getElementById("availabilityModal");
+
+const availabilityModalClose =
+    document.getElementById("availabilityModalClose");
+
+const gmailOption =
+    document.getElementById("gmailOption");
+
+const mailAppOption =
+    document.getElementById("mailAppOption");
+
+
+if (
+    winterAvailabilityButton &&
+    availabilityModal &&
+    availabilityModalClose &&
+    gmailOption &&
+    mailAppOption
+) {
+
+    const email =
+        "AnnalisaHouse2026@gmail.com";
+
+    const subject =
+        "Richiesta disponibilità invernale – Annalisa House";
+
+
+    /* =========================
+       RILEVA DISPOSITIVO
+    ========================= */
+
+    const isMobile =
+        /Android|iPhone|iPad|iPod/i.test(
+            navigator.userAgent
+        );
+
+
+    /* =========================
+       CLICK PULSANTE
+    ========================= */
+
+    winterAvailabilityButton.addEventListener(
+        "click",
+        () => {
+
+            /* TELEFONO */
+
+            if (isMobile) {
+
+                window.location.href =
+                    `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+
+                return;
+            }
+
+
+            /* PC */
+
+            availabilityModal.classList.add("open");
+
+        }
+    );
+
+
+    /* =========================
+       CHIUDI MODAL
+    ========================= */
+
+    availabilityModalClose.addEventListener(
+        "click",
+        () => {
+
+            availabilityModal.classList.remove("open");
+
+        }
+    );
+
+
+    /* =========================
+       CLICK FUORI DAL MODAL
+    ========================= */
+
+    availabilityModal.addEventListener(
+        "click",
+        (event) => {
+
+            if (
+                event.target === availabilityModal
+            ) {
+
+                availabilityModal.classList.remove("open");
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       GMAIL
+    ========================= */
+
+    gmailOption.addEventListener(
+        "click",
+        () => {
+
+            const gmailURL =
+                "https://mail.google.com/mail/?view=cm" +
+                "&fs=1" +
+                "&to=" +
+                encodeURIComponent(email) +
+                "&su=" +
+                encodeURIComponent(subject);
+
+            window.open(
+                gmailURL,
+                "_blank"
+            );
+
+            availabilityModal.classList.remove("open");
+
+        }
+    );
+
+
+    /* =========================
+       PROGRAMMA EMAIL
+    ========================= */
+
+    mailAppOption.addEventListener(
+        "click",
+        () => {
+
+            window.location.href =
+                `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+
+            availabilityModal.classList.remove("open");
+
+        }
+    );
+
+}
     
 
     /* =========================
