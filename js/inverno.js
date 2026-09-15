@@ -573,7 +573,7 @@ if (
         "AnnalisaHouse2026@gmail.com";
 
     const subject =
-        "Richiesta disponibilità – Annalisa House";
+        "Richiesta disponibilità invernale – Annalisa House";
 
 
     /* =========================
