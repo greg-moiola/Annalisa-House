@@ -1015,3 +1015,16 @@ body.dark-theme .winter-service-list::-webkit-scrollbar-thumb {
     background: #222;
     color: #F4F1EB;
 }
+
+
+/* RICHIEDI DISPONIBILITÀ - TEMA SCURO */
+body.dark-theme .availability-button {
+    background: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+
+body.dark-theme .availability-button:hover {
+    background: #fff;
+    color: #17130f;
+}
