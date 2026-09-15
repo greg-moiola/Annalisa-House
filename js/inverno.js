@@ -573,7 +573,7 @@ if (
         "AnnalisaHouse2026@gmail.com";
 
     const subject =
-        "Richiesta disponibilità invernale – Annalisa House";
+        "Richiesta disponibilità – Annalisa House";
 
 
     /* =========================
@@ -602,6 +602,7 @@ if (
                     `mailto:${email}?subject=${encodeURIComponent(subject)}`;
 
                 return;
+
             }
 
 
@@ -627,9 +628,7 @@ if (
     );
 
 
-    /* =========================
-       CLICK FUORI DAL MODAL
-    ========================= */
+    /* CLICK FUORI DAL MODAL */
 
     availabilityModal.addEventListener(
         "click",
@@ -691,7 +690,8 @@ if (
     );
 
 }
-    
+
+
 
     /* =========================
        RIPRISTINO LINGUA
