@@ -1024,6 +1024,10 @@ body.dark-theme .availability-button {
     color: #fff;
 }
 
+
+body.dark-theme .availability-modal-content h3 {
+    color: #222;
+}
 body.dark-theme .availability-button:hover {
     background: #fff;
     color: #17130f;
